@@ -13,3 +13,4 @@ nano docker-compose.yml
 New!
 
 ไปที่ floder user ที่เครื่อง ubantu server
+git clone https://github.com/kridsanat/php-webapps-nu
