@@ -14,3 +14,16 @@ New!
 
 ไปที่ floder user ที่เครื่อง ubantu server ใช้แค่คำสั้งล่างอันเดียวพอ
 git clone https://github.com/kridsanat/php-webapps-nu
+
+-------------
+ตรวจสอบ
+sudo docker ps
+sudo docker stop ตามด้วยชื่อ container เพื่อหยุด
+
+ดู container ทั้งหมด
+sudo docker ps --all
+
+sudo docker rm ตามด้วยชื่อ container เพื่อลบ หลายๆอันได้ใส่เว้นวรรค
+
+คำสั่ง run ตัว compose
+sudo docker compose up
