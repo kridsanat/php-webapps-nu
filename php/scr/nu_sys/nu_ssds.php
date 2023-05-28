@@ -60,28 +60,15 @@ window.setTimeout("timerefresh('"+t+"')",1000)
 timerefresh(60);
 </script>
 <!--refresh หน้าเพจ-->
-
-<script type="text/javascript" src="js/lightbox.js"></script>
-
-
-
 <html>
-<head>
-<title><?php echo "$headtxt"; ?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620">
 
-<link href="css/style.css" rel="stylesheet" type="text/css">
-
-</head>
+		<head>
+			<title><?php echo "$headtxt"; ?></title>
+			<meta http-equiv="Content-Type" content="text/html; charset=tis-620">
+			<link href="" rel="" type="">
+		</head>
 
 <body bgcolor="#ffffff">
-
-
-<font color="#990000" size="+1">
-
-<strong><font color="#333333" size="2"></font></strong>
-
-</font>
 
 		<!-- ส่วนหัว -->
 		<TABLE width="90%" border="0" align="center" cellpadding="1" cellspacing="1">
@@ -122,9 +109,12 @@ timerefresh(60);
 
 							<DIV align="right">
 
-								<font color="#000000" size="2">Wellcome</font>
+								<font color="#000000" size="+1" face="tahoma">
+										<img src="../images/icon_emoticon.gif" alt="" width="" height="" border="0" >
+										<b>Wellcome</b> : 
+								</font>
 		
-								<font color="#6495ED" size="3"><b><?php echo "$adminname"; ?></b></font>
+								<font color="#6495ED" size="3" face="tahoma"><b><?php echo "$adminname"; ?></b></font>
 								
 								<BR>
 
@@ -436,7 +426,7 @@ if($bgmod==0){
 												
 								<td width="3.5%" bgcolor="#FFFFFF" ><div align="right">
 
-											<a href="nu_delssds.php?SerID=<?php echo "$idx"; ?>" onclick="return confirm('Are you sure?')" ><img src="../images/delete.png" alt="ลบข้อมูล" width="22" height="22" border="0" ></a></div>
+											<a href="nu_delssds.php?SerID=<?php echo "$idx"; ?>" onclick="return confirm('Are you sure?')" ><img src="../images/icon_close.jpg" alt="ลบข้อมูล" width="" height="" border="0" ></a></div>
 	
 								</td>
 											

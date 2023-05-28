@@ -11,5 +11,5 @@ if ($connect->connect_error){
 }
 
 $headtxt_web =  "Wellcome ";
-$headtxt = "HELLO";
+$headtxt = "Hello .. Have a good day! ";
 ?>
