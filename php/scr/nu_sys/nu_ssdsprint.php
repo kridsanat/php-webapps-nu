@@ -21,7 +21,7 @@ require_once "../include/connectdb.php";
 ?>
 <html>
 <head>
-<title><?php echo "$headtxt"; ?></title>
+<title><?php echo "$headtxt_web"; ?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=tis-620">
 <!-- Fireworks MX Dreamweaver MX target.  Created Sat Apr 02 10:29:23 GMT+0700 (SE Asia Standard Time) 2011-->
 <link href="css/style.css" rel="stylesheet" type="text/css">

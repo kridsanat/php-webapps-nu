@@ -63,7 +63,7 @@ timerefresh(60);
 <html>
 
 		<head>
-			<title><?php echo "$headtxt"; ?></title>
+			<title><?php echo "$headtxt_web"; ?></title>
 			<meta http-equiv="Content-Type" content="text/html; charset=tis-620">
 			<link href="" rel="" type="">
 		</head>

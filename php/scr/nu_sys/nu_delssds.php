@@ -26,7 +26,7 @@ $db_query=mysqli_query($connect,$sql_del);
 ?>
 <html>
 <head>
-<title><? echo "$headtxt"; ?></title>
+<title><? echo "$headtxt_web"; ?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=tis-620">
 <!-- Fireworks MX Dreamweaver MX target.  Created Sat Apr 02 10:29:23 GMT+0700 (SE Asia Standard Time) 2011-->
 <link href="css/style.css" rel="stylesheet" type="text/css">
