@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   php-apache-environment:
-    container_name: php-webapp   
+    container_name: php-webapp
     build:
       context: ./php
       dockerfile: Dockerfile
@@ -11,7 +11,6 @@ services:
       - ./php/scr:/var/www/html/
     ports:
       - 8080:80
-
   db:
     container_name: db
     image: mysql

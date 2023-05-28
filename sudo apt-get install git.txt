@@ -9,6 +9,8 @@ git clone https://github.com/kridsanat/php-webapps-nu scr
 nano Dockerfile
 nano docker-compose.yml
 
+cat docker-compose.yml
+
 -----------
 New!
 
