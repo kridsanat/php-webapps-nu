@@ -28,7 +28,7 @@ if(isset($_SESSION['timeLasetdActive'])){
 	//หากไม่ได้ Active ในเวลาที่กำหนด
 	if($seclogin>$sessionlifetime){
 		//goto logout page
-		header('location:logout.php');
+		header('location:../logout.php');
 		exit;
 	}else{
 		$_SESSION['timeLasetdActive'] = time();
