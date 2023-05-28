@@ -1,0 +1,15 @@
+rm -rvf php-webapps-nu
+
+sudo apt-get install git
+cd php-webapps-nu
+mkdir php
+cd php
+git clone https://github.com/kridsanat/php-webapps-nu scr
+
+nano Dockerfile
+nano docker-compose.yml
+
+-----------
+New!
+
+ไปที่ floder user ที่เครื่อง ubantu server
