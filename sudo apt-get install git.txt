@@ -45,3 +45,5 @@ su - marlena
 
 Than cmd sudo command for verification. For example cmd: 
 sudo ls -l /etc/shadow
+
+----------------------------------
