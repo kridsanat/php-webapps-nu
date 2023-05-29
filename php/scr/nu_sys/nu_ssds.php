@@ -20,24 +20,6 @@ require_once "../include/connectdb.php";
 						  $user_admin=$result["useradmin"];
 						  $pass_admin=$result["passadmin"];
 
-//Auto logottttt				  
-$sessionlifetime = 180; //กำหนดเป็นนาที
- 
-if(isset($_SESSION['timeLasetdActive'])){
-	$seclogin = (time()-$_SESSION['timeLasetdActive'])/60;
-	//หากไม่ได้ Active ในเวลาที่กำหนด
-	if($seclogin>$sessionlifetime){
-		//goto logout page
-		header('location:logout.php');
-		exit;
-	}else{
-		$_SESSION['timeLasetdActive'] = time();
-	}
-}else{
-	$_SESSION['timeLasetdActive'] = time();
-}	
-
-
 
 
 ?>
@@ -207,7 +189,8 @@ while ($rows = mysqli_fetch_array($fect)) {
 
 echo "SUM: <b>" . number_format($sum, 2, '.', ',') . "</b>&nbsp;THB.";
 ?>
-
+<br>
+No.xx = อ้างอิงจากลำดับเอกสาร cert ในแฟ้ม
 
 
 <br>
@@ -339,6 +322,7 @@ if($bgmod==0){
 									<span >
 											<?php echo number_format($total, 2, '.', ','); ?>&nbsp;
 									</span>
+									
 									</font>
 
 

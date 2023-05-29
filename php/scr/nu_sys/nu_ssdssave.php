@@ -60,7 +60,7 @@ if (!$result) {
 <head>
 <title><?PHP echo "$headtxt_web"; ?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=tis-620">
-<!-- Fireworks MX Dreamweaver MX target.  Created Sat Apr 02 10:29:23 GMT+0700 (SE Asia Standard Time) 2011-->
+
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <meta http-equiv="refresh" content="3;URL=nu_ssds.php">
 </head>
@@ -70,16 +70,17 @@ if (!$result) {
             <table width="100%" border="0" cellspacing="1" cellpadding="1">
                 <tr> 
                     <td>
+						
 						<div align="center">
 						<br>
                         <br>	
-		<img src="../images/ajax-loader.gif" width="" height="">			
+						<img src="../images/ajax-loader.gif" width="" height="">			
                         <br>
                         <br>
-        <font color="#003366" size="2">Complated</font>
+        				<font color="#003366" size="2">Complated</font>
 						<br>
 						<br> 
-		<font size="2">Please Wait...</font>
+						<font size="2">Please Wait...</font>
 						<br>
                         <br>
                         <br>
