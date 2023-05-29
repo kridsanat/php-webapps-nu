@@ -29,3 +29,19 @@ sudo docker rm ตามด้วยชื่อ container เพื่อลบ
 
 คำสั่ง run ตัว compose
 sudo docker compose up
+
+---------------------------------
+
+Commands to add or create a new sudo user (admin) on an Ubuntu or Debian Linux server:
+
+Create a new user named marlena, cmd: 
+adduser marlena
+
+Make marlena user ‘sudo user’ (admin) cmd: 
+usermod -aG sudo marlena
+
+Verify it by running the id marlena Log in as marlena cmd:
+su - marlena
+
+Than cmd sudo command for verification. For example cmd: 
+sudo ls -l /etc/shadow

@@ -6,14 +6,16 @@ $admin_pass = md5($_POST["passadmin"]);
 		$dbquery = mysqli_query($connect, $sql); 
 		$num_rows = mysqli_num_rows($dbquery);
 		$rowLogin = mysqli_fetch_array($dbquery);
-		if($num_rows == 1){ 
-			session_start();
-			$_SESSION['useradmin'] = $rowLogin['useradmin'];
-			echo "<meta http-equiv='refresh' content='0;URL=nu_sys/nu_ssds.php'>";
-		}else{ 
-			echo "<meta http-equiv='Content-Type' content='text/html; charset=tis-620' />";
-			echo "<script language='javascript'>alert('username or password not in correct');</script>";
-			echo "<meta http-equiv='refresh' content='0;URL=index.php'>";
-		}
+
+if ($num_rows == 1) {
+    session_start();
+    $_SESSION['useradmin'] = $rowLogin['useradmin'];
+    echo "<meta http-equiv='refresh' content='0;URL=main.php'>";
+} else {
+    echo "<meta http-equiv='Content-Type' content='text/html; charset=tis-620' />";
+    echo "<script language='javascript'>alert('Username or password is not correct');</script>";
+    echo "<meta http-equiv='refresh' content='0;URL=index.php'>";
+    exit();
+}
 	
 ?>

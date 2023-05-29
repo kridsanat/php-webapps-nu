@@ -190,9 +190,7 @@ while ($rows = mysqli_fetch_array($fect)) {
 echo "SUM: <b>" . number_format($sum, 2, '.', ',') . "</b>&nbsp;THB.";
 ?>
 <br>
-No.xx = อ้างอิงจากลำดับเอกสาร cert ในแฟ้ม
-
-
+[ No.xx = อ้างอิงจากลำดับเอกสาร cert ในแฟ้ม ]
 <br>
 <br>								  
 									 
