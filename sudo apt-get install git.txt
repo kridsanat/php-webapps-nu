@@ -52,10 +52,10 @@ sudo ls -l /etc/shadow
 existing folder that already contains files/folders
 Follow the following steps (in this case for the root folder):
 
-cd /
+cd / 
 git init
 git remote add origin <your-repo-url>
 git pull
 git checkout main -f
 git branch --set-upstream-to origin/master
-Change "cd /" to point to your desired folder
+Change "cd /" to point to your desired folder เข้าไป floder ของ project
