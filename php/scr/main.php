@@ -105,8 +105,11 @@ timerefresh(60);
 			<tr valign="center"> 
 			
 			
-				<td width="60%">
-			
+				<td width="">
+						<br>
+						<br>
+						<br>
+						<br>
 						<?php echo "<font size=2 color=#000080>$headtxt | </font><font size=2 color=#666666>$e_date $etime</font>"; ?>
 		
 						<br>
@@ -119,10 +122,10 @@ timerefresh(60);
 
 						</div>
 			
-				</td>
+				<!--</td>
 				
 				
-				<!--
+				
 				<td width="40%" valign="center" >
 				<div >
 				<font face="tahoma" color="#000000" size="2"><img src="images/warning.gif" width="" >
@@ -132,11 +135,11 @@ timerefresh(60);
 				</font>
 				</div>
 				</td>
-				-->
+				
 
-				<td width="40%">
+				<td width="40%">-->
 
-							<DIV align="right">
+							<DIV align="left">
 
 								<font color="#000000" size="+1" face="tahoma">
 										<img src="../images/icon_emoticon.gif" alt="" width="" height="" border="0" >
@@ -194,9 +197,9 @@ timerefresh(60);
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                             <font face="tahoma" color="#000033" size="2">
-                            <a href="XXXXXXXXX.php" style="text-decoration: none;" >
+                            <a href="nu_equp/nu_equp.php" style="text-decoration: none;" >
                                 <b>
-                                <button class="button" style="vertical-align:middle"><span>Empty.</span></button>
+                                <button class="button" style="vertical-align:middle"><span>Equpment.</span></button>
                                 </b>
                             </a>
                             </font>

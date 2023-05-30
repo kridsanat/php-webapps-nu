@@ -131,7 +131,6 @@ timerefresh(60);
 							
 <table width="90%" border="0" align="center" cellspacing="1" cellpadding="1">
 
-
 			<tr>
 				<td>
 				<a href="../main.php"  style="text-decoration: none;" >
@@ -140,29 +139,19 @@ timerefresh(60);
 				<br>
 				<br>
 				</td>
-			</tr>	
+			</tr>
+
 
     		<tr class=""> 
        	 		<td bgcolor="#FFFFFF"> 
 
 <?php
-	$numproducts ="select * from nu_ssds";
+	$numproducts ="select * from nu_equps";
 	$query_select=mysqli_query($connect, $numproducts);
 	$numall=mysqli_num_rows($query_select);
 ?>																											  
-						  
-<a href="nu_ssdsprint.php">
-	<font face="tahoma" color="#000033" size="4">
 
-		<u><i>Print Report</i></u>
-
-	</font>
-</a>
-
-
-
-|
-<a href="nu_ssdsadd.php">
+<a href="nu_equpadd.php">
 	<font face="tahoma" color="#000033" size="4">
 
 		<u><i>Create New</i></u>
@@ -176,7 +165,7 @@ timerefresh(60);
 <br>
 
 <?php 
-$sql_select_mem = "SELECT * FROM nu_ssds";
+$sql_select_mem = "SELECT * FROM nu_equps";
 $fect = mysqli_query($connect, $sql_select_mem);
 if (!$fect) {
     die("ติดต่อฐานข้อมูลไม่ได้" . mysqli_error());
@@ -188,9 +177,9 @@ $bgcount = 0;
 
 while ($rows = mysqli_fetch_array($fect)) {
     $info1 = $rows["info1"];
-    $ssdsprice = $rows["ssdsprice"];
-	if (is_numeric($info1) && is_numeric($ssdsprice)) {
-		$total = $ssdsprice * $info1;
+    $equpprice = $rows["equpprice"];
+	if (is_numeric($info1) && is_numeric($equpprice)) {
+		$total = $equpprice * $info1;
 		$sum += $total;
 		// Rest of the code
 	} else {
@@ -201,7 +190,7 @@ while ($rows = mysqli_fetch_array($fect)) {
 echo "SUM: <b>" . number_format($sum, 2, '.', ',') . "</b>&nbsp;THB.";
 ?>
 <br>
-[ No.xx = อ้างอิงจากลำดับเอกสาร cert ในแฟ้ม ]
+
 <br>
 <br>								  
 									 
@@ -209,14 +198,14 @@ echo "SUM: <b>" . number_format($sum, 2, '.', ',') . "</b>&nbsp;THB.";
 
 $page = isset($_GET['page']) ? $_GET['page'] : '';
 
-$select_type="select * from nu_ssds order by infono desc";
+$select_type="select * from nu_equps order by infono desc";
 $query_select=mysqli_query($connect, $select_type);
 $num_rows=mysqli_num_rows($query_select);
 
 if($num_rows<1){
 echo "<br><br><center><font color=#666666 face=tahoma size=2><b>No item</b></font></center>";
 }else{
-		$select="select * from nu_ssds order by infono desc";
+		$select="select * from nu_equps order by infono desc";
 		$q_ry = mysqli_query($connect,$select);
 	 	$num_rows=mysqli_num_rows($q_ry);
   		$pagesize=100;
@@ -236,7 +225,7 @@ echo "<br><br><center><font color=#666666 face=tahoma size=2><b>No item</b></fon
 			}
 		mysqli_free_result($q_ry);
 		$goto=($page-1)*$pagesize;
-$sql_select_mem="Select * From nu_ssds order by infono desc limit $goto,$pagesize";
+$sql_select_mem="Select * From nu_equps order by infono desc limit $goto,$pagesize";
 		$fect=mysqli_query($connect,$sql_select_mem);
 		if(!$fect)
 		{
@@ -254,12 +243,12 @@ $info3 =$rows["info3"];
 $info4 =$rows["info4"];
 $info5 =$rows["info5"];
 $info6 =$rows["info6"];
-$ssdsprice =$rows["ssdsprice"];
-$ssdsphoto =$rows["ssdsphoto"];
+$equpprice =$rows["equpprice"];
+$equpphoto =$rows["equpphoto"];
 $status =$rows["status"];
 $infono =$rows["infono"];
-if (is_numeric($info1) && is_numeric($ssdsprice)) {
-    $total = $ssdsprice * $info1;
+if (is_numeric($info1) && is_numeric($equpprice)) {
+    $total = $equpprice * $info1;
     $sum += $total;
     // Rest of the code
 } else {
@@ -276,7 +265,7 @@ if($bgmod==0){
 ?>
 	
 
-<form method="post" action="nu_ssdsedit.php?SerID=<?php echo "$idx"; ?>">
+<form method="post" action="nu_equpedit.php?SerID=<?php echo "$idx"; ?>">
 
 
     <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
@@ -311,10 +300,10 @@ if($bgmod==0){
 									<?php
 						
 			
-									if ($ssdsprice == 0) {
+									if ($equpprice == 0) {
   									echo "<font face=tahoma size=1 color=#><b>Unit/Price</b><br></font><font face=tahoma size=2 color=#FF0000><b>-</b></font>";
-									} else if ($ssdsprice >= 1) {
- 									 $formattedPrice = number_format($ssdsprice, 2, '.', ',');
+									} else if ($equpprice >= 1) {
+ 									 $formattedPrice = number_format($equpprice, 2, '.', ',');
  									 echo "<font face=tahoma size=1 color=#><b>Unit/Price</b><br></font> <font face=tahoma size=2 color=#000000>$formattedPrice</font>";
 									}
 									?>	
@@ -343,12 +332,12 @@ if($bgmod==0){
 
 								<td bgcolor="#FFFFFF" width="3%" valign="middle"  >
 
-										<a href="<?php echo "../pic/$ssdsphoto"; ?>" rel="lightbox" target="_blank" >
+										<a href="<?php echo "../pic/$equpphoto"; ?>" rel="lightbox" target="_blank" >
 												
 										<?php
-							 			 if ($ssdsphoto >= 100)
+							 			 if ($equpphoto >= 100)
 							  			{
-							 			echo "<img src=../pic/$ssdsphoto width=35 height=35 border=1 >";
+							 			echo "<img src=../pic/$equpphoto width=35 height=35 border=1 >";
 							 			}else
 										{
 										echo "&nbsp;&nbsp;No Pic";	
@@ -361,10 +350,24 @@ if($bgmod==0){
 								</td>	
 												
 
-								<td bgcolor="#FFFFFF" width="3%" >
-									<font size="2">No.<?php echo "$infono"; ?></font>
-								</td>
-												
+										
+			<?php
+			
+			if ($infono == 'HQ')
+			  {
+			  echo "<td bgcolor='#33CC99' width='3%' ><font size='+1'><b>&nbsp;&nbsp;HQ</b></font></td>";
+			}else if ($infono == 'TIP9')
+			  {
+				echo "<td bgcolor='#99CCFF' width='3%' ><font size='+1'><b>&nbsp;&nbsp;TIP9</b></font></td>";
+			}else
+			  {
+			echo "<b><font face=tahoma size=1 color=#>Qty.<br></font> <font face=tahoma size=2 color=#B8860B></font></b>";
+			}
+
+			?>
+									
+									
+											
 												
 								<td width="3%" bgcolor='#FFFFFF' align="center">  
 									<input name="submit" type="submit" class="submit" value="Edit" >
@@ -419,7 +422,7 @@ if($bgmod==0){
 												
 								<td width="3.5%" bgcolor="#FFFFFF" ><div align="right">
 
-											<a href="nu_delssds.php?SerID=<?php echo "$idx"; ?>" onclick="return confirm('Are you sure?')" ><img src="../images/icon_close.jpg" alt="ลบข้อมูล" width="" height="" border="0" ></a></div>
+											<a href="nu_delequp.php?SerID=<?php echo "$idx"; ?>" onclick="return confirm('Are you sure?')" ><img src="../images/icon_close.jpg" alt="ลบข้อมูล" width="" height="" border="0" ></a></div>
 	
 								</td>
 											
