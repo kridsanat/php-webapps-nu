@@ -47,3 +47,15 @@ Than cmd sudo command for verification. For example cmd:
 sudo ls -l /etc/shadow
 
 ----------------------------------
+ git clone ทับที่เดิมบน server   
+
+existing folder that already contains files/folders
+Follow the following steps (in this case for the root folder):
+
+cd /
+git init
+git remote add origin <your-repo-url>
+git pull
+git checkout main -f
+git branch --set-upstream-to origin/master
+Change "cd /" to point to your desired folder
