@@ -130,7 +130,7 @@ function checkprd()
                                       <td> <div align="right"><font size="2">Name 
                                           :</font></div></td>
                                       <td><font size="3"> 
-                                        <input name="info4" type="text" class="input" id="info4" size="100" maxlength="100">
+                                        <input name="info4" type="text" class="input" id="info4" size="100" maxlength="" value='<a href="" target="_blank"  ></a>' >
                                         </font></td>
                                     </tr>
 									<tr bgcolor="#FFFFFF"> 

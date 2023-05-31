@@ -108,7 +108,11 @@ $infono =$result1['infono'];
                                       <td> <div align="right"><font size="2">Name
                                           :</font></div></td>
                                       <td><font size="3"> 
-                                        <input name="info4" type="text" class="input" id="info4" size="100" value='<?php echo $info4; ?>' maxlength="100">
+
+                                        <input name="info4" type="text" class="input" id="info4" size="125" 
+                                        value='<?php echo $info4; ?>' 
+                                        maxlength="">
+                                        
                                         </font></td>
                                     </tr>
 									<tr bgcolor="#FFFFFF"> 

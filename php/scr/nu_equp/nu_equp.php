@@ -355,13 +355,13 @@ if($bgmod==0){
 			
 			if ($infono == 'HQ')
 			  {
-			  echo "<td bgcolor='#33CC99' width='3%' ><font size='+1'><b>&nbsp;&nbsp;HQ</b></font></td>";
+			  	echo "<td bgcolor='#009933' width='8%' ><font size='+1'><b>&nbsp;&nbsp;HQ</b></font></td>";
 			}else if ($infono == 'TIP9')
 			  {
-				echo "<td bgcolor='#99CCFF' width='3%' ><font size='+1'><b>&nbsp;&nbsp;TIP9</b></font></td>";
+				echo "<td bgcolor='#99CCFF' width='8%' ><font size='+1'><b>&nbsp;&nbsp;TIP9</b></font></td>";
 			}else
 			  {
-			echo "<b><font face=tahoma size=1 color=#>Qty.<br></font> <font face=tahoma size=2 color=#B8860B></font></b>";
+				echo "<td bgcolor='#FFFFCC' width='8%' ><font size='+1'><b>&nbsp;&nbsp;$infono</b></font></td>";
 			}
 
 			?>
@@ -436,7 +436,8 @@ if($bgmod==0){
 						</td>
 
 						<td colspan="4" >
-							<font face='tahoma' size='1' color='#000000' ></font><?php echo "<font face=tahoma size=2 color=#3CB371 ><b>$info6</b></font>"; ?>
+							
+							<textarea name="info6" type="text" id="" id="info6"  cols="130" rows="1" readonly><?php echo $info6; ?></textarea>
 						</td>
 
 					</tr>		
