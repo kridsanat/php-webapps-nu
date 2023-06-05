@@ -337,16 +337,16 @@ if($bgmod==0){
 			
 			if ($infono == 'HQ')
 			  {
-			  	echo "<td bgcolor='#00CC66' width='8%' ><font size='+1'><b>&nbsp;&nbsp;HQ</b></font></td>";
+			  	echo "<td bgcolor='#00CC66' width='8%' ><font face= 'tahoma' color='#330099' size='+1'><b>&nbsp;&nbsp;HQ</b></font></td>";
 			}else if ($infono == 'TIP9')
 			  {
-				echo "<td bgcolor='#339999' width='8%' ><font size='+1'><b>&nbsp;&nbsp;TIP9</b></font></td>";
+				echo "<td bgcolor='#339999' width='8%' ><font face= 'tahoma' color='#330099' size='+1'><b>&nbsp;&nbsp;TIP9</b></font></td>";
 			}else if ($infono == 'CLOUD')
 			{
-			  echo "<td bgcolor='#99CCFF' width='8%' ><font size='+1'><b>&nbsp;&nbsp;CLOUD</b></font></td>";
+			  echo "<td bgcolor='#99CCFF' width='8%' ><font face= 'tahoma' color='#330099' size='+1'><b>&nbsp;&nbsp;CLOUD</b></font></td>";
 			}else
 			  {
-				echo "<td bgcolor='#FFFFCC' width='8%' ><font size='+1'><b>&nbsp;&nbsp;$infono</b></font></td>";
+				echo "<td bgcolor='#FFFFCC' width='8%' ><font face= 'tahoma' color='#330099' size='+1'><b>&nbsp;&nbsp;$infono</b></font></td>";
 			}
 
 			?>
