@@ -50,13 +50,13 @@ timerefresh(60);
 .button {
   display: inline-block;
   border-radius: 4px;
-  background-color: #f4511e;
+  background-color: #00CC33;
   border: none;
   color: #FFFFFF;
   text-align: center;
   font-size: 28px;
   padding: 20px;
-  width: 200px;
+  width: 500px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
@@ -199,7 +199,7 @@ timerefresh(60);
                             <font face="tahoma" color="#000033" size="2">
                             <a href="nu_equp/nu_equp.php" style="text-decoration: none;" >
                                 <b>
-                                <button class="button" style="vertical-align:middle"><span>Equpment.</span></button>
+                                <button class="button" style="vertical-align:middle" ><span>System and Network.</span></button>
                                 </b>
                             </a>
                             </font>
@@ -210,6 +210,23 @@ timerefresh(60);
 			
 				</td>
             </tr>
+			<tr valign="center"> 
+			
+			
+
+                <td align=left width=100%>
+
+                            <br>
+			                <br>
+			            
+							<img src="../images/nutrilogo.png" alt="" width="" height="" border="0" >
+                        
+                            <br>
+                            <br>
+
+			
+				</td>
+            </tr>			
         </TABLE>
 
 </body>

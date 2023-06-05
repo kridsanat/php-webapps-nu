@@ -198,14 +198,14 @@ echo "SUM: <b>" . number_format($sum, 2, '.', ',') . "</b>&nbsp;THB.";
 
 $page = isset($_GET['page']) ? $_GET['page'] : '';
 
-$select_type="select * from nu_equps order by infono desc";
+$select_type="select * from nu_equps order by infono, info4 asc";
 $query_select=mysqli_query($connect, $select_type);
 $num_rows=mysqli_num_rows($query_select);
 
 if($num_rows<1){
 echo "<br><br><center><font color=#666666 face=tahoma size=2><b>No item</b></font></center>";
 }else{
-		$select="select * from nu_equps order by infono desc";
+		$select="select * from nu_equps order by infono, info4 asc";
 		$q_ry = mysqli_query($connect,$select);
 	 	$num_rows=mysqli_num_rows($q_ry);
   		$pagesize=100;
@@ -225,7 +225,7 @@ echo "<br><br><center><font color=#666666 face=tahoma size=2><b>No item</b></fon
 			}
 		mysqli_free_result($q_ry);
 		$goto=($page-1)*$pagesize;
-$sql_select_mem="Select * From nu_equps order by infono desc limit $goto,$pagesize";
+$sql_select_mem="Select * From nu_equps order by infono, info4 asc limit $goto,$pagesize";
 		$fect=mysqli_query($connect,$sql_select_mem);
 		if(!$fect)
 		{
@@ -358,7 +358,10 @@ if($bgmod==0){
 			  	echo "<td bgcolor='#009933' width='8%' ><font size='+1'><b>&nbsp;&nbsp;HQ</b></font></td>";
 			}else if ($infono == 'TIP9')
 			  {
-				echo "<td bgcolor='#99CCFF' width='8%' ><font size='+1'><b>&nbsp;&nbsp;TIP9</b></font></td>";
+				echo "<td bgcolor='#339999' width='8%' ><font size='+1'><b>&nbsp;&nbsp;TIP9</b></font></td>";
+			}else if ($infono == 'CLOUD')
+			{
+			  echo "<td bgcolor='#99CCFF' width='8%' ><font size='+1'><b>&nbsp;&nbsp;CLOUD</b></font></td>";
 			}else
 			  {
 				echo "<td bgcolor='#FFFFCC' width='8%' ><font size='+1'><b>&nbsp;&nbsp;$infono</b></font></td>";
@@ -392,9 +395,9 @@ if($bgmod==0){
 												
 								<td bgcolor="#F5F5F5" width="49%" >
 											
-									<b>
-									&nbsp;<?php echo "<font face=tahoma size=2 color=#2F4F4F ><u><i>$info4</i></u></font>"; ?></u>
-									</b>
+									
+									&nbsp;<?php echo "<font face=tahoma size=4 color=#000000 >$info4</font>"; ?></u>
+									
 
 											<br>
 
