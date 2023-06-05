@@ -23,25 +23,7 @@ require_once "../include/connectdb.php";
 
 
 ?>
-<!--refresh หน้าเพจ-->
-<SCRIPT language="JavaScript">
-function timerefresh(t)
-{
 
-if(t==0)
-{
-window.location.reload();
-}
-else
-{
-t--;
-}
-window.setTimeout("timerefresh('"+t+"')",1000)
-}
-
-timerefresh(60);
-</script>
-<!--refresh หน้าเพจ-->
 <html>
 
 		<head>
@@ -355,7 +337,7 @@ if($bgmod==0){
 			
 			if ($infono == 'HQ')
 			  {
-			  	echo "<td bgcolor='#009933' width='8%' ><font size='+1'><b>&nbsp;&nbsp;HQ</b></font></td>";
+			  	echo "<td bgcolor='#00CC66' width='8%' ><font size='+1'><b>&nbsp;&nbsp;HQ</b></font></td>";
 			}else if ($infono == 'TIP9')
 			  {
 				echo "<td bgcolor='#339999' width='8%' ><font size='+1'><b>&nbsp;&nbsp;TIP9</b></font></td>";
@@ -393,7 +375,7 @@ if($bgmod==0){
 						
 												
 												
-								<td bgcolor="#F5F5F5" width="49%" >
+								<td bgcolor="#FFFFFF" width="49%" >
 											
 									
 									&nbsp;<?php echo "<font face=tahoma size=4 color=#000000 >$info4</font>"; ?></u>
@@ -440,7 +422,7 @@ if($bgmod==0){
 
 						<td colspan="4" >
 							
-							<textarea name="info6" type="text" id="" id="info6"  cols="130" rows="1" readonly><?php echo $info6; ?></textarea>
+							<textarea name="info6" type="text" id="" id="info6"  cols="1" rows="1" readonly><?php echo $info6; ?></textarea>
 						</td>
 
 					</tr>		
