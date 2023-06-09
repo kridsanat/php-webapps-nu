@@ -108,9 +108,7 @@ require_once "../include/connectdb.php";
 
 <br>
 <br>										  
-                        
-                        
-							
+
 <table width="90%" border="0" align="center" cellspacing="1" cellpadding="1">
 
 			<tr>
@@ -378,7 +376,7 @@ if($bgmod==0){
 								<td bgcolor="#FFFFFF" width="49%" >
 											
 									
-									&nbsp;<?php echo "<font face=tahoma size=4 color=#000000 >$info4</font>"; ?></u>
+									&nbsp;<?php echo "<font face=tahoma size=+1 color=#000000 >$info4</font>"; ?></u>
 									
 
 											<br>

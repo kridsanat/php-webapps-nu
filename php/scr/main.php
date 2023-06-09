@@ -204,6 +204,15 @@ timerefresh(60);
                             </a>
                             </font>
                         
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            <font face="tahoma" color="#000033" size="2">
+                            <a href="nu_news/newmain.php" style="text-decoration: none;" >
+                                <b>
+                                <button class="button" style="vertical-align:middle" ><span>Manual</span></button>
+                                </b>
+                            </a>
+                            </font>                       
                             <br>
                             <br>
 
