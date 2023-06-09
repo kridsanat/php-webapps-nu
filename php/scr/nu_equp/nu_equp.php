@@ -335,10 +335,10 @@ if($bgmod==0){
 			
 			if ($infono == 'HQ')
 			  {
-			  	echo "<td bgcolor='#00CC66' width='8%' ><font face= 'tahoma' color='#330099' size='+1'><b>&nbsp;&nbsp;HQ</b></font></td>";
+			  	echo "<td bgcolor='#00CC33' width='8%' ><font face= 'tahoma' color='#330099' size='+1'><b>&nbsp;&nbsp;HQ</b></font></td>";
 			}else if ($infono == 'TIP9')
 			  {
-				echo "<td bgcolor='#339999' width='8%' ><font face= 'tahoma' color='#330099' size='+1'><b>&nbsp;&nbsp;TIP9</b></font></td>";
+				echo "<td bgcolor='#00FF99' width='8%' ><font face= 'tahoma' color='#330099' size='+1'><b>&nbsp;&nbsp;TIP9</b></font></td>";
 			}else if ($infono == 'CLOUD')
 			{
 			  echo "<td bgcolor='#99CCFF' width='8%' ><font face= 'tahoma' color='#330099' size='+1'><b>&nbsp;&nbsp;CLOUD</b></font></td>";
@@ -376,7 +376,7 @@ if($bgmod==0){
 								<td bgcolor="#FFFFFF" width="49%" >
 											
 									
-									&nbsp;<?php echo "<font face=tahoma size=+1 color=#000000 >$info4</font>"; ?></u>
+									&nbsp;<?php echo "<font face=tahoma size=3 color=#228B22 >$info4</font>"; ?></u>
 									
 
 											<br>
