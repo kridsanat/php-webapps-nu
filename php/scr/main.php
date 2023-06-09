@@ -182,10 +182,20 @@ timerefresh(60);
 			
 
                 <td align=left width=100%>
+                           
+							<br>
+							<br>
 
-                            <br>
-			                <br>
-			            
+							<font face="tahoma" color="#000033" size="2">
+                            <a href="nu_news/newmain.php" style="text-decoration: none;" >
+                                <b>
+                                <button class="button" style="vertical-align:middle" ><span>Manual</span></button>
+                                </b>
+                            </a>
+                            </font> 
+
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
                             <font face="tahoma" color="#000033" size="2">
                             <a href="nu_sys\nu_ssds.php" style="text-decoration: none;" >
                                 <b>
@@ -203,16 +213,7 @@ timerefresh(60);
                                 </b>
                             </a>
                             </font>
-                        
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                            <font face="tahoma" color="#000033" size="2">
-                            <a href="nu_news/newmain.php" style="text-decoration: none;" >
-                                <b>
-                                <button class="button" style="vertical-align:middle" ><span>Manual</span></button>
-                                </b>
-                            </a>
-                            </font>                       
+                      
                             <br>
                             <br>
 
