@@ -338,7 +338,7 @@ if($bgmod==0){
 			  	echo "<td bgcolor='#32CD32' width='8%' ><font face= 'tahoma' color='#330099' size='+1'><b>&nbsp;&nbsp;HQ.Jatuchot</b></font></td>";
 			}else if ($infono == 'Factory.TIP9')
 			  {
-				echo "<td bgcolor='#00FF99' width='8%' ><font face= 'tahoma' color='#330099' size='+1'><b>&nbsp;&nbsp;Factory.TIP9</b></font></td>";
+				echo "<td bgcolor='#3399CC' width='8%' ><font face= 'tahoma' color='#330099' size='+1'><b>&nbsp;&nbsp;Factory.TIP9</b></font></td>";
 			}else if ($infono == 'CLOUD')
 			{
 			  echo "<td bgcolor='#99CCFF' width='8%' ><font face= 'tahoma' color='#330099' size='+1'><b>&nbsp;&nbsp;CLOUD</b></font></td>";
