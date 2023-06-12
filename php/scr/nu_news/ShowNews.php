@@ -151,11 +151,10 @@ background-attachment : fixed
 							  <? echo "$message"; ?>
 							  
 							  
-							<a href="<? echo "NEW/$newphoto <br><br><img src=../images/zoom.gif width= >&nbsp;Zoom Picture</a><br><br>"; ?>" rel="lightbox">
-							  <?  
+							
+							  <?php 
 							  if ($newphoto >= 100){
 							  echo "<img src=NEW/$newphoto width=100%>
-							  <br><br><img src=../images/zoom.gif width= >&nbsp;Zoom Picture</a><br><br>
 							  
 							  ";
 							  }

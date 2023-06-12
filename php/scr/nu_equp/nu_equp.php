@@ -335,7 +335,7 @@ if($bgmod==0){
 			
 			if ($infono == 'HQ')
 			  {
-			  	echo "<td bgcolor='#00CC33' width='8%' ><font face= 'tahoma' color='#330099' size='+1'><b>&nbsp;&nbsp;HQ</b></font></td>";
+			  	echo "<td bgcolor='#32CD32' width='8%' ><font face= 'tahoma' color='#330099' size='+1'><b>&nbsp;&nbsp;HQ</b></font></td>";
 			}else if ($infono == 'TIP9')
 			  {
 				echo "<td bgcolor='#00FF99' width='8%' ><font face= 'tahoma' color='#330099' size='+1'><b>&nbsp;&nbsp;TIP9</b></font></td>";
