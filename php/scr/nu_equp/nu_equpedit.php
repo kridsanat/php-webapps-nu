@@ -119,7 +119,7 @@ $infono =$result1['infono'];
                                       <td width="140"> <div align="right"><font size="2">No. 
                                           :</font></div></td>
                                       <td width="428"><font size="3"> 
-                                        <input name="infono" type="text"  id="infono" class="input" value='<?php echo "$infono"; ?>' size="5">
+                                        <input name="infono" type="text"  id="infono" class="input" value='<?php echo "$infono"; ?>' size="10">
                                         
                                         </font></td>
                                     </tr>

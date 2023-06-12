@@ -137,7 +137,7 @@ function checkprd()
                                       <td> <div align="right"><font size="2">No.
                                           :</font></div></td>
                                       <td><font size="3"> 
-                                        <input name="infono" type="text" class="input" id="infono" size="5" >
+                                        <input name="infono" type="text" class="input" id="infono" size="10" >
                                         </font></td>
                                     </tr>
                                     <tr bgcolor="#FFFFFF"> 
