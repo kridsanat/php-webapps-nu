@@ -23,24 +23,7 @@ require_once "../include/connectdb.php";
 
 
 ?>
-<!--refresh หน้าเพจ-->
-<SCRIPT language="JavaScript">
-function timerefresh(t)
-{
 
-if(t==0)
-{
-window.location.reload();
-}
-else
-{
-t--;
-}
-window.setTimeout("timerefresh('"+t+"')",1000)
-}
-
-timerefresh(60);
-</script>
 <STYLE type=text/css>
 BODY {
 background-image : url('../images/bg.gif');
@@ -49,11 +32,29 @@ background-attachment : fixed
 
 }
 </STYLE>
-<!--refresh หน้าเพจ-->
+
+
+<?php
+						  $sql_1="select * from news where id = '$_GET[NewsID]'";
+						  $db_query=mysqli_query($connect,$sql_1);
+						  $result1=mysqli_fetch_array($db_query);
+						  $idx=$result1['id'];
+						  $topic=$result1['topic'];
+						  $message=$result1['message'];
+						  $newphoto=$result1['newphoto'];
+						  $dateregist=$result1['dateregist'];
+						  
+?>
+
+
+
+
+
+
 <html>
 
 		<head>
-			<title><?php echo "$headtxt_web"; ?></title>
+			<title><?php echo "$topic"; ?></title>
 			<meta http-equiv="Content-Type" content="text/html; charset=tis-620">
 			<link href="" rel="" type="">
 		</head>
@@ -96,16 +97,7 @@ background-attachment : fixed
 			  
 			  
               <table width="100%" border="0" cellpadding="2" cellspacing="0" bordercolor="#852A3B">
-                <tr>    <?php
-						  $sql_1="select * from news where id = '$_GET[NewsID]'";
-						  $db_query=mysqli_query($connect,$sql_1);
-						  $result1=mysqli_fetch_array($db_query);
-						  $idx=$result1['id'];
-						  $topic=$result1['topic'];
-						  $message=$result1['message'];
-						  $newphoto=$result1['newphoto'];
-						  $dateregist=$result1['dateregist'];
-						?>
+                <tr>    
                   <td>
 					<div align="center">
 				  <table width="80%" border="0" cellspacing="1" cellpadding="3">
@@ -133,8 +125,8 @@ background-attachment : fixed
 						<font face="tahoma" size="5" color="#222222">
 						<tr>
 						<td>
-						<a href="EditNews.php?NewsID=<? echo "$idx"; ?>"><img src="../images/pencil.jpg" width="20" height="20" border="0"></a></div>
-						<font face="tahoma" size="3" color=""><? echo "<b>$topic</b>"; ?>&nbsp;&nbsp;</font>
+						<a href="EditNews.php?NewsID=<?php echo "$idx"; ?>"><img src="../images/pencil.jpg" width="20" height="20" border="0"></a></div>
+						<font face="tahoma" size="3" color=""><?php echo "<b>$topic</b>"; ?>&nbsp;&nbsp;</font>
 						</td>
 						</tr>
 						</font>
@@ -143,7 +135,7 @@ background-attachment : fixed
                       </tr>
                       <tr>
                         <td colspan="2">
-						<table width="" border="0" cellspacing="1" cellpadding="4">
+						<table width="900" border="0" cellspacing="1" cellpadding="4">
                             <tr>
                               <td>
 							  <font size="2" face="tahoma" color="#222222">

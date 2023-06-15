@@ -41,8 +41,12 @@ window.setTimeout("timerefresh('"+t+"')",1000)
 
 timerefresh(60);
 </script>
-
 <!--refresh หน้าเพจ-->
+
+
+
+
+
 <html>
 
 		<head>
