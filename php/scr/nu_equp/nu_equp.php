@@ -335,16 +335,16 @@ if($bgmod==0){
 			
 			if ($infono == 'HQ.Jatuchot')
 			  {
-			  	echo "<td bgcolor='#32CD32' width='8%' ><font face= 'tahoma' color='#330099' size='+1'><b>&nbsp;&nbsp;HQ.Jatuchot</b></font></td>";
+			  	echo "<td bgcolor='#32CD32' width='8%' ><font face= 'tahoma' color='#0033FF' size='+1'><b>&nbsp;&nbsp;HQ.Jatuchot</b></font></td>";
 			}else if ($infono == 'Factory.TIP9')
 			  {
-				echo "<td bgcolor='#3399CC' width='8%' ><font face= 'tahoma' color='#330099' size='+1'><b>&nbsp;&nbsp;Factory.TIP9</b></font></td>";
+				echo "<td bgcolor='#3CB371' width='8%' ><font face= 'tahoma' color='#0033FF' size='+1'><b>&nbsp;&nbsp;Factory.TIP9</b></font></td>";
 			}else if ($infono == 'CLOUD')
 			{
-			  echo "<td bgcolor='#99CCFF' width='8%' ><font face= 'tahoma' color='#330099' size='+1'><b>&nbsp;&nbsp;CLOUD</b></font></td>";
+			  echo "<td bgcolor='#99CCFF' width='8%' ><font face= 'tahoma' color='#0033FF' size='+1'><b>&nbsp;&nbsp;CLOUD</b></font></td>";
 			}else
 			  {
-				echo "<td bgcolor='#FFFFCC' width='8%' ><font face= 'tahoma' color='#330099' size='+1'><b>&nbsp;&nbsp;$infono</b></font></td>";
+				echo "<td bgcolor='#66CCCC' width='8%' ><font face= 'tahoma' color='#0033FF' size='+1'><b>&nbsp;&nbsp;$infono</b></font></td>";
 			}
 
 			?>
@@ -376,7 +376,7 @@ if($bgmod==0){
 								<td bgcolor="#FFFFFF" width="49%" >
 											
 									
-									&nbsp;<?php echo "<font face=tahoma size=3 color=#228B22 >$info4</font>"; ?></u>
+									&nbsp;<?php echo "<font face=tahoma size=3 color=#000000 ><b>$info4</b></font>"; ?></u>
 									
 
 											<br>

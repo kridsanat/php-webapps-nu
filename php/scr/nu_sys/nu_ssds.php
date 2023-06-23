@@ -341,7 +341,7 @@ if($bgmod==0){
 								
 												
 
-								<td bgcolor="#FFFFFF" width="3%" valign="middle"  >
+								<td bgcolor="#FFFFFF" width="2%" valign="middle"  >
 
 										<a href="<?php echo "../pic/$ssdsphoto"; ?>" rel="lightbox" target="_blank" >
 												
@@ -361,8 +361,8 @@ if($bgmod==0){
 								</td>	
 												
 
-								<td bgcolor="#FFFFFF" width="3%" >
-									<font size="2">No.<?php echo "$infono"; ?></font>
+								<td bgcolor="#CCCCFF" width="3%" >
+									<font size="2">&nbsp;&nbsp;&nbsp;No.<?php echo "$infono"; ?></font>
 								</td>
 												
 												
@@ -395,7 +395,7 @@ if($bgmod==0){
 
 											<br>
 
-									<font face="tahoma" size="2" color="red">
+									<font face="tahoma" size="2" color="redx">
 										&nbsp;Preroid Expire : &nbsp;<b><?php echo "$info5"; ?></b>												
 									</font>
 
@@ -433,7 +433,8 @@ if($bgmod==0){
 						</td>
 
 						<td colspan="4" >
-							<font face='tahoma' size='1' color='#000000' ></font><?php echo "<font face=tahoma size=2 color=#3CB371 ><b>$info6</b></font>"; ?>
+						
+						<textarea name="info6" type="text" id="" id="info6"  cols="1" rows="1" readonly><?php echo $info6; ?></textarea>
 						</td>
 
 					</tr>		
