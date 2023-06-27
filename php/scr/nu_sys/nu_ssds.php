@@ -198,10 +198,12 @@ while ($rows = mysqli_fetch_array($fect)) {
 	}
 }
 
-echo "SUM: <b>" . number_format($sum, 2, '.', ',') . "</b>&nbsp;THB.";
-?>
+echo "<font face='tahoma' color='#000033' size='28'>SUMMARY: <b>" . number_format($sum, 2, '.', ',') . "</b>&nbsp;THB.</font>";
+?>	
 <br>
-[ No.xx = อ้างอิงจากลำดับเอกสาร cert ในแฟ้ม ]
+<font face='tahoma' color='#0000FF' size='5'>
+[ No.xx = อ้างอิงจากลำดับเอกสาร Certificat ในแฟ้ม ]
+</font>
 <br>
 <br>								  
 									 
@@ -285,19 +287,19 @@ if($bgmod==0){
 
 
 
-								<td width="3%" bgcolor='#AFEEEE' align="right">
+								<td width="5.7%" bgcolor='#AFEEEE' align="left">
 																		
 									<?php
 			
 									if ($info1 == 0)
 					  				{
-					  				echo "<b><font face=tahoma size=1 color=#>Qty.<br></font><font face=tahoma size=2 color=#B8860B>0</font></b>";
+					  				echo "<b><font face=tahoma size=1 color=#>&nbsp;&nbsp;Qty.</font><font face=tahoma size=2 color=#B8860B>0</font></b>";
 									}else if ($info1 < 4)
 					  				{
-					 				echo "<b><font face=tahoma size=1 color=#>Qty.<br></font> <font face=tahoma size=2 color=#B8860B>$info1</font></b> ";
+					 				echo "<b><font face=tahoma size=1 color=#>&nbsp;&nbsp;Qty.</font> <font face=tahoma size=2 color=#B8860B>$info1</font></b> ";
 									}else
 					  				{
-									echo "<b><font face=tahoma size=1 color=#>Qty.<br></font> <font face=tahoma size=2 color=#B8860B>$info1</font></b>";
+									echo "<b><font face=tahoma size=1 color=#>&nbsp;&nbsp;Qty.</font> <font face=tahoma size=2 color=#B8860B>$info1</font></b>";
 									}
 						
 									?>	
@@ -306,7 +308,7 @@ if($bgmod==0){
 								</td>	
 					
 				
-								<td width="6%" bgcolor='#AFEEEE' align="right" >
+								<td width="6%" bgcolor='#AFEEEE' align="left" >
 
 									<?php
 						
@@ -348,7 +350,7 @@ if($bgmod==0){
 										<?php
 							 			 if ($ssdsphoto >= 100)
 							  			{
-							 			echo "<img src=../pic/$ssdsphoto width=35 height=35 border=1 >";
+							 			echo "<img src=../pic/$ssdsphoto width=50 height=50 border=1 >";
 							 			}else
 										{
 										echo "&nbsp;&nbsp;No Pic";	
@@ -361,14 +363,13 @@ if($bgmod==0){
 								</td>	
 												
 
-								<td bgcolor="#CCCCFF" width="3%" >
-									<font size="2">&nbsp;&nbsp;&nbsp;No.<?php echo "$infono"; ?></font>
+								<td bgcolor="#330066" width="3%" >
+									<font size="3" color="#FFDAB9" ><b>&nbsp;No.<?php echo "$infono"; ?></b></font>
 								</td>
 												
-												
-								<td width="3%" bgcolor='#FFFFFF' align="center">  
-									<input name="submit" type="submit" class="submit" value="Edit" >
-								</td>
+								<td bgcolor="#FFFFFF" width="0.3%" >
+
+								</td>				
 												
 												
 												
@@ -389,14 +390,14 @@ if($bgmod==0){
 												
 								<td bgcolor="#F5F5F5" width="49%" >
 											
-									<b>
-									&nbsp;<?php echo "<font face=tahoma size=2 color=#2F4F4F ><u><i>$info4</i></u></font>"; ?></u>
-									</b>
+									
+									&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >&nbsp;<?php echo "<font face=tahoma size=4 color=#2F4F4F >$info4</font>"; ?></u>
+									
 
 											<br>
 
-									<font face="tahoma" size="2" color="redx">
-										&nbsp;Preroid Expire : &nbsp;<b><?php echo "$info5"; ?></b>												
+									<font face="tahoma" size="4" color="0000CC">
+										&nbsp;Preroid Expire : </font><font face="tahoma" size="3" color="0000CC">&nbsp;<?php echo "$info5"; ?>												
 									</font>
 
 								</td>
