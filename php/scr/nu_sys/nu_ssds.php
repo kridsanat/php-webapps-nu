@@ -47,6 +47,7 @@ timerefresh(60);
 		<head>
 			<title><?php echo "$headtxt_web"; ?></title>
 			<meta http-equiv="Content-Type" content="text/html; charset=tis-620">
+			<meta http-equiv="refresh" content="900;url=../logout.php" />
 			<link href="" rel="" type="">
 		</head>
 
@@ -58,17 +59,15 @@ timerefresh(60);
 			<tr valign="center"> 
 			
 			
-				<td width="60%">
+				<td width="40%">
 			
-						<?php echo "<font size=2 color=#000080>$headtxt | </font><font size=2 color=#666666>$e_date $etime</font>"; ?>
+						<?php echo "<font size=4 color=#000080>$headtxt | $e_date $etime</font>"; ?>
 		
 						<br>
 		
 						<div align="left">
 			
-							<font color="#000000" size="2">Presently Page :</font><font size="2"> 
-				
-							<font color="#333333"><strong>Stock</strong></font>
+						<font color="#000000" size="4">Presently Page : <strong>MAIN PAGE</strong></font>
 
 						</div>
 			
@@ -87,16 +86,16 @@ timerefresh(60);
 				</td>
 				-->
 
-				<td width="40%">
+				<td width="60%">
 
 							<DIV align="right">
 
-								<font color="#000000" size="+1" face="tahoma">
-										<img src="../images/icon_emoticon.gif" alt="" width="" height="" border="0" >
-										<b>Wellcome</b> : 
+								<font color="#000000" size="6" face="tahoma">
+										
+										<b>WELLCOME</b> : 
 								</font>
 		
-								<font color="#6495ED" size="3" face="tahoma"><b><?php echo "$adminname"; ?></b></font>
+								<font color="#6495ED" size="6" face="tahoma"><b><?php echo "$adminname"; ?></b></font>
 								
 								<BR>
 
