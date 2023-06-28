@@ -253,8 +253,8 @@ if($bgmod==0){
 
 
 
-								<td width="6%" bgcolor='#AFEEEE' align="left">
-								&nbsp;&nbsp;&nbsp;									
+								<td width="8%" bgcolor='#AFEEEE' align="left">
+								&nbsp;&nbsp;									
 									<?php
 			
 									if ($info1 == 0)
@@ -309,7 +309,7 @@ if($bgmod==0){
 								
 												
 
-								<td bgcolor="#FFFFFF" width="3%" valign="middle"  >
+								<td bgcolor="#AFEEEE" width="1%" valign="right"  >
 
 										<a href="<?php echo "../pic/$equpphoto"; ?>" rel="lightbox" target="_blank" >
 												
@@ -343,11 +343,25 @@ if($bgmod==0){
 			}else if ($infono == 'CLOUD')
 			{
 			  echo "<td bgcolor='#99CCFF' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;CLOUD</b></font></td>";
+			}else if ($infono == 'Site.Central')
+			{
+			  echo "<td bgcolor='#66CCCC' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.Central</b></font></td>";
+			}else if ($infono == 'Site.Nirvana')
+			{
+			  echo "<td bgcolor='#B0C4DE' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.Nirvana</b></font></td>";
+			}else if ($infono == 'Site.UM')
+			{
+			  echo "<td bgcolor='#8FBC8F' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.UM</b></font></td>";
+			}else if ($infono == 'Site.WHN')
+			{
+			  echo "<td bgcolor='#B03060' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.WHN</b></font></td>";
 			}else
 			  {
 				echo "<td bgcolor='#66CCCC' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;$infono</b></font></td>";
 			}
-
+			
+			
+						
 			?>
 									
 									
