@@ -60,6 +60,7 @@ if (!$result) {
 <head>
 <title><?PHP echo "$headtxt_web"; ?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=tis-620">
+<meta http-equiv="refresh" content="900;url=../logout.php" />
 
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <meta http-equiv="refresh" content="3;URL=nu_equp.php">
