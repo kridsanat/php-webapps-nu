@@ -14,7 +14,7 @@ require_once "include/connectdb.php";
 						  $sql="select * from useradmin where useradmin='$useradmin'";
 						  $db_query=mysqli_query($connect,$sql);
 						  $result=mysqli_fetch_array($db_query);
-						  $id=$result[id];
+						  $id=$result["id"];
 						  $adminname=$result["name"];
 						  $user_admin=$result["useradmin"];
 						  $pass_admin=$result["passadmin"];
