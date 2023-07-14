@@ -49,7 +49,7 @@ require_once "../include/connectdb.php";
 		
 						<div align="left">
 			
-						<font color="#000000" size="4">Presently Page : <strong>MAIN PAGE</strong></font>
+						<font color="#000000" size="4">Presently Page : <strong>PRINTERS PAGE</strong></font>
 
 						</div>
 			
@@ -125,12 +125,12 @@ require_once "../include/connectdb.php";
        	 		<td bgcolor="#FFFFFF"> 
 
 <?php
-	$numproducts ="select * from nu_equps";
+	$numproducts ="select * from nu_prints";
 	$query_select=mysqli_query($connect, $numproducts);
 	$numall=mysqli_num_rows($query_select);
 ?>																											  
 
-<a href="nu_equpadd.php">
+<a href="nu_printsadd.php">
 	<font face="tahoma" color="#000033" size="4">
 
 		<u><i>Create New</i></u>
@@ -144,7 +144,7 @@ require_once "../include/connectdb.php";
 <br>
 
 <?php 
-$sql_select_mem = "SELECT * FROM nu_equps";
+$sql_select_mem = "SELECT * FROM nu_prints";
 $fect = mysqli_query($connect, $sql_select_mem);
 if (!$fect) {
     die("ติดต่อฐานข้อมูลไม่ได้" . mysqli_error());
@@ -156,9 +156,9 @@ $bgcount = 0;
 
 while ($rows = mysqli_fetch_array($fect)) {
     $info1 = $rows["info1"];
-    $equpprice = $rows["equpprice"];
-	if (is_numeric($info1) && is_numeric($equpprice)) {
-		$total = $equpprice * $info1;
+    $printsprice = $rows["printsprice"];
+	if (is_numeric($info1) && is_numeric($printsprice)) {
+		$total = $printsprice * $info1;
 		$sum += $total;
 		// Rest of the code
 	} else {
@@ -177,14 +177,14 @@ echo "<font face='tahoma' color='#000033' size='28'>MA SUMMARY: <b>" . number_fo
 
 $page = isset($_GET['page']) ? $_GET['page'] : '';
 
-$select_type="select * from nu_equps order by infono, info4 asc";
+$select_type="select * from nu_prints order by infono, info4 asc";
 $query_select=mysqli_query($connect, $select_type);
 $num_rows=mysqli_num_rows($query_select);
 
 if($num_rows<1){
 echo "<br><br><center><font color=#666666 face=tahoma size=2><b>No item</b></font></center>";
 }else{
-		$select="select * from nu_equps order by infono, info4 asc";
+		$select="select * from nu_prints order by infono, info4 asc";
 		$q_ry = mysqli_query($connect,$select);
 	 	$num_rows=mysqli_num_rows($q_ry);
   		$pagesize=100;
@@ -204,7 +204,7 @@ echo "<br><br><center><font color=#666666 face=tahoma size=2><b>No item</b></fon
 			}
 		mysqli_free_result($q_ry);
 		$goto=($page-1)*$pagesize;
-$sql_select_mem="Select * From nu_equps order by infono, info4 asc limit $goto,$pagesize";
+$sql_select_mem="Select * From nu_prints order by infono, info4 asc limit $goto,$pagesize";
 		$fect=mysqli_query($connect,$sql_select_mem);
 		if(!$fect)
 		{
@@ -222,12 +222,12 @@ $info3 =$rows["info3"];
 $info4 =$rows["info4"];
 $info5 =$rows["info5"];
 $info6 =$rows["info6"];
-$equpprice =$rows["equpprice"];
-$equpphoto =$rows["equpphoto"];
+$printsprice =$rows["printsprice"];
+$printsphoto =$rows["printsphoto"];
 $status =$rows["status"];
 $infono =$rows["infono"];
-if (is_numeric($info1) && is_numeric($equpprice)) {
-    $total = $equpprice * $info1;
+if (is_numeric($info1) && is_numeric($printsprice)) {
+    $total = $printsprice * $info1;
     $sum += $total;
     // Rest of the code
 } else {
@@ -244,7 +244,7 @@ if($bgmod==0){
 ?>
 	
 
-<form method="post" action="nu_equpedit.php?SerID=<?php echo "$idx"; ?>">
+<form method="post" action="nu_printsedit.php?SerID=<?php echo "$idx"; ?>">
 
 
     <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
@@ -279,10 +279,10 @@ if($bgmod==0){
 									<?php
 						
 			
-									if ($equpprice == 0) {
+									if ($printsprice == 0) {
   									echo "<font face=tahoma size=2 color=#><b>Unit/Price</b><br></font><font face=tahoma size=2 color=#FF0000><b>-</b></font>";
-									} else if ($equpprice >= 1) {
- 									 $formattedPrice = number_format($equpprice, 2, '.', ',');
+									} else if ($printsprice >= 1) {
+ 									 $formattedPrice = number_format($printsprice, 2, '.', ',');
  									 echo "<font face=tahoma size=2 color=#><b>Unit/Price</b><br></font> <font face=tahoma size=2 color=#000000>$formattedPrice</font>";
 									}
 									?>	
@@ -311,12 +311,12 @@ if($bgmod==0){
 
 								<td bgcolor="#AFEEEE" width="1%" valign="right"  >
 
-										<a href="<?php echo "../pic/$equpphoto"; ?>" rel="lightbox" target="_blank" >
+										<a href="<?php echo "../pic/$printsphoto"; ?>" rel="lightbox" target="_blank" >
 												
 										<?php
-							 			 if ($equpphoto >= 100)
+							 			 if ($printsphoto >= 100)
 							  			{
-							 			echo "<img src=../pic/$equpphoto width=50 height=50 border=1 >";
+							 			echo "<img src=../pic/$printsphoto width=50 height=50 border=1 >";
 							 			}else
 										{
 										echo "&nbsp;&nbsp;No Pic";	
@@ -355,11 +355,9 @@ if($bgmod==0){
 			}else if ($infono == 'Site.WHN')
 			{
 			  echo "<td bgcolor='#B03060' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.WHN</b></font></td>";
-			
 			}else if ($infono == 'Site.Bangpoo')
 			{
-			  echo "<td bgcolor='#FFDAB9' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.Bangpoo</b></font></td>";
-			
+			  echo "<td bgcolor='#B03060' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.Bangpoo</b></font></td>";
 			}else
 			  {
 				echo "<td bgcolor='#66CCCC' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;$infono</b></font></td>";
@@ -368,8 +366,7 @@ if($bgmod==0){
 			
 						
 			?>
-									
-									
+																		
 											
 									<td width="1%" bgcolor="#FFFFFF">
 										
@@ -422,7 +419,7 @@ if($bgmod==0){
 
 						<td colspan="8" valign="top">  
 
-						<a href="nu_delequp.php?SerID=<?php echo "$idx"; ?>" onclick="return confirm('Are you sure?')" ><img src="../images/icon_close.jpg" alt="ลบข้อมูล" width="" height="" border="0" ></a></div>
+						<a href="nu_delprints.php?SerID=<?php echo "$idx"; ?>" onclick="return confirm('Are you sure?')" ><img src="../images/icon_close.jpg" alt="ลบข้อมูล" width="" height="" border="0" ></a></div>
 						
 
 						&nbsp;<?php echo "<font face=tahoma size=2 color=#27408B><b> $info2</b></font>"; ?>

@@ -9,8 +9,8 @@ echo "<script>alert('Only Administrator');</script>";
 header("Location: ../index.php");
 exit();
 }
-require_once "include/tdate.php";
-require_once "include/connectdb.php";
+require_once "../include/tdate.php";
+require_once "../include/connectdb.php";
 
 						  $sql="select * from useradmin where useradmin='$useradmin'";
 						  $db_query=mysqli_query($connect, $sql);					
@@ -53,10 +53,10 @@ timerefresh(60);
   background-color: #00CC33;
   border: none;
   color: #FFFFFF;
-  text-align: right;
+  text-align: center;
   font-size: 28px;
   padding: 20px;
-  width: 350px;
+  width: 500px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
@@ -114,13 +114,12 @@ timerefresh(60);
 						<br>
 						<br>
 						<?php echo "<font size=8 color=#000080>$headtxt | $e_date $etime</font>"; ?>
-
+		
 						<br>
-
+		
 						<div align="left">
-
+			
 							<font color="#000000" size="4">Presently Page : <strong>MAIN PAGE</strong></font>
-
 						<br>
 						<br>
 						</div>
@@ -190,7 +189,7 @@ timerefresh(60);
 							<br>
 
 							<font face="tahoma" color="#000033" size="2">
-                            <a href="nu_news/newmain.php" style="text-decoration: none;" >
+                            <a href="../nu_news/newmain.php" style="text-decoration: none;" >
                                 <b>
                                 <button class="button" style="vertical-align:middle" ><span>Manual</span></button>
                                 </b>
@@ -203,36 +202,25 @@ timerefresh(60);
                             <font face="tahoma" color="#000033" size="2">
                             <a href="nu_sys\nu_ssds.php" style="text-decoration: none;" >
                                 <b>
-                                <button class="button" style="vertical-align:middle"><span>Licenses</span></button>
+                                <button class="button" style="vertical-align:middle"><span>Licenses.</span></button>
                                 </b>
                             </a>
                             </font>
                         
                             <br>
 							<br>
-							
-                            <font face="tahoma" color="#000033" size="2">
-                            <a href="nu_prints/nu_prints.php" style="text-decoration: none;" >
-                                <b>
-                                <button class="button" style="vertical-align:middle" ><span>Printers</span></button>
-                                </b>
-                            </a>
-                            </font>
-
-                            <br>
-                            <br>
 
                             <font face="tahoma" color="#000033" size="2">
                             <a href="nu_equp/nu_equp.php" style="text-decoration: none;" >
                                 <b>
-                                <button class="button" style="vertical-align:middle" ><span>System and Network</span></button>
+                                <button class="button" style="vertical-align:middle" ><span>System and Network.</span></button>
                                 </b>
                             </a>
                             </font>
-
-
+                      
                             <br>
                             <br>
+
 			
 				</td>
             </tr>

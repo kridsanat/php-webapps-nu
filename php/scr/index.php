@@ -51,7 +51,7 @@ require_once "include/connectdb.php";
 		  
 		  
 		   <table width="100%" border="0" align="center" cellpadding="1" cellspacing="1">
-            <form method="post" action="SignIn.php">
+            <form method="post" action=".php">
               <tr> 
                 <td width="156">
 				

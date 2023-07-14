@@ -35,48 +35,12 @@ require_once "../include/connectdb.php";
 <body bgcolor="#ffffff">
 <div align="center"><font color="#990000" size="+1"><strong><font color="#333333" size="2"> 
   </font></strong></font>
-  <table width="89%" border="0" align="center" cellpadding="1" cellspacing="1">
-        <tr valign="top"> 
-      <td width="57%"><? echo "<font size=2 color=#000000>$headtxt | </font><font size=2 color=#666666>$e_date $etime</font>"; ?><br>
-        <div align="left"><font color="#000000" size="2">Presently Page :</font><font size="2"> 
-          <font color="#333333"> 
-          <strong>Add</strong></font>
-		  
-		</div></td>
-		
-		
-		
-		
-     <td width="43%">
 
 
-	  <div align="right"><font color="#000000" size="2">Wellcome</font>
-		<font color="#6495ED" size="3"> 
-          <b><? echo "$adminname"; ?></b> 
-		</font>
-		<font color="#333333" size="2"></font><font color="#333333" size="2"><br>
-          <font color="#">[</font> <a href="ChangePass.php"><font color="#000033">Change password</font></a> 
-          ] <a href="logout.php"><font color="#000033">Sign Out</font></a> </font></font>
-		  
-		  </div>
-		  
-	</td>
-		  
-		  
-	
+<br><br>
 
-    </tr>
-    <tr> 
-      <td colspan="2"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#E9E9E6">
-          <tr> 
-            <td><div align="center"> 
-                <table width="100%" border="1" cellspacing="1" cellpadding="1">
-                  <tr> 
-                    <td><div align="center"><br>
-                        <table width="100%" border="0" cellspacing="1" cellpadding="1">
-                          <tr> 
-                            <td height="341"><div align="center"> 
-                                <script language="JavaScript">
+ 
+<script language="JavaScript">
 function checksearch()
 {
       var news1 = document.webFormSearch.topic.value;
@@ -151,33 +115,19 @@ function checksearch()
                                     
                                     <tr bgcolor="#FFFFFF"> 
                                       <td valign="top">&nbsp;</td>
-                                      <td><font size="3"> 
+                                      
+                                      <td><font size="3">
+                                        <br> 
                                         <input name="submit" type="submit" class="submit" value="Submit" onClick="return confirm ('Sure ? ') ">
-                                        </font></td>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="newmain.php" target="" >Cancel</a>
+                                        </font>
+                                      </td>
                                       
                                     </tr>
                                   </form>
                                 </table>
-                              </div></td>
-                          </tr>
-                          <tr> 
-                            <td></td>
-                          </tr>
-                        </table>
-                        <br>
-                        <br>
-                      </div></td>
-                  </tr>
-                </table>
-              </div></td>
-          </tr>
-        </table></td>
-    </tr>
-    <tr> 
-      <td colspan="2"><div align="center"><br>
-          <? echo "<font size=2 color=#666666>$buttomtxt</font>"; ?> </div></td>
-    </tr>
-  </table>
+
   
 </div>
 </body>
