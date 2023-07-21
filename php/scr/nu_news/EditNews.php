@@ -72,7 +72,17 @@ require_once "../include/connectdb.php";
 										</td>
 										<td>
 										<br>
-										<? echo "<img src=NEW/$newphoto width=55 height=55 border=1 >"; ?>
+
+                <?php 
+							  if ($newphoto >= 100){
+							  echo "<img src=NEW/$newphoto width=55 height=55 border=1 >
+							  
+							  ";
+							  }
+								else{
+								echo "";	
+								}
+							  ?>
 										<br>
 										
 										<a href="EditNewsPhoto.php?NewsID=<? echo "$idxx"; ?>">Change Picture</a>

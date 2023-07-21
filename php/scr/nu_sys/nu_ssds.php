@@ -362,8 +362,8 @@ if($bgmod==0){
 								</td>	
 												
 
-								<td bgcolor="#330066" width="3%" >
-									<font size="3" color="#FFDAB9" ><b>&nbsp;No.<?php echo "$infono"; ?></b></font>
+								<td bgcolor="#CCFF00" width="3%" >
+									<font size="3" color="#000033" ><b>&nbsp;No.<?php echo "$infono"; ?></b></font>
 								</td>
 												
 								<td bgcolor="#FFFFFF" width="0.3%" >
