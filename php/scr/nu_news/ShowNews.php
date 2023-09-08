@@ -56,7 +56,7 @@ background-attachment : fixed
 		<head>
 			<title><?php echo "$topic"; ?></title>
 			<meta http-equiv="Content-Type" content="text/html; charset=tis-620">
-			<meta http-equiv="refresh" content="900;url=../logout.php" />
+			<meta http-equiv="refresh" content="1800;url=../logout.php" />
 
 			<link href="" rel="" type="">
 		</head>
