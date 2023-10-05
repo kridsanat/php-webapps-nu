@@ -106,19 +106,22 @@ $numall=mysqli_num_rows($query_select);
 										  <tr >
 													<td >
 													<img src="../images/DIT-Logo-Original.png" alt="ź������" width="" height="50" border="0" >
+													&nbsp;&nbsp;&nbsp;&nbsp;
+													<font face="tahoma" color="#" size="8"><?php echo $e_date; ?> <?php echo $etime; ?> </font>*วันที่ ปริ้นเอกสาร ออกมา
 													<br>
 													<br>
+													
 													</td>
 												</tr>
 											</table>	
 											
 										   <table  width="100%" border="0" cellspacing="1" cellpadding="1">
 												
-                                              <tr bgcolor="#191970"> 
-												<td width="5%"><div align="ledt"><strong><font face="tahoma" color="#FFFFFF" size="2">&nbsp;&nbsp;No.</font></strong></div></td>
-                                                <td width="5%"><div align="ledt"><strong><font face="tahoma" color="#FFFFFF" size="2" >&nbsp;&nbsp;Qty.</font></strong></div></td>
-												<td width="65%"><div align="ledt"><strong><font face="tahoma" color="#FFFFFF" size="2">&nbsp;&nbsp;Name</font></strong></div></td>
-												<td width="25%"><div align="ledt"><strong><font face="tahoma" color="#FFFFFF" size="2">&nbsp;&nbsp;Update</font></strong></div></td>
+                                              <tr height="50" bgcolor="#191970"> 
+												<td width="5%"><div align="ledt"><font face="tahoma" color="#FFFFFF" size="4">&nbsp;&nbsp;No.</font></div></td>
+                                                <td width="5%"><div align="ledt"><font face="tahoma" color="#FFFFFF" size="4" >&nbsp;&nbsp;Qty.</font></div></td>
+												<td width="65%"><div align="ledt"><font face="tahoma" color="#FFFFFF" size="4">&nbsp;&nbsp;Details</font></div></td>
+												<td width="25%"><div align="ledt"><font face="tahoma" color="#FFFFFF" size="4">&nbsp;&nbsp;Update</font></div></td>
 												
                                               </tr>
                                             </table>
