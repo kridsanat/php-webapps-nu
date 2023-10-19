@@ -197,8 +197,7 @@ timerefresh(60);
                             </a>
                             </font> 
 
-							<br>
-							<br>
+							
 
                             <font face="tahoma" color="#000033" size="2">
                             <a href="nu_sys\nu_ssds.php" style="text-decoration: none;" >
@@ -207,7 +206,7 @@ timerefresh(60);
                                 </b>
                             </a>
                             </font>
-                        
+                        <!--
                             <br>
 							<br>
 							
@@ -218,10 +217,10 @@ timerefresh(60);
                                 </b>
                             </a>
                             </font>
-
+							
                             <br>
                             <br>
-
+						-->
                             <font face="tahoma" color="#000033" size="2">
                             <a href="nu_equp/nu_equp.php" style="text-decoration: none;" >
                                 <b>

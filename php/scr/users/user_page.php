@@ -179,51 +179,61 @@ timerefresh(60);
 		<!-- ส่วนกลาง -->
 		<TABLE width="90%" border="0" align="center" cellpadding="1" cellspacing="1">
 		  
-			<tr valign="center"> 
+		<tr valign="center"> 
 			
 			
 
-                <td align=left width=100%>
-                           
-							<br>
-							<br>
+			<td align=left width=100%>
+					   
+						<br>
+						<br>
 
-							<font face="tahoma" color="#000033" size="2">
-                            <a href="../nu_news/newmain.php" style="text-decoration: none;" >
-                                <b>
-                                <button class="button" style="vertical-align:middle" ><span>Manual</span></button>
-                                </b>
-                            </a>
-                            </font> 
+						<font face="tahoma" color="#000033" size="2">
+						<a href="nu_news/newmain.php" style="text-decoration: none;" >
+							<b>
+							<button class="button" style="vertical-align:middle" ><span>Manual</span></button>
+							</b>
+						</a>
+						</font> 
 
-							<br>
-							<br>
+						
 
-                            <font face="tahoma" color="#000033" size="2">
-                            <a href="nu_sys\nu_ssds.php" style="text-decoration: none;" >
-                                <b>
-                                <button class="button" style="vertical-align:middle"><span>Licenses.</span></button>
-                                </b>
-                            </a>
-                            </font>
-                        
-                            <br>
-							<br>
+						<font face="tahoma" color="#000033" size="2">
+						<a href="nu_sys\nu_ssds.php" style="text-decoration: none;" >
+							<b>
+							<button class="button" style="vertical-align:middle"><span>Licenses</span></button>
+							</b>
+						</a>
+						</font>
+					<!--
+						<br>
+						<br>
+						
+						<font face="tahoma" color="#000033" size="2">
+						<a href="nu_prints/nu_prints.php" style="text-decoration: none;" >
+							<b>
+							<button class="button" style="vertical-align:middle" ><span>Printers</span></button>
+							</b>
+						</a>
+						</font>
+						
+						<br>
+						<br>
+					-->
+						<font face="tahoma" color="#000033" size="2">
+						<a href="nu_equp/nu_equp.php" style="text-decoration: none;" >
+							<b>
+							<button class="button" style="vertical-align:middle" ><span>System and Network</span></button>
+							</b>
+						</a>
+						</font>
 
-                            <font face="tahoma" color="#000033" size="2">
-                            <a href="nu_equp/nu_equp.php" style="text-decoration: none;" >
-                                <b>
-                                <button class="button" style="vertical-align:middle" ><span>System and Network.</span></button>
-                                </b>
-                            </a>
-                            </font>
-                      
-                            <br>
-                            <br>
 
-			
-				</td>
-            </tr>
+						<br>
+						<br>
+		
+			</td>
+		</tr>
 			<tr valign="center"> 
 			
 			
