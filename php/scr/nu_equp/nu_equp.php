@@ -384,7 +384,7 @@ if($bgmod==0){
 									  echo "<td width='0.3%' align='center' bgcolor='#0099CC'></td>";
 									}else if ($status == "Deactive")
 									{
-									  echo "<td width='0.3%' align='center' bgcolor='#0099CC'></td>";
+									  echo "<td width='0.3%' align='center' bgcolor='#FF0033'></td>";
 									}						
 									?>
 						
