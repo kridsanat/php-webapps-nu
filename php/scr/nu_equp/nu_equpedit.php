@@ -91,10 +91,10 @@ $status =$result1['status'];
 $infono =$result1['infono'];
 ?>
                                 </font> 
-                                <table width="1000" height="19" border="0" cellpadding="1" cellspacing="1">
+                                <table width="60%" height="19" border="0" cellpadding="1" cellspacing="1">
                                
 								  <form method="post" action="nu_equpeditsave.php" enctype="multipart/form-data" name="webFormSearch" onSubmit="return checksearch()">
-                                    <tr bgcolor="#FFFFFF"> 
+                                    <tr bgcolor="#FFFFFF" width="300" > 
                                       <td> <div align="right"><font size="2">Update Picture
                                           :</font></div></td>
                                       <td>
