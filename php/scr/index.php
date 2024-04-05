@@ -88,15 +88,6 @@ require_once "include/connectdb.php";
   <br>
   <br>
   -->
-</div>
-
-<div align="center" >
-<br>
-<br>
-<iframe width=1500 height=800 frameborder="1"
-src="https://192.168.2.26/public/mapshow.htm?id=2301&mapid=10D51334-80C8-4C1A-A0F3-185B81662DAA">
-</iframe>  
-</div> 
   
 </body>
 </html>
