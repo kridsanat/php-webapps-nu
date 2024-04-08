@@ -24,7 +24,7 @@ require_once "../include/connectdb.php";
 <head>
 <title><? echo "$headtxt"; ?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=tis-620">
-<meta http-equiv="refresh" content="900;url=../logout.php" />
+
 
 <!-- Fireworks MX Dreamweaver MX target.  Created Sat Apr 02 10:29:23 GMT+0700 (SE Asia Standard Time) 2011-->
 <link href="css/style.css" rel="stylesheet" type="text/css">
