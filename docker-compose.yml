@@ -34,7 +34,6 @@ services:
     depends_on:
       - db
       
-  services:
   nginxproxy:
     container_name: nginxproxy
     image: 'jc21/nginx-proxy-manager:latest'

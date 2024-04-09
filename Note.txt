@@ -1,0 +1,13 @@
+Nginx 192.168.25.155:81
+k-tanom@hotmail.com
+P@ssw0rd2024
+
+Portainer 192.168.25.155:8890
+sysadmin
+P@ssw0rd2024
+
+
+ยืนยัน root ที่อยู่ไฟล์
+------------------
+sudo docker exec -it ed4755af86fe ls -l /var/www/html
+sudo docker exec -it ed4755af86fe service apache2 restart
