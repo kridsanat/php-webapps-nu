@@ -55,11 +55,12 @@ if(!$result) {
 
 <html>
 <head>
-<title><?php echo "$headtxt"; ?></title>
+<title><?php echo htmlspecialchars($headtxt); ?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=tis-620">
-<meta http-equiv="refresh" content="900;url=../logout.php" />
 
-<!-- Fireworks MX Dreamweaver MX target.  Created Sat Apr 02 10:29:23 GMT+0700 (SE Asia Standard Time) 2011-->
+<!-- Remove one of the meta refresh tags if not necessary -->
+<meta http-equiv="refresh" content="900;url=../logout.php">
+
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <meta http-equiv="refresh" content="3;URL=newmain.php">
 </head>
