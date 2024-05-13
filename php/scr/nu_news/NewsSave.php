@@ -3,7 +3,7 @@
 
 ob_start();
 $useradmin = $_SESSION["useradmin"];
-if (empty($useradmin)) {
+if(empty($useradmin)) {
     echo "<script>alert('Only Administrator');</script>";
     header("Location: ../index.php");
     exit();
@@ -18,7 +18,7 @@ mysqli_stmt_bind_param($stmt, "s", $useradmin);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 
-if ($result && $result->num_rows > 0) {
+if($result && $result->num_rows > 0) {
     $row = mysqli_fetch_assoc($result);
     $id = $row["id"];
     $adminname = $row["name"];
@@ -31,7 +31,7 @@ if ($result && $result->num_rows > 0) {
 }
 
 $photo_1 = "";
-if (isset($_FILES["newphoto"]["name"]) && $_FILES["newphoto"]["name"] != "") {
+if(isset($_FILES["newphoto"]["name"]) && $_FILES["newphoto"]["name"] != "") {
     $name = $_FILES['newphoto']['name'];
     $tmp = $_FILES['newphoto']['tmp_name'];
     $date_time = date("Y-m-d H:i:s");
@@ -43,8 +43,11 @@ if (isset($_FILES["newphoto"]["name"]) && $_FILES["newphoto"]["name"] != "") {
 
 $postmessage = str_replace("\n", "<br>", $_POST['message']);
 
+// Prepare the SQL statement
 $sql = "INSERT INTO news (topic, newphoto, message, dateregist) VALUES (?, ?, ?, ?)";
 $stmt = mysqli_prepare($connect, $sql);
+
+// Bind parameters and execute the statement
 mysqli_stmt_bind_param($stmt, "ssss", $topic, $newphoto, $message, $datetime);
 
 // Escape special characters in the input data
@@ -55,6 +58,7 @@ $datetime = mysqli_real_escape_string($connect, "$e_date $etime");
 
 $result = mysqli_stmt_execute($stmt);
 
+// Check for errors
 if (!$result) {
     die("Cannot Add Database: " . mysqli_error($connect));
 }
