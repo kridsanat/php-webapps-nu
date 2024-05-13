@@ -45,7 +45,14 @@ $postmessage = str_replace("\n", "<br>", $_POST['message']);
 
 $sql = "INSERT INTO news (topic, newphoto, message, dateregist) VALUES (?, ?, ?, ?)";
 $stmt = mysqli_prepare($connect, $sql);
-mysqli_stmt_bind_param($stmt, "ssss", $_POST['topic'], $photo_1, $postmessage, "$e_date $etime");
+mysqli_stmt_bind_param($stmt, "ssss", $topic, $newphoto, $message, $datetime);
+
+// Escape special characters in the input data
+$topic = mysqli_real_escape_string($connect, $_POST['topic']);
+$newphoto = mysqli_real_escape_string($connect, $photo_1);
+$message = mysqli_real_escape_string($connect, $postmessage);
+$datetime = mysqli_real_escape_string($connect, "$e_date $etime");
+
 $result = mysqli_stmt_execute($stmt);
 
 if(!$result) {
