@@ -59,3 +59,9 @@ git pull
 git checkout main -f
 git branch --set-upstream-to origin/master
 Change "cd /" to point to your desired folder เข้าไป floder ของ project
+
+
+เอาขึ้นไปที่ github 
+git remote add origin <your-repo-url>
+git remote -v
+git push origin main
