@@ -185,9 +185,7 @@ timerefresh(60);
 			
 
                 <td align=left width=100%>
-                           
-							<br>
-							<br>
+
 
 							<font face="tahoma" color="#000033" size="5">
                             <a href="nu_news/newmain.php" style="text-decoration: none;" >
@@ -197,19 +195,7 @@ timerefresh(60);
                             </a>
                             </font> 
 
-							<br>
-							<br>
 
-                            <font face="tahoma" color="#000033" size="5">
-                            <a href="nu_sys\nu_ssds.php" style="text-decoration: none;" >
-                                <b>
-                               ==== Licenses ====
-                                </b>
-                            </a>
-                            </font>
-
-							<br>
-							<br>
                         <!--
                             <br>
 							<br>
@@ -225,19 +211,56 @@ timerefresh(60);
                             <br>
                             <br>
 						-->
-                            <font face="tahoma" color="#000033" size="5">
+                            
+
+			
+				</td>
+            </tr>
+			<tr valign="center"> 
+			
+			
+
+			<td align=left width=100%>
+
+						<br>
+						<br>
+					
+						<font face="tahoma" color="#000033" size="5">
+                            <a href="nu_sys\nu_ssds.php" style="text-decoration: none;" >
+                                <b>
+                               ==== Licenses ====
+                                </b>
+                            </a>
+                            </font>
+						
+						<br>
+						<br>
+
+		
+			</td>
+		</tr>	
+		<tr valign="center"> 
+			
+			
+
+			<td align=left width=100%>
+
+						<br>
+						<br>
+					
+						<font face="tahoma" color="#000033" size="5">
                             <a href="nu_equp/nu_equp.php" style="text-decoration: none;" >
                             <b>
 							==== System and Networks ====
                             </a>
                             </font>
+						
+						<br>
+						<br>
 
-
-                            <br>
-                            <br>
-			
-				</td>
-            </tr>
+		
+			</td>
+		</tr>	
 			<tr valign="center"> 
 			
 			
