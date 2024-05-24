@@ -192,7 +192,7 @@ timerefresh(60);
 							<font face="tahoma" color="#000033" size="2">
                             <a href="nu_news/newmain.php" style="text-decoration: none;" >
                                 <b>
-                                <button class="button" style="vertical-align:middle" ><span>Manual</span></button>
+                                Manual
                                 </b>
                             </a>
                             </font> 
@@ -202,7 +202,7 @@ timerefresh(60);
                             <font face="tahoma" color="#000033" size="2">
                             <a href="nu_sys\nu_ssds.php" style="text-decoration: none;" >
                                 <b>
-                                <button class="button" style="vertical-align:middle"><span>Licenses</span></button>
+                               Licenses
                                 </b>
                             </a>
                             </font>
@@ -223,7 +223,7 @@ timerefresh(60);
 						-->
                             <font face="tahoma" color="#000033" size="2">
                             <a href="nu_equp/nu_equp.php" style="text-decoration: none;" >
-                                <b>
+                            <b>
                                System and Network
                             </a>
                             </font>
