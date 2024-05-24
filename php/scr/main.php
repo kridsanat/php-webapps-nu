@@ -224,8 +224,7 @@ timerefresh(60);
                             <font face="tahoma" color="#000033" size="2">
                             <a href="nu_equp/nu_equp.php" style="text-decoration: none;" >
                                 <b>
-                                <button class="button" style="vertical-align:middle" ><span>System and Network</span></button>
-                                </b>
+                               System and Network
                             </a>
                             </font>
 
