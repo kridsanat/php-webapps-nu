@@ -62,7 +62,7 @@ Change "cd /" to point to your desired folder เข้าไป floder ขอ�
 
 
 
-git remote add origin <your-repo-url>
+git remote add origin https://github.com/kridsanat/php-webapps-nu.git
 git remote -v
 git push origin main
 git pull origin main
