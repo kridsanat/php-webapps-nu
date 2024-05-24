@@ -146,7 +146,7 @@ timerefresh(60);
 										<b>Wellcome</b> : 
 								</font>
 		
-								<font color="black" size="8" face="tahoma"><b><?php echo "$adminname"; ?></b></font>
+								<font color="#FF6600" size="8" face="tahoma"><b><?php echo "$adminname"; ?></b></font>
 								
 								<BR>
 
