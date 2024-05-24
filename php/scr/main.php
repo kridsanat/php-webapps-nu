@@ -178,6 +178,10 @@ timerefresh(60);
 
 
 		<!-- ส่วนกลาง -->
+
+		<br>
+		<br>
+		
 		<TABLE width="" border="0" align="left" cellpadding="1" cellspacing="1">
 		  
 			<tr valign="center"> 
