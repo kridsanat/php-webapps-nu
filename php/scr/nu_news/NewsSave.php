@@ -41,7 +41,9 @@ if (!$stmt) {
 }
 
 // Bind parameters and execute the statement
-mysqli_stmt_bind_param($stmt, "ssss", $topic, $photo_1, $postmessage, $e_date.$etime);
+$dateregist = $e_date.$etime;
+mysqli_stmt_bind_param($stmt, "ssss", $topic, $photo_1, $postmessage, $dateregist);
+
 $result = mysqli_stmt_execute($stmt);
 
 if (!$result) {
