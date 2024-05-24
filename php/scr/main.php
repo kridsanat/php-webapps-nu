@@ -224,7 +224,7 @@ timerefresh(60);
                             <font face="tahoma" color="#000033" size="2">
                             <a href="nu_equp/nu_equp.php" style="text-decoration: none;" >
                             <b>
-                               System and Network
+                               System and Networkssssssssssssssssss
                             </a>
                             </font>
 
