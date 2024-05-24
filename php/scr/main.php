@@ -222,8 +222,7 @@ timerefresh(60);
 
 			<td align=left width=100%>
 
-						<br>
-						<br>
+				
 					
 						<font face="tahoma" color="#000033" size="5">
                             <a href="nu_sys\nu_ssds.php" style="text-decoration: none;" >
@@ -233,8 +232,7 @@ timerefresh(60);
                             </a>
                             </font>
 						
-						<br>
-						<br>
+						
 
 		
 			</td>
@@ -245,8 +243,7 @@ timerefresh(60);
 
 			<td align=left width=100%>
 
-						<br>
-						<br>
+				
 					
 						<font face="tahoma" color="#000033" size="5">
                             <a href="nu_equp/nu_equp.php" style="text-decoration: none;" >
@@ -254,9 +251,7 @@ timerefresh(60);
 							==== System and Networks ====
                             </a>
                             </font>
-						
-						<br>
-						<br>
+	
 
 		
 			</td>
