@@ -13,7 +13,7 @@ if (empty($_SESSION["useradmin"])) {
 $useradmin = $_SESSION["useradmin"];
 
 // Include necessary files
-require_once "../include/tdate.php";
+require_once "../include/tdate.php";  // Ensure tdate.php defines $e_date and $etime correctly
 require_once "../include/connectdb.php";
 
 // Retrieve user information
@@ -57,7 +57,12 @@ $etime = date('H:i:s');
 // Construct SQL INSERT statement
 $sql = "INSERT INTO news (topic, newphoto, message, dateregist) VALUES (?, ?, ?, ?)";
 $stmt = mysqli_prepare($connect, $sql);
-mysqli_stmt_bind_param($stmt, "ssss", $_POST['topic'], $photo_1, $postmessage, "$e_date $etime");
+if (!$stmt) {
+    die("MySQL prepare statement error: " . mysqli_error($connect));
+}
+
+$dateregist = "$e_date $etime";
+mysqli_stmt_bind_param($stmt, "ssss", $_POST['topic'], $photo_1, $postmessage, $dateregist);
 $result = mysqli_stmt_execute($stmt);
 
 // Check if SQL INSERT was successful
@@ -69,5 +74,3 @@ if (!$result) {
     exit();
 }
 ?>
-
-<!-- HTML content for displaying success message or redirecting users -->
