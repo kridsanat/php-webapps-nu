@@ -192,7 +192,7 @@ timerefresh(60);
 							<font face="tahoma" color="#000033" size="5">
                             <a href="nu_news/newmain.php" style="text-decoration: none;" >
                                 <b>
-                                Manual
+                                ==== Manual ====
                                 </b>
                             </a>
                             </font> 
@@ -203,7 +203,7 @@ timerefresh(60);
                             <font face="tahoma" color="#000033" size="5">
                             <a href="nu_sys\nu_ssds.php" style="text-decoration: none;" >
                                 <b>
-                               Licenses
+                               ==== Licenses ====
                                 </b>
                             </a>
                             </font>
@@ -228,7 +228,7 @@ timerefresh(60);
                             <font face="tahoma" color="#000033" size="5">
                             <a href="nu_equp/nu_equp.php" style="text-decoration: none;" >
                             <b>
-                               System and Networks
+							==== System and Networks ====
                             </a>
                             </font>
 
