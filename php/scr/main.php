@@ -179,10 +179,7 @@ timerefresh(60);
 
 		<!-- ส่วนกลาง -->
 
-		<br>
-		<br>
-		<br>
-		<br>
+
 		<TABLE width="" border="0" align="left" cellpadding="1" cellspacing="1">
 		  
 			<tr valign="center"> 
@@ -191,7 +188,8 @@ timerefresh(60);
 
                 <td align=left width=100%>
 
-
+		<br>
+		<br>
 							<font face="tahoma" color="#000033" size="5">
                             <a href="nu_news/newmain.php" style="text-decoration: none;" >
                                 <b>
