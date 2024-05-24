@@ -103,7 +103,7 @@ timerefresh(60);
 <body>
 
 		<!-- ส่วนหัว -->
-		<TABLE width="90%" border="0" align="center" cellpadding="1" cellspacing="1">
+		<TABLE width="90%" border="0" align="left" cellpadding="1" cellspacing="1">
 		  
 			<tr valign="center"> 
 			
@@ -181,7 +181,7 @@ timerefresh(60);
 
 		<br>
 		<br>
-		
+
 		<TABLE width="" border="0" align="left" cellpadding="1" cellspacing="1">
 		  
 			<tr valign="center"> 
