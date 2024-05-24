@@ -1,5 +1,4 @@
 <?php
-// Start session and output buffering
 session_start();
 ob_start();
 
@@ -15,23 +14,6 @@ $useradmin = $_SESSION["useradmin"];
 // Include necessary files
 require_once "../include/tdate.php";  // Ensure tdate.php defines $e_date and $etime correctly
 require_once "../include/connectdb.php";
-
-// Retrieve user information
-$sql = "SELECT * FROM useradmin WHERE useradmin=?";
-$stmt = mysqli_prepare($connect, $sql);
-mysqli_stmt_bind_param($stmt, "s", $useradmin);
-mysqli_stmt_execute($stmt);
-$result = mysqli_stmt_get_result($stmt);
-
-// Check if user information is found
-if ($result && mysqli_num_rows($result) > 0) {
-    $row = mysqli_fetch_assoc($result);
-    // Retrieve necessary user information if needed
-} else {
-    echo "<script>alert('Invalid User');</script>";
-    header("Location: ../index.php");
-    exit();
-}
 
 // Process file upload if applicable
 $photo_1 = "";
@@ -62,7 +44,7 @@ if (!$stmt) {
 }
 
 $dateregist = "$e_date $etime";
-$topic = "test";  // This is where 'test' is inserted
+$topic = $_POST['topic'];  // Getting the topic from POST data
 mysqli_stmt_bind_param($stmt, "ssss", $topic, $photo_1, $postmessage, $dateregist);
 $result = mysqli_stmt_execute($stmt);
 
