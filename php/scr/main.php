@@ -56,7 +56,7 @@ timerefresh(60);
   text-align: right;
   font-size: 28px;
   padding: 20px;
-  width: 350px;
+  width: 300px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
