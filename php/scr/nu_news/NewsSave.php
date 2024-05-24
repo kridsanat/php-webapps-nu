@@ -62,7 +62,8 @@ if (!$stmt) {
 }
 
 $dateregist = "$e_date $etime";
-mysqli_stmt_bind_param($stmt, "ssss", $_POST['topic'], $photo_1, $postmessage, $dateregist);
+$topic = "test";  // This is where 'test' is inserted
+mysqli_stmt_bind_param($stmt, "ssss", $topic, $photo_1, $postmessage, $dateregist);
 $result = mysqli_stmt_execute($stmt);
 
 // Check if SQL INSERT was successful
