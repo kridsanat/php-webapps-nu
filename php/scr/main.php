@@ -111,8 +111,6 @@ timerefresh(60);
 				<td width="">
 						<br>
 						<br>
-						<br>
-						<br>
 						<?php echo "<font size=8 color=#000080>$headtxt | $e_date $etime</font>"; ?>
 
 						<br>
