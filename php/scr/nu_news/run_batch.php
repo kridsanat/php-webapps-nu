@@ -1,6 +1,6 @@
 <?php
 // Set the path to your batch file
-$batchFile = 'check password exprice input.bat';
+$batchFile = 'C:\check password exprice input.bat';
 
 // Escape the command to ensure it's safe to run
 $escapedCommand = escapeshellcmd($batchFile);
