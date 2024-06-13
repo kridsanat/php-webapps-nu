@@ -198,8 +198,14 @@ $numall=mysqli_num_rows($query_select);
 
 										  
 										  <a href="News.php"><font face="tahoma" color="#000033" size="2"><u>add</u><br></font></a>
+										  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 										  
-										 
+
+										  <form action="run_batch.php" method="post">
+        <button type="submit">Run Batch File</button>
+    </form>
+										  
+										  
                                         </tr>
                                         <tr>
                                        
