@@ -198,7 +198,7 @@ $numall=mysqli_num_rows($query_select);
 
 										  
 										  <a href="News.php"><font face="tahoma" color="#000033" size="2"><u>add</u><br></font></a>
-						=
+						
 										  
 										  
                                         </tr>
