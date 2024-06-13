@@ -201,9 +201,9 @@ $numall=mysqli_num_rows($query_select);
 										  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 										  
 
-										  <form action="run_batch.php" method="post">
-        <button type="submit">Run Batch File</button>
-    </form>
+										<form action="run_batch.php" method="post">
+        											<button type="submit">Run Batch File</button>
+    									</form>
 										  
 										  
                                         </tr>
