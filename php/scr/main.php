@@ -258,7 +258,7 @@ timerefresh(60);
 		
 			</td>
 		</tr>	
-			<tr valign="center"> 
+			<!--<tr valign="center"> 
 			
 			
 
@@ -274,7 +274,7 @@ timerefresh(60);
 
 			
 				</td>
-            </tr>			
+            </tr>-->			
         </TABLE>
 
 </body>
