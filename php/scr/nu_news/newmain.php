@@ -285,7 +285,7 @@ if($bgmod==0){
 									
 
 									<a href="ShowNews-user.php?NewsID=<?php echo "$idxxx"; ?>" style="text-decoration:none"  target="_blank">
-									view only <img src="../images/Detail.gif" width="" >
+									<font color="#" face="tahoma" size="2">View only </font><img src="../images/Detail.gif" width="" >
 									</a>
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									<a href="ShowNews.php?NewsID=<?php echo "$idxxx"; ?>" style="text-decoration:none" >
