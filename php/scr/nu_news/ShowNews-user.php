@@ -111,7 +111,6 @@ background-attachment : fixed
 						<td>
 						<br>
 						
-						<a href="newmain.php"><font face="tahoma" size="2" color="#0099CC">Home</font></a>
 						<br>
 						<br>
 						</td>
