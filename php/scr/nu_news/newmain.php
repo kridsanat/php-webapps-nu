@@ -284,7 +284,7 @@ if($bgmod==0){
                                     <div align="left">
 									
 
-									<a href="ShowNews-user.php?NewsID=<?php echo "$idxxx"; ?>" style="text-decoration:none" >
+									<a href="ShowNews-user.php?NewsID=<?php echo "$idxxx"; ?>" style="text-decoration:none"  target="_blank">
 									<img src="../images/Detail.gif" width="" >
 									</a>
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
