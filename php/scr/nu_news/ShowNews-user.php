@@ -127,7 +127,6 @@ background-attachment : fixed
 						<font face="tahoma" size="5" color="#222222">
 						<tr>
 						<td>
-						<a href="EditNews.php?NewsID=<?php echo "$idx"; ?>"><img src="../images/pencil.jpg" width="20" height="20" border="0"></a></div>
 						<font face="tahoma" size="3" color=""><?php echo "<b>$topic</b>"; ?>&nbsp;&nbsp;</font>
 						</td>
 						</tr>
@@ -166,7 +165,6 @@ background-attachment : fixed
                       </tr>
                       <tr>
                         <td width="100%"><div align="right"><font face="tahoma" size="2" color="#222222"><? echo ":: Date $dateregist ::"; ?>
-						<a href="Delnews.php?NewsID=<? echo "$idx"; ?>" onclick="return confirm('Are you sure?')" ><font face="tahoma" size="2" color="blue"><u>Delete</u></font></a>
 						<br><br><br></font></div>
 						</td>
                         <td width="1%">&nbsp;</td>
