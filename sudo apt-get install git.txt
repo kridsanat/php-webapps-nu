@@ -61,7 +61,7 @@ git branch --set-upstream-to origin/master
 Change "cd /" to point to your desired folder เข้าไป floder ของ project
 
 
-
+https://github.com/kridsanat/php-webapps-nu.git
 
 git push origin main เอาที่แก้ไขขึ้นไป local to remote
 git pull origin main เอาที่แก้ไขลงมา remote to local
