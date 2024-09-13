@@ -286,6 +286,11 @@ if($bgmod==0){
 
 									
 									<a href="ShowNews.php?NewsID=<?php echo "$idxxx"; ?>" style="text-decoration:none" >
+									
+									<img src="../images/Detail.gif" width="" >
+									<a href="ShowNews.php?NewsID=<?php echo "$idxxx"; ?>" style="text-decoration:none" >
+
+									
 									<img src="../images/DsM_explorer.gif" width="" >
 									&nbsp;&nbsp;<font color="#" face="tahoma" size="2"><u><?php echo "$topic"; ?></u></font>
 									</a>
