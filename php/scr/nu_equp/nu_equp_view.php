@@ -355,7 +355,6 @@ if($bgmod==0){
 								<td bgcolor="#F5F5F5" width="54.5%" valign="top" >
 											
 									
-								&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >&nbsp;
 								<?php echo "<font face=tahoma size=4 color=#000000 >$info4 </font>"; ?></u>
 									
 
