@@ -1,4 +1,19 @@
+<?php
+@session_start();
 
+ob_start();
+$useradmin = $_SESSION["useradmin"];
+if(empty($useradmin)) 
+{
+echo "<script>alert('Only Administrator');</script>";
+header("Location: ../index.php");
+exit();
+}
+require_once "../include/tdate.php";
+require_once "../include/connectdb.php";
+
+
+?>
 
 <html>
 
