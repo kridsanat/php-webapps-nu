@@ -139,6 +139,19 @@ require_once "../include/connectdb.php";
 </a>
 
 &nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+<a href="nu_equpadd_view.php">
+	<font face="tahoma" color="#000033" size="4">
+
+		<u><i>View Page</i></u>
+
+	</font>
+</a>
+
+&nbsp;
 
 <br>
 <br>
