@@ -67,16 +67,6 @@ require_once "../include/connectdb.php";
 							</DIV>
 				</td>
 			</tr>
-			
-			
-			<tr>
-
-				<td colspan="2" >
-
-	
-				</td>	
-
-			</tr>
 		
 
 	
