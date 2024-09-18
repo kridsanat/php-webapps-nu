@@ -83,8 +83,6 @@ require_once "../include/connectdb.php";
 			<tr>
 				<td>
 
-				<br>
-				<br>
 				</td>
 			</tr>
 
