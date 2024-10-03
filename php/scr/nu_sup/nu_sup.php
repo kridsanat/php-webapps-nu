@@ -144,7 +144,7 @@ require_once "../include/connectdb.php";
 <br>
 
 <?php 
-$sql_select_mem = "SELECT * FROM nu_prints";
+$sql_select_mem = "SELECT * FROM nu_sup";
 $fect = mysqli_query($connect, $sql_select_mem);
 if (!$fect) {
     die("ติดต่อฐานข้อมูลไม่ได้" . mysqli_error());
@@ -156,7 +156,7 @@ $bgcount = 0;
 
 while ($rows = mysqli_fetch_array($fect)) {
     $info1 = $rows["info1"];
-    $printsprice = $rows["printsprice"];
+    $printsprice = $rows["supprice"];
 	if (is_numeric($info1) && is_numeric($printsprice)) {
 		$total = $printsprice * $info1;
 		$sum += $total;
@@ -177,14 +177,14 @@ echo "<font face='tahoma' color='#000033' size='28'>MA SUMMARY: <b>" . number_fo
 
 $page = isset($_GET['page']) ? $_GET['page'] : '';
 
-$select_type="select * from nu_prints order by infono, info4 asc";
+$select_type="select * from nu_sup order by infono, info4 asc";
 $query_select=mysqli_query($connect, $select_type);
 $num_rows=mysqli_num_rows($query_select);
 
 if($num_rows<1){
 echo "<br><br><center><font color=#666666 face=tahoma size=2><b>No item</b></font></center>";
 }else{
-		$select="select * from nu_prints order by infono, info4 asc";
+		$select="select * from nu_sup order by infono, info4 asc";
 		$q_ry = mysqli_query($connect,$select);
 	 	$num_rows=mysqli_num_rows($q_ry);
   		$pagesize=100;
@@ -204,7 +204,7 @@ echo "<br><br><center><font color=#666666 face=tahoma size=2><b>No item</b></fon
 			}
 		mysqli_free_result($q_ry);
 		$goto=($page-1)*$pagesize;
-$sql_select_mem="Select * From nu_prints order by infono, info4 asc limit $goto,$pagesize";
+$sql_select_mem="Select * From nu_sup order by infono, info4 asc limit $goto,$pagesize";
 		$fect=mysqli_query($connect,$sql_select_mem);
 		if(!$fect)
 		{
@@ -222,8 +222,8 @@ $info3 =$rows["info3"];
 $info4 =$rows["info4"];
 $info5 =$rows["info5"];
 $info6 =$rows["info6"];
-$printsprice =$rows["printsprice"];
-$printsphoto =$rows["printsphoto"];
+$printsprice =$rows["supprice"];
+$printsphoto =$rows["supphoto"];
 $status =$rows["status"];
 $infono =$rows["infono"];
 if (is_numeric($info1) && is_numeric($printsprice)) {
@@ -244,7 +244,7 @@ if($bgmod==0){
 ?>
 	
 
-<form method="post" action="nu_printsedit.php?SerID=<?php echo "$idx"; ?>">
+<form method="post" action="nu_supedit.php?SerID=<?php echo "$idx"; ?>">
 
 
     <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
