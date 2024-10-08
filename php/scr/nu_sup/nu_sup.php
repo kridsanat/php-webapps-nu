@@ -253,28 +253,7 @@ if($bgmod==0){
 
 
 								
-								<td width="8%" bgcolor='#AFEEEE' align="left">
-								&nbsp;&nbsp;	
-								<?php echo "<font face=tahoma size=4 color=#000000 >$info1 </font>"; ?>								
 
-								</td>	
-					
-				
-								<td width="8%" bgcolor='#AFEEEE' align="left" >
-								<?php echo "<font face=tahoma size=4 color=#000000 >$supprice </font>"; ?>
-											
-								</td>
-
-
-
-
-								<td width="6%" bgcolor='#AFEEEE' align="right">						
-	
-
-
-
-
-								</td>
 												
 								
 								
@@ -372,7 +351,28 @@ if($bgmod==0){
 								</td>
                                               
 		 
-												
+								<td width="8%" bgcolor='#AFEEEE' align="left">
+								&nbsp;&nbsp;	
+								<?php echo "<font face=tahoma size=4 color=#000000 >$info1 </font>"; ?>								
+
+								</td>	
+					
+				
+								<td width="8%" bgcolor='#AFEEEE' align="left" >
+								<?php echo "<font face=tahoma size=4 color=#000000 >$supprice </font>"; ?>
+											
+								</td>
+
+
+
+
+								<td width="6%" bgcolor='#AFEEEE' align="right">						
+	
+
+
+
+
+								</td>												
 												
 												
 
