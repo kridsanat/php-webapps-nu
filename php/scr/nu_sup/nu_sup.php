@@ -252,31 +252,31 @@ if($bgmod==0){
 			
 			if ($infono == 'IIS')
 			  {
-			  	echo "<td bgcolor='#4682B4' width='8%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;IIS</b></font></td>";
+			  	echo "<td bgcolor='#4682B4' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;IIS</b></font></td>";
 			}else if ($infono == 'XAMPP')
 			  {
-				echo "<td bgcolor='#3CB371' width='8%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;XAMPP</b></font></td>";
+				echo "<td bgcolor='#3CB371' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;XAMPP</b></font></td>";
 			}else if ($infono == 'CLOUD')
 			{
-			  echo "<td bgcolor='#99CCFF' width='8%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Apache.linux</b></font></td>";
+			  echo "<td bgcolor='#99CCFF' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Apache.linux</b></font></td>";
 			}else if ($infono == 'Apache.linux')
 			{
-			  echo "<td bgcolor='#66CCCC' width='8%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Apache.linux</b></font></td>";
+			  echo "<td bgcolor='#66CCCC' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Apache.linux</b></font></td>";
 			}else if ($infono == 'Apache.linux')
 			{
-			  echo "<td bgcolor='#B0C4DE' width='8%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.Nirvana</b></font></td>";
+			  echo "<td bgcolor='#B0C4DE' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.Nirvana</b></font></td>";
 			}else if ($infono == 'Site.UM')
 			{
-			  echo "<td bgcolor='#8FBC8F' width='8%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.UM</b></font></td>";
+			  echo "<td bgcolor='#8FBC8F' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.UM</b></font></td>";
 			}else if ($infono == 'Site.WHN')
 			{
-			  echo "<td bgcolor='#B03060' width='8%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.WHN</b></font></td>";
+			  echo "<td bgcolor='#B03060' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.WHN</b></font></td>";
 			}else if ($infono == 'Site.Bangpoo')
 			{
-			  echo "<td bgcolor='#B03060' width='8%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.Bangpoo</b></font></td>";
+			  echo "<td bgcolor='#B03060' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.Bangpoo</b></font></td>";
 			}else
 			  {
-				echo "<td bgcolor='#66CCCC' width='8%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;$infono</b></font></td>";
+				echo "<td bgcolor='#66CCCC' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;$infono</b></font></td>";
 			}
 			
 			
@@ -321,7 +321,7 @@ if($bgmod==0){
 								</td>
                                               
 		 
-								<td width="10%" bgcolor='#AFEEEE' align="left">
+								<td width="8%" bgcolor='#AFEEEE' align="left">
 								&nbsp;&nbsp;	
 								<?php echo "<font face=tahoma size=4 color=#000000 >$info1 </font>"; ?>								
 
