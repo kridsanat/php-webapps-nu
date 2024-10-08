@@ -321,13 +321,13 @@ if($bgmod==0){
 											
 								</td>
 
-								<td width="7%" bgcolor='#AFEEEE' align="right">
+								<td width="7%" bgcolor='#AFEEEE' align="left">
 								&nbsp;&nbsp;	
 								<?php echo "<font face=tahoma size=4 color=#3709e2 >$info1 </font>"; ?>	
 
 								</td>									
 		 
-								<td width="10%" bgcolor='#AFEEEE' align="right">
+								<td width="10%" bgcolor='#AFEEEE' align="left">
 
 								&nbsp;						
 								<textarea name="info6" type="text" id="" id="info6" cols="47" rows="1" readonly><?php echo $info6; ?></textarea>
