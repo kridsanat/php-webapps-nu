@@ -141,36 +141,6 @@ require_once "../include/connectdb.php";
 &nbsp;
 
 <br>
-<br>
-
-<?php 
-$sql_select_mem = "SELECT * FROM nu_sup";
-$fect = mysqli_query($connect, $sql_select_mem);
-if (!$fect) {
-    die("ติดต่อฐานข้อมูลไม่ได้" . mysqli_error());
-    exit;
-}
-
-$sum = 0;
-$bgcount = 0;
-
-while ($rows = mysqli_fetch_array($fect)) {
-    $info1 = $rows["info1"];
-    $printsprice = $rows["supprice"];
-	if (is_numeric($info1) && is_numeric($printsprice)) {
-		$total = $printsprice * $info1;
-		$sum += $total;
-		// Rest of the code
-	} else {
-		// Handle the case when the values are not numeric
-	}
-}
-
-echo "<font face='tahoma' color='#000033' size='28'>MA SUMMARY: <b>" . number_format($sum, 2, '.', ',') . "</b>&nbsp;THB.</font>";
-?>
-<br>
-
-<br>
 <br>								  
 									 
 <?PHP
