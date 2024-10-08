@@ -390,23 +390,7 @@ if($bgmod==0){
 											
                                         
 											
-					<tr height="">
-
-						<td colspan="6" valign="top">  
-
-						
-
-
-				
-						</td>
-
-						<td colspan="5" >
-
-						
-
-						</td>
-
-					</tr>		
+	
 			</tr>
 											
     </table>
