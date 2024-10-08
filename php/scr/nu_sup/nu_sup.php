@@ -292,10 +292,10 @@ if($bgmod==0){
 									<?php
 									if ($status == "Active")
 					 				{
-									  echo "<td width='2%' align='center' bgcolor='#0099CC'></td>";
+									  echo "<td width='1%' align='center' bgcolor='#red'></td>";
 									}else if ($status == "Deactive")
 									{
-									  echo "<td width='2%' align='center' bgcolor='#0099CC'></td>";
+									  echo "<td width='1%' align='center' bgcolor='#green'></td>";
 									}						
 									?>
 						
