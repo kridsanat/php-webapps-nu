@@ -236,7 +236,7 @@ if($bgmod==0){
 										<?php
 							 			 if ($supphoto >= 100)
 							  			{
-							 			echo "<img src=../pic/$supphoto width=30 height=30 border=1 >";
+							 			echo "<img src=../pic/$supphoto width=5 height=5 border=1 >";
 							 			}else
 										{
 										echo "<font face= 'tahoma' color='' size='2'>N/A</font>";	
