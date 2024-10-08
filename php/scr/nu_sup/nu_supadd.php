@@ -154,10 +154,10 @@ function checkprd()
                                         </font></td>
                                     </tr>
                                     <tr bgcolor="#FFFFFF"> 
-                                      <td width="160"> <div align="right"><font size="2">Qty.
+                                      <td width="160"> <div align="right"><font size="2">LAN.
                                           :</font></div></td>
                                       <td width="501"><font size="3"> 
-                                        <input name="info1" type="text" id="info1" class="input" size="5">
+                                        <input name="info1" type="text" id="info1" class="input" size="30">
                                         </font></td>
                                     </tr>
 									
