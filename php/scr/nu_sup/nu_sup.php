@@ -297,11 +297,7 @@ if($bgmod==0){
 									</a>
 												
 												
-								</td>	
-												
-										<td width="1%" bgcolor="#FFFFFF">
-										
-										</td>
+
 										
 			<?php
 			
@@ -339,9 +335,7 @@ if($bgmod==0){
 			?>
 																		
 											
-									<td width="1%" bgcolor="#FFFFFF">
-										
-									</td>
+							
 
 												
 												
@@ -388,7 +382,7 @@ if($bgmod==0){
 											
 					<tr height="">
 
-						<td colspan="8" valign="top">  
+						<td colspan="6" valign="top">  
 
 						<a href="nu_delprints.php?SerID=<?php echo "$idx"; ?>" onclick="return confirm('Are you sure?')" ><img src="../images/icon_close.jpg" alt="ลบข้อมูล" width="" height="" border="0" ></a></div>
 						
