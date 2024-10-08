@@ -334,7 +334,7 @@ if($bgmod==0){
 						
 												
 												
-								<td bgcolor="#F5F5F5" width="54.5%" valign="top" >
+								<td bgcolor="#F5F5F5" width="30%" valign="top" >
 											
 									
 								&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >&nbsp;
