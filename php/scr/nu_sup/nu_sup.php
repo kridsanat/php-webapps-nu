@@ -261,17 +261,7 @@ if($bgmod==0){
 					
 				
 								<td width="8%" bgcolor='#AFEEEE' align="left" >
-								
-									<?php
-						
-			
-									if ($printsprice == 0) {
-  									echo "<font face=tahoma size=2 color=#><b>Unit/Price</b><br></font><font face=tahoma size=2 color=#FF0000><b>-</b></font>";
-									} else if ($supprice >= 1) {
- 									 $formattedPrice = number_format($supprice, 2, '.', ',');
- 									 echo "<font face=tahoma size=2 color=#><b>Unit/Price</b><br></font> <font face=tahoma size=2 color=#000000>$formattedPrice</font>";
-									}
-									?>	
+								<?php echo "<font face=tahoma size=4 color=#000000 >$supprice </font>"; ?>
 											
 								</td>
 
