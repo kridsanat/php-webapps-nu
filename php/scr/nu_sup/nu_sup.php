@@ -394,18 +394,7 @@ if($bgmod==0){
 	echo"[<a href='$PHP_SELF?page=$i'><font size=2 color='#000000'>$i</font></a>]";
 	}
 	?>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+
                                             </span></font><font color="#FFFFFF" size="2"><span class="maekhawtom"> 
                                             </span></font>
 
