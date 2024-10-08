@@ -297,7 +297,7 @@ if($bgmod==0){
 
 								<td bgcolor="#AFEEEE" width="50" valign="right"  >
 
-										<a href="<?php echo "../pic/$supphoto"; ?>" >
+										<a href="<?php echo "../pic/$supphoto"; ?>" rel="lightbox" target="_blank" style="text-decoration: none;" >
 												
 										<?php
 							 			 if ($supphoto >= 100)
