@@ -181,7 +181,7 @@ function checkprd()
                                       <td> <div align="right"><font size="2">Remark
                                           :</font></div></td>
                                       <td><font size="3"> 
-                                        <textarea name="info6" type="text" id="" id="info6"  cols="120" rows="20"></textarea>
+                                        <textarea name="info6" type="text" id="" id="info6"  cols="120" rows="10"></textarea>
                                         </font></td>
                                     </tr>
 									<tr bgcolor="#FFFFFF"> 
