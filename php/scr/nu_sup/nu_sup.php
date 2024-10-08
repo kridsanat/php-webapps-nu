@@ -261,7 +261,7 @@ if($bgmod==0){
 			  echo "<td bgcolor='#99CCFF' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Apache.linux</b></font></td>";
 			}else if ($infono == 'Site.Central')
 			{
-			  echo "<td bgcolor='#66CCCC' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.Central</b></font></td>";
+			  echo "<td bgcolor='#66CCCC' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Other</b></font></td>";
 			}else if ($infono == 'Site.Nirvana')
 			{
 			  echo "<td bgcolor='#B0C4DE' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.Nirvana</b></font></td>";

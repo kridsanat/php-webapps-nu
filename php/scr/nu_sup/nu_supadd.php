@@ -112,7 +112,7 @@ function checkprd()
 </script>
                                 <table width="1000" height="19" border="0" cellpadding="1" cellspacing="1">
                                   
-								  <form method="post" action="nu_printssave.php" enctype="multipart/form-data" name="webFormSearch" onSubmit="return checksearch()">
+								  <form method="post" action="nu_supsave.php" enctype="multipart/form-data" name="webFormSearch" onSubmit="return checksearch()">
 								  
                                     <tr bgcolor="#FFFFFF"> 
                                       <td align="center" ><font size="2" color="#333333"><strong> 
@@ -124,7 +124,7 @@ function checkprd()
                                           :</font></div></td>
                                       <td><font size="3"> 
 									  
-                                        <input name="printsphoto" type="file" class="input" id="printsphoto" size="40">
+                                        <input name="supphoto" type="file" class="input" id="supsphoto" size="40">
 										
                                         </font></td>
                                     </tr>									
@@ -142,13 +142,11 @@ function checkprd()
 
                                       <select name="infono" id="infono" width="300">
                                                   <option selected value="<?php echo "$infono"; ?>"><?php echo "$infono"; ?></option>
-                                                  <option value="HQ.Jatuchot">HQ.Jatuchot</option>
-                                                  <option value="Factory.TIP9">Factory.TIP9</option>
-                                                  <option value="Site.Central">Site.Central</option>
-                                                  <option value="Site.Nirvana">Site.Nirvana</option>
-                                                  <option value="Site.UM">Site.UM</option>
-                                                  <option value="Site.WHN">Site.WHN</option>
-                                                  <option value="Site.Bangpoo">Site.Bangpoo</option>
+                                                  <option value="IIS">HQ.Jatuchot</option>
+                                                  <option value="XAMPP">XAMPP</option>
+                                                  <option value="Apache.linux">Apache.linux</option>
+                                                  <option value="Other">Other</option>
+                       
                                         </select>
 
 
@@ -167,7 +165,7 @@ function checkprd()
                                       <td width="160"> <div align="right"><font size="2">Unit Price  
                                           :</font></div></td>
                                       <td width="501"><font size="3"> 
-                                        <input name="printsprice" type="text" id="printsprice" class="input" size="5">
+                                        <input name="supprice" type="text" id="supprice" class="input" size="5">
                                         </font></td>
                                     </tr>                                    
 																		
@@ -183,7 +181,7 @@ function checkprd()
                                       <td> <div align="right"><font size="2">Remark
                                           :</font></div></td>
                                       <td><font size="3"> 
-                                        <textarea name="info6" type="text" id="" id="info6"  cols="120" rows="30"></textarea>
+                                        <textarea name="info6" type="text" id="" id="info6"  cols="120" rows="20"></textarea>
                                         </font></td>
                                     </tr>
 									<tr bgcolor="#FFFFFF"> 
@@ -223,7 +221,7 @@ function checkprd()
                                     <tr bgcolor="#FFFFFF"> 
                                       <td>&nbsp;</td>
                                       <td> <input name="submit" type="submit" class="submit" value="Add"  onClick="return confirm ('Sure ? ') ">
-									  &nbsp;&nbsp;&nbsp;&nbsp;<a href="nu_prints.php"><font face="tahoma" >Cancel</font></a>
+									  &nbsp;&nbsp;&nbsp;&nbsp;<a href="nu_sup.php"><font face="tahoma" >Cancel</font></a>
 									  </td>
                                     </tr>
                                   </form>
