@@ -133,10 +133,10 @@ $infono =$result1['infono'];
                                         </font></td>
                                     </tr>
                                     <tr bgcolor="#FFFFFF"> 
-                                      <td width="140"> <div align="right"><font size="2">Qty. 
+                                      <td width="140"> <div align="right"><font size="2">LAN. 
                                           :</font></div></td>
                                       <td width="428"><font size="3"> 
-                                        <input name="info1" type="text"  id="info1" class="input" value='<?php echo "$info1"; ?>' size="5">
+                                        <input name="info1" type="text"  id="info1" class="input" value='<?php echo "$info1"; ?>' size="30">
                                         <input type="hidden" name="idx" value="<?php echo "$idx"; ?>" >
                                         </font></td>
                                     </tr>
