@@ -311,13 +311,13 @@ if($bgmod==0){
 								&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >&nbsp;
 								<i><?php echo "<font face=tahoma size=4 color=#000000 >$info4 </font>"; ?></i>
 									
-
+										<!--
 								&nbsp;&nbsp;
 
 									<font face="tahoma" size="2" color="#3e3d36">
 										&nbsp;SSL cert - Expire : &nbsp;<b><?php echo "$info5"; ?></b>												
 									</font>
-											<br>
+								-->
 											
 								</td>
 
