@@ -274,7 +274,44 @@ timerefresh(60);
 
 			
 				</td>
-            </tr>-->			
+            </tr>-->	
+			<tr valign="center"> 
+			
+			
+
+			<td align=left width=100%>
+			<br>
+			<br>
+				
+					
+						<font face="tahoma" color="#000033" size="5">
+                            <a href="nu_sup/nu_sup.php" style="text-decoration: none;" >
+                            <b>
+							==== Subdomain SSL ====
+                            </a>
+                            </font>
+	
+
+		
+			</td>
+		</tr>	
+			<!--<tr valign="center"> 
+			
+			
+
+                <td align=left width=100%>
+
+                            <br>
+			                <br>
+			            
+							<img src="../images/nutrilogo.png" alt="" width="" height="" border="0" >
+							
+                            <br>
+                            <br>
+
+			
+				</td>
+            </tr>-->		
         </TABLE>
 
 </body>
