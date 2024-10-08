@@ -311,7 +311,7 @@ if($bgmod==0){
 								<i><?php echo "<font face=tahoma size=4 color=#000000 >$info4 </font>"; ?></i>
 									
 
-											<br>
+								&nbsp;&nbsp;
 
 									<font face="tahoma" size="2" color="#3e3d36">
 										&nbsp;SSL cert - Preroid Expire : &nbsp;<b><?php echo "$info5"; ?></b>												
