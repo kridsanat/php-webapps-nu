@@ -254,16 +254,16 @@ if($bgmod==0){
 			if ($infono == 'IIS')
 			  {
 			  	echo "<td bgcolor='#4682B4' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;IIS</b></font></td>";
-			}else if ($infono == 'XAMPP')
+			}else if ($infono == 'IIS')
 			  {
 				echo "<td bgcolor='#3CB371' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;XAMPP</b></font></td>";
-			}else if ($infono == 'CLOUD')
+			}else if ($infono == 'XAMPP')
 			{
 			  echo "<td bgcolor='#99CCFF' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Apache.linux</b></font></td>";
 			}else if ($infono == 'Apache.linux')
 			{
-			  echo "<td bgcolor='#66CCCC' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Apache.linux</b></font></td>";
-			}else if ($infono == 'Apache.linux')
+			  echo "<td bgcolor='#66CCCC' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Other</b></font></td>";
+			}else if ($infono == 'Other')
 			{
 			  echo "<td bgcolor='#B0C4DE' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.Nirvana</b></font></td>";
 			}else if ($infono == 'Site.UM')
