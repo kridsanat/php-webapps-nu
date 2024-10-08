@@ -366,7 +366,7 @@ if($bgmod==0){
 								&nbsp;<font face="tahoma" size="2" color="#"></font>
 								<?php echo "<font face=tahoma size=2 color=#	><b>$info3</b></font>"; ?>
 								<br>
-								<textarea name="info6" type="text" id="" id="info6" cols="5" rows="1" readonly><?php echo $info6; ?></textarea>
+								<textarea name="info6" type="text" id="" id="info6" cols="20" rows="1" readonly><?php echo $info6; ?></textarea>
 											
 								</td>
 
