@@ -285,7 +285,9 @@ if($bgmod==0){
 			?>
 																		
 											
-																		<td width="17%" bgcolor='#AFEEEE' align="left" >
+							
+							
+							<td width="17%" bgcolor='#AFEEEE' align="left" >
 								
 								<a href="nu_delsup.php?SerID=<?php echo "$idx"; ?>" onclick="return confirm('Are you sure?')" ><img src="../images/icon_close.jpg" alt="ลบข้อมูล" width="" height="" border="0" ></a></div>
 			
@@ -299,7 +301,7 @@ if($bgmod==0){
 								
 								
 											
-								</td>
+							</td>
 							
 
 												
