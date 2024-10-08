@@ -304,7 +304,7 @@ if($bgmod==0){
 						
 												
 												
-								<td bgcolor="#F5F5F5" width="30%" valign="top" >
+								<td bgcolor="#F5F5F5" width="50%" valign="top" >
 											
 									
 								&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >&nbsp;
@@ -340,7 +340,7 @@ if($bgmod==0){
 								&nbsp;<font face="tahoma" size="2" color="#"></font>
 								<?php echo "<font face=tahoma size=2 color=#	><b>$info3</b></font>"; ?>
 								<br>
-								<textarea name="info6" type="text" id="" id="info6" cols="110" rows="1" readonly><?php echo $info6; ?></textarea>
+								<textarea name="info6" type="text" id="" id="info6" cols="80" rows="1" readonly><?php echo $info6; ?></textarea>
 											
 								</td>
 
