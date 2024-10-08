@@ -360,6 +360,13 @@ if($bgmod==0){
 				
 								<td width="8%" bgcolor='#AFEEEE' align="left" >
 								<?php echo "<font face=tahoma size=4 color=#000000 >$supprice </font>"; ?>
+
+								&nbsp;<?php echo "<font face=tahoma size=2 color=#27408B><b> $info2</b></font>"; ?>
+
+&nbsp;<font face="tahoma" size="2" color="#"></font>
+<?php echo "<font face=tahoma size=2 color=#	><b>$info3</b></font>"; ?>
+								
+								<textarea name="info6" type="text" id="" id="info6" cols="1" rows="1" readonly><?php echo $info6; ?></textarea>
 											
 								</td>
 
@@ -369,8 +376,8 @@ if($bgmod==0){
 								<td width="6%" bgcolor='#AFEEEE' align="right">						
 	
 
-
-
+								
+								<a href="nu_delprints.php?SerID=<?php echo "$idx"; ?>" onclick="return confirm('Are you sure?')" ><img src="../images/icon_close.jpg" alt="ลบข้อมูล" width="" height="" border="0" ></a></div>
 
 								</td>												
 												
@@ -384,19 +391,15 @@ if($bgmod==0){
 
 						<td colspan="6" valign="top">  
 
-						<a href="nu_delprints.php?SerID=<?php echo "$idx"; ?>" onclick="return confirm('Are you sure?')" ><img src="../images/icon_close.jpg" alt="ลบข้อมูล" width="" height="" border="0" ></a></div>
 						
 
-						&nbsp;<?php echo "<font face=tahoma size=2 color=#27408B><b> $info2</b></font>"; ?>
 
-						&nbsp;<font face="tahoma" size="2" color="#"></font>
-						<?php echo "<font face=tahoma size=2 color=#	><b>$info3</b></font>"; ?>
 				
 						</td>
 
 						<td colspan="5" >
 
-						<textarea name="info6" type="text" id="" id="info6"  cols="1" rows="1" readonly><?php echo $info6; ?></textarea>
+						
 
 						</td>
 
