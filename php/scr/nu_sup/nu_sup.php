@@ -261,8 +261,17 @@ if($bgmod==0){
 					
 				
 								<td width="8%" bgcolor='#AFEEEE' align="left" >
-
-					
+								
+									<?php
+						
+			
+									if ($printsprice == 0) {
+  									echo "<font face=tahoma size=2 color=#><b>Unit/Price</b><br></font><font face=tahoma size=2 color=#FF0000><b>-</b></font>";
+									} else if ($supprice >= 1) {
+ 									 $formattedPrice = number_format($supprice, 2, '.', ',');
+ 									 echo "<font face=tahoma size=2 color=#><b>Unit/Price</b><br></font> <font face=tahoma size=2 color=#000000>$formattedPrice</font>";
+									}
+									?>	
 											
 								</td>
 
@@ -288,12 +297,12 @@ if($bgmod==0){
 
 								<td bgcolor="#AFEEEE" width="1%" valign="right"  >
 
-										<a href="<?php echo "../pic/$printsphoto"; ?>" rel="lightbox" target="_blank" >
+										<a href="<?php echo "../pic/$supphoto"; ?>" rel="lightbox" target="_blank" >
 												
 										<?php
-							 			 if ($printsphoto >= 100)
+							 			 if ($supphoto >= 100)
 							  			{
-							 			echo "<img src=../pic/$printsphoto width=50 height=50 border=1 >";
+							 			echo "<img src=../pic/$supphoto width=50 height=50 border=1 >";
 							 			}else
 										{
 										echo "&nbsp;&nbsp;No Pic";	
