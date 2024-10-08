@@ -49,7 +49,7 @@ require_once "../include/connectdb.php";
 		
 						<div align="left">
 			
-						<font color="#000000" size="4">Presently Page : <strong>PRINTERS PAGE</strong></font>
+						<font color="#000000" size="4">Presently Page : <strong>.....</strong></font>
 
 						</div>
 			
