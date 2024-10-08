@@ -124,13 +124,10 @@ $infono =$result1['infono'];
 
 								                      	<select name="infono" id="infono" width="300">
                                                   <option selected value="<?php echo "$infono"; ?>"><?php echo "$infono"; ?></option>
-                                                  <option value="HQ.Jatuchot">HQ.Jatuchot</option>
-                                                  <option value="Factory.TIP9">Factory.TIP9</option>
-                                                  <option value="Site.Central">Site.Central</option>
-                                                  <option value="Site.Nirvana">Site.Nirvana</option>
-                                                  <option value="Site.UM">Site.UM</option>
-                                                  <option value="Site.WHN">Site.WHN</option>
-                                                  <option value="Site.Bangpoo">Site.Bangpoo</option>
+                                                  <option value="IIS">IIS</option>
+                                                  <option value="XAMPP">XAMPP</option>
+                                                  <option value="Apache.linux">Apache.linux</option>
+                                                  <option value="Other">Other</option>
                                         </select>
 
                                         </font></td>
