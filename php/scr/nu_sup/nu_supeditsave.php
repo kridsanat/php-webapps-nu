@@ -21,7 +21,7 @@ require_once "../include/connectdb.php";
 
 
 
-$sql_data = "update nu_prints set info1='$_POST[info1]',info2='$_POST[info2]',info3='$_POST[info3]',info4 = '$_POST[info4]',info5='$_POST[info5]',info6='$_POST[info6]',printsprice='$_POST[printsprice]',status='$_POST[status]',infono='$_POST[infono]' where id = '$_POST[idx]'";
+$sql_data = "update nu_sup set info1='$_POST[info1]',info2='$_POST[info2]',info3='$_POST[info3]',info4 = '$_POST[info4]',info5='$_POST[info5]',info6='$_POST[info6]',supprice='$_POST[supprice]',status='$_POST[status]',infono='$_POST[infono]' where id = '$_POST[idx]'";
 mysqli_query($connect,$sql_data);
 
 ?>
@@ -36,12 +36,12 @@ mysqli_query($connect,$sql_data);
 
 <!-- Fireworks MX Dreamweaver MX target.  Created Sat Apr 02 10:29:23 GMT+0700 (SE Asia Standard Time) 2011-->
 <link href="css/style.css" rel="stylesheet" type="text/css">
-<meta http-equiv="refresh" content="3;URL=nu_prints.php">
+<meta http-equiv="refresh" content="3;URL=nu_sup.php">
 </head>
 <body bgcolor="#ffffff">
 
 <?php
-$sql_1="select * from nu_prints where id = '$_GET[SerID]'";
+$sql_1="select * from nu_sup where id = '$_GET[SerID]'";
 $db_query=mysqli_query($connect,$sql_1);
 $result1=mysqli_fetch_array($db_query);
 $idx =$result1['id'];

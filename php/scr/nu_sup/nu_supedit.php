@@ -74,7 +74,7 @@ require_once "../include/connectdb.php";
                           <tr> 
                             <td><div align="center"> <font color="#003366" size="2">
 <?php
-$sql_1="select * from nu_prints where id = '$_GET[SerID]'";
+$sql_1="select * from nu_sup where id = '$_GET[SerID]'";
 $db_query=mysqli_query($connect,$sql_1);
 $result1=mysqli_fetch_array($db_query);
 
@@ -85,22 +85,22 @@ $info3 =$result1['info3'];
 $info4 =$result1['info4'];
 $info5 =$result1['info5'];
 $info6 =$result1['info6'];
-$printsprice =$result1['printsprice'];
-$printsphoto =$result1['printsphoto'];
+$supprice =$result1['supprice'];
+$supphoto =$result1['supphoto'];
 $status =$result1['status'];
 $infono =$result1['infono'];
 ?>
                                 </font> 
                                 <table width="1000" height="19" border="0" cellpadding="1" cellspacing="1">
                                
-								  <form method="post" action="nu_printseditsave.php" enctype="multipart/form-data" name="webFormSearch" onSubmit="return checksearch()">
+								  <form method="post" action="nu_supeditsave.php" enctype="multipart/form-data" name="webFormSearch" onSubmit="return checksearch()">
                                     <tr bgcolor="#FFFFFF"> 
                                       <td> <div align="right"><font size="2">Update Picture
                                           :</font></div></td>
                                       <td>
-									  <?php echo "<img src=../pic/$printsphoto width=55 height=55 border=1 >"; ?>
+									  <?php echo "<img src=../pic/$supphoto width=55 height=55 border=1 >"; ?>
 									  <br>
-									  <a href="nu_printseditphoto.php?SerID=<?php echo "$idx"; ?>" >Change Picture</a>
+									  <a href="nu_supeditphoto.php?SerID=<?php echo "$idx"; ?>" >Change Picture</a>
 									  
 									  
 									  </td>
@@ -148,7 +148,7 @@ $infono =$result1['infono'];
                                       <td width="160"> <div align="right"><font size="2">Unit Price 
                                           :</font></div></td>
                                       <td width="501"><font size="3"> 
-                                        <input name="printsprice" type="text" id="printsprice" class="input" size="5" value='<?php echo "$printsprice"; ?>'>
+                                        <input name="supprice" type="text" id="supprice" class="input" size="5" value='<?php echo "$supprice"; ?>'>
                                         </font></td>
                                     </tr>   									
 									 <tr bgcolor="#FFFFFF"> 
@@ -229,7 +229,7 @@ $infono =$result1['infono'];
                                       <td>&nbsp;</td>
                                       <td> <input name="submit" type="submit" class="submit" value="Submit" onClick="return confirm ('Sure ? ') ">
 									  
-									  &nbsp;&nbsp;&nbsp;&nbsp;<a href="nu_prints.php"><font face="tahoma" color="#000033" size="2">Cancel</font></a>
+									  &nbsp;&nbsp;&nbsp;&nbsp;<a href="nu_sup.php"><font face="tahoma" color="#000033" size="2">Cancel</font></a>
 									  </td>
                                     </tr>
 									

@@ -19,10 +19,10 @@ require_once "../include/connectdb.php";
 						  $user_admin=$result["useradmin"];
 						  $pass_admin=$result["passadmin"];
 
-if($_FILES["printsphoto"]["name"] != "")
+if($_FILES["supphoto"]["name"] != "")
 {
-$name=$_FILES['printsphoto']['name'];
-$tmp=$_FILES['printsphoto']["tmp_name"];
+$name=$_FILES['supphoto']['name'];
+$tmp=$_FILES['supphoto']["tmp_name"];
 $date_time=date("Y-m-d H:i:s");
 $oldname=explode(".",$name);
 $ext = "";
@@ -35,7 +35,7 @@ $photo_3 = "";
 
 
 
-$sql_data = "update nu_prints set info1='$_POST[info1]',info2='$_POST[info2]',info3='$_POST[info3]',info4 = '$_POST[info4]',info5='$_POST[info5]',info6='$_POST[info6]',printsphoto='$photo_3' where id = '$_POST[idx]'";
+$sql_data = "update nu_sup set info1='$_POST[info1]',info2='$_POST[info2]',info3='$_POST[info3]',info4 = '$_POST[info4]',info5='$_POST[info5]',info6='$_POST[info6]',supphoto='$photo_3' where id = '$_POST[idx]'";
 mysqli_query($connect,$sql_data);
 
 ?>
@@ -50,7 +50,7 @@ mysqli_query($connect,$sql_data);
 
 <!-- Fireworks MX Dreamweaver MX target.  Created Sat Apr 02 10:29:23 GMT+0700 (SE Asia Standard Time) 2011-->
 <link href="css/style.css" rel="stylesheet" type="text/css">
-<meta http-equiv="refresh" content="3;URL=nu_prints.php">
+<meta http-equiv="refresh" content="3;URL=nu_sup.php">
 </head>
 <body bgcolor="#ffffff">
 
