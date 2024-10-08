@@ -287,7 +287,7 @@ timerefresh(60);
 						<font face="tahoma" color="#000033" size="5">
                             <a href="nu_sup/nu_sup.php" style="text-decoration: none;" >
                             <b>
-							==== Subdomain SSL ====
+							==== Sub Domain SSL ====
                             </a>
                             </font>
 	
