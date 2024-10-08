@@ -229,7 +229,7 @@ if($bgmod==0){
 								
 												
 
-								<td bgcolor="#FFFFFF" width="2%" valign="right"  >
+								<td bgcolor="#FFFFFF" width="2%" valign="center"  >
 
 										<a href="<?php echo "../pic/$supphoto"; ?>" rel="lightbox" target="_blank" style="text-decoration: none;" >
 												
@@ -239,7 +239,7 @@ if($bgmod==0){
 							 			echo "<img src=../pic/$supphoto width=30 height=30 border=1 >";
 							 			}else
 										{
-										echo "<font face= 'tahoma' color='#FFFACD' size='1'>N/A></font>";	
+										echo "<font face= 'tahoma' color='' size='2'>N/A</font>";	
 									    }
 							 			 ?>
 		
