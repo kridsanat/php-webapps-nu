@@ -358,13 +358,13 @@ if($bgmod==0){
 								</td>	
 					
 				
-								<td width="8%" bgcolor='#AFEEEE' align="left" >
-								<?php echo "<font face=tahoma size=4 color=#000000 >$supprice </font>"; ?>
+								<td width="20%" bgcolor='#AFEEEE' align="left" >
+								&nbsp;<?php echo "<font face=tahoma size=4 color=#000000 >$supprice </font>"; ?>
 
 								&nbsp;<?php echo "<font face=tahoma size=2 color=#27408B><b> $info2</b></font>"; ?>
 
-&nbsp;<font face="tahoma" size="2" color="#"></font>
-<?php echo "<font face=tahoma size=2 color=#	><b>$info3</b></font>"; ?>
+								&nbsp;<font face="tahoma" size="2" color="#"></font>
+								<?php echo "<font face=tahoma size=2 color=#	><b>$info3</b></font>"; ?>
 								
 								<textarea name="info6" type="text" id="" id="info6" cols="1" rows="1" readonly><?php echo $info6; ?></textarea>
 											
