@@ -304,7 +304,7 @@ if($bgmod==0){
 						
 												
 												
-								<td bgcolor="#F5F5F5" width="40%" valign="top" >
+								<td bgcolor="#F5F5F5" width="30%" valign="top" >
 											
 									
 								&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >&nbsp;
@@ -329,7 +329,7 @@ if($bgmod==0){
 								</td>	
 					
 				
-								<td width="10%" bgcolor='#AFEEEE' align="left" >
+								<td width="20%" bgcolor='#AFEEEE' align="left" >
 								
 								<a href="nu_delsup.php?SerID=<?php echo "$idx"; ?>" onclick="return confirm('Are you sure?')" ><img src="../images/icon_close.jpg" alt="ลบข้อมูล" width="" height="" border="0" ></a></div>
 			
