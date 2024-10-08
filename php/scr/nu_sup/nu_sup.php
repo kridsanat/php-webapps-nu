@@ -363,7 +363,7 @@ if($bgmod==0){
 								<a href="nu_delprints.php?SerID=<?php echo "$idx"; ?>" onclick="return confirm('Are you sure?')" ><img src="../images/icon_close.jpg" alt="ลบข้อมูล" width="" height="" border="0" ></a></div>
 			
 
-								&nbsp;<?php echo "<font face=tahoma size=4 color=#000000 >$supprice </font>"; ?>
+								
 
 								&nbsp;<?php echo "<font face=tahoma size=2 color=#27408B><b> $info2</b></font>"; ?>
 
@@ -376,14 +376,14 @@ if($bgmod==0){
 
 
 
-
+								<!--
 								<td width="6%" bgcolor='#AFEEEE' align="right">						
 	
-
+								&nbsp;<?php echo "<font face=tahoma size=4 color=#000000 >$supprice </font>"; ?>			
 								
 
 								</td>												
-												
+								-->				
 												
 
 											
