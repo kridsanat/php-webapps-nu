@@ -130,7 +130,7 @@ require_once "../include/connectdb.php";
 	$numall=mysqli_num_rows($query_select);
 ?>																											  
 
-<a href="nu_printsadd.php">
+<a href="nu_supadd.php">
 	<font face="tahoma" color="#000033" size="4">
 
 		<u><i>Create New</i></u>
