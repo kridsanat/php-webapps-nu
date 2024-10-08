@@ -239,7 +239,7 @@ if($bgmod==0){
 							 			echo "<img src=../pic/$supphoto width=30 height=30 border=1 >";
 							 			}else
 										{
-										echo "&nbsp;&nbsp;NA";	
+										echo "&nbsp;N|A";	
 									    }
 							 			 ?>
 		
