@@ -19,10 +19,10 @@ require_once "../include/connectdb.php";
 						  $user_admin=$result["useradmin"];
 						  $pass_admin=$result["passadmin"];
 
-if($_FILES["printsphoto"]["name"] != "")
+if($_FILES["supsphoto"]["name"] != "")
 {
-$name=$_FILES['printsphoto']['name'];
-$tmp=$_FILES['printsphoto']["tmp_name"];
+$name=$_FILES['supphoto']['name'];
+$tmp=$_FILES['supphoto']["tmp_name"];
 $date_time=date("Y-m-d H:i:s");
 $oldname=explode(".",$name);
 $ext = "";
@@ -35,9 +35,9 @@ $photo_3 = "";
 
 
 
-$insert="INSERT INTO nu_prints
+$insert="INSERT INTO nu_sup
 (
-info1, info2, info3, info4, info5, info6, printsprice, printsphoto, status, infono
+info1, info2, info3, info4, info5, info6, supprice, supphoto, status, infono
 ) values ( 
 '$_POST[info1]',
 '$_POST[info2]',
@@ -45,7 +45,7 @@ info1, info2, info3, info4, info5, info6, printsprice, printsphoto, status, info
 '$_POST[info4]',
 '$_POST[info5]',
 '$_POST[info6]',
-'$_POST[printsprice]',
+'$_POST[supprice]',
 '$photo_3',
 '$_POST[status]',
 '$_POST[infono]')";
@@ -63,7 +63,7 @@ if (!$result) {
 <meta http-equiv="refresh" content="900;url=../logout.php" />
 
 <link href="css/style.css" rel="stylesheet" type="text/css">
-<meta http-equiv="refresh" content="3;URL=nu_prints.php">
+<meta http-equiv="refresh" content="3;URL=nu_sup.php">
 </head>
 <body bgcolor="#ffffff">
 <div align="center"> 
