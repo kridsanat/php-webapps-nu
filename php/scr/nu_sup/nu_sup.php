@@ -327,7 +327,7 @@ if($bgmod==0){
 
 								</td>									
 		 
-								<td width="15%" bgcolor='#AFEEEE' align="right">
+								<td width="10%" bgcolor='#AFEEEE' align="right">
 
 								&nbsp;						
 								<textarea name="info6" type="text" id="" id="info6" cols="47" rows="1" readonly><?php echo $info6; ?></textarea>
