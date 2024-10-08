@@ -268,18 +268,6 @@ if($bgmod==0){
 
 
 
-								<td width="6%" bgcolor='#AFEEEE' align="right">						
-	
-
-									<font face=tahoma size=2 color=#><b>&nbsp;Total&nbsp;</b><br></font> <font face=tahoma size=2 color=#000000>
-									<span >
-											<?php echo number_format($total, 2, '.', ','); ?>&nbsp;
-									</span>
-									
-									</font>
-
-
-								</td>
 												
 								
 								
