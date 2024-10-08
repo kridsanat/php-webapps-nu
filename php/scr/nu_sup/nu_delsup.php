@@ -20,8 +20,8 @@ require_once "../include/connectdb.php";
 						  $pass_admin=$result["passadmin"];
 						  
 						  
-@unlink("../pic/$_GET[printsphoto]");
-$sql_del = "delete from nu_prints where id = '$_GET[SerID]'";
+@unlink("../pic/$_GET[supphoto]");
+$sql_del = "delete from nu_sup where id = '$_GET[SerID]'";
 $db_query=mysqli_query($connect,$sql_del);
 ?>
 <html>
@@ -32,7 +32,7 @@ $db_query=mysqli_query($connect,$sql_del);
 
 <!-- Fireworks MX Dreamweaver MX target.  Created Sat Apr 02 10:29:23 GMT+0700 (SE Asia Standard Time) 2011-->
 <link href="css/style.css" rel="stylesheet" type="text/css">
-<meta http-equiv="refresh" content="3;URL=nu_prints.php">
+<meta http-equiv="refresh" content="3;URL=nu_sup.php">
 </head>
 <body bgcolor="#ffffff">
 <div align="center"> 
