@@ -252,40 +252,17 @@ if($bgmod==0){
 			<tr bgcolor="#AFEEEE" > 
 
 
-
+								
 								<td width="8%" bgcolor='#AFEEEE' align="left">
-								&nbsp;&nbsp;									
-									<?php
-			
-									if ($info1 == 0)
-					  				{
-					  				echo "<b><font face=tahoma size=2 color=#>Qty.</font><font face=tahoma size=2 color=#B8860B>0</font></b>";
-									}else if ($info1 < 4)
-					  				{
-					 				echo "<b><font face=tahoma size=2 color=#>Qty.</font> <font face=tahoma size=2 color=#B8860B>$info1</font></b> ";
-									}else
-					  				{
-									echo "<b><font face=tahoma size=2 color=#>Qty.</font> <font face=tahoma size=2 color=#B8860B>$info1</font></b>";
-									}
-						
-									?>	
-						
-						
+								&nbsp;&nbsp;	
+								<?php echo "<font face=tahoma size=4 color=#000000 >$info1 </font>"; ?>								
+
 								</td>	
 					
 				
 								<td width="8%" bgcolor='#AFEEEE' align="left" >
 
-									<?php
-						
-			
-									if ($printsprice == 0) {
-  									echo "<font face=tahoma size=2 color=#><b>Unit/Price</b><br></font><font face=tahoma size=2 color=#FF0000><b>-</b></font>";
-									} else if ($printsprice >= 1) {
- 									 $formattedPrice = number_format($printsprice, 2, '.', ',');
- 									 echo "<font face=tahoma size=2 color=#><b>Unit/Price</b><br></font> <font face=tahoma size=2 color=#000000>$formattedPrice</font>";
-									}
-									?>	
+					
 											
 								</td>
 
