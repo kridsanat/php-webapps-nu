@@ -250,7 +250,7 @@ if($bgmod==0){
 										
 			<?php
 			
-			if ($infono == 'HQ.Jatuchot')
+			if ($infono == 'IIS')
 			  {
 			  	echo "<td bgcolor='#4682B4' width='8%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;IIS</b></font></td>";
 			}else if ($infono == 'Factory.TIP9')
