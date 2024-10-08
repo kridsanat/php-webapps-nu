@@ -125,7 +125,7 @@ require_once "../include/connectdb.php";
        	 		<td bgcolor="#FFFFFF"> 
 
 <?php
-	$numproducts ="select * from nu_prints";
+	$numproducts ="select * from nu_sup";
 	$query_select=mysqli_query($connect, $numproducts);
 	$numall=mysqli_num_rows($query_select);
 ?>																											  
@@ -192,12 +192,12 @@ $info3 =$rows["info3"];
 $info4 =$rows["info4"];
 $info5 =$rows["info5"];
 $info6 =$rows["info6"];
-$printsprice =$rows["supprice"];
-$printsphoto =$rows["supphoto"];
+$supprice =$rows["supprice"];
+$supphoto =$rows["supphoto"];
 $status =$rows["status"];
 $infono =$rows["infono"];
-if (is_numeric($info1) && is_numeric($printsprice)) {
-    $total = $printsprice * $info1;
+if (is_numeric($info1) && is_numeric($supprice)) {
+    $total = $supprice * $info1;
     $sum += $total;
     // Rest of the code
 } else {
@@ -330,7 +330,7 @@ if($bgmod==0){
 				
 								<td width="20%" bgcolor='#AFEEEE' align="left" >
 
-								<a href="nu_delprints.php?SerID=<?php echo "$idx"; ?>" onclick="return confirm('Are you sure?')" ><img src="../images/icon_close.jpg" alt="ลบข้อมูล" width="" height="" border="0" ></a></div>
+								<a href="nu_delsup.php?SerID=<?php echo "$idx"; ?>" onclick="return confirm('Are you sure?')" ><img src="../images/icon_close.jpg" alt="ลบข้อมูล" width="" height="" border="0" ></a></div>
 			
 
 								
