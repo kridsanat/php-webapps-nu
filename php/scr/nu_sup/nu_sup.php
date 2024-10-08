@@ -268,6 +268,13 @@ if($bgmod==0){
 
 
 
+								<td width="6%" bgcolor='#AFEEEE' align="right">						
+	
+
+
+
+
+								</td>
 												
 								
 								
