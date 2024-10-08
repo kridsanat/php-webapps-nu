@@ -19,7 +19,7 @@ require_once "../include/connectdb.php";
 						  $user_admin=$result["useradmin"];
 						  $pass_admin=$result["passadmin"];
 
-if($_FILES["supsphoto"]["name"] != "")
+if($_FILES["supphoto"]["name"] != "")
 {
 $name=$_FILES['supphoto']['name'];
 $tmp=$_FILES['supphoto']["tmp_name"];
