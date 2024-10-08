@@ -322,7 +322,7 @@ if($bgmod==0){
 								</td>
                                               
 		 
-								<td width="20%" bgcolor='#AFEEEE' align="left">
+								<td width="25%" bgcolor='#AFEEEE' align="left">
 								&nbsp;&nbsp;	
 								<?php echo "<font face=tahoma size=4 color=#000000 >$info1 </font>"; ?>	
 								&nbsp;						
@@ -330,7 +330,7 @@ if($bgmod==0){
 								</td>	
 					
 				
-								<td width="20%" bgcolor='#AFEEEE' align="left" >
+								<td width="15%" bgcolor='#AFEEEE' align="left" >
 								
 								<a href="nu_delsup.php?SerID=<?php echo "$idx"; ?>" onclick="return confirm('Are you sure?')" ><img src="../images/icon_close.jpg" alt="ลบข้อมูล" width="" height="" border="0" ></a></div>
 			
