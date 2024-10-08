@@ -142,7 +142,7 @@ function checkprd()
 
                                       <select name="infono" id="infono" width="300">
                                                   <option selected value="<?php echo "$infono"; ?>"><?php echo "$infono"; ?></option>
-                                                  <option value="IIS">HQ.Jatuchot</option>
+                                                  <option value="IIS">IIS</option>
                                                   <option value="XAMPP">XAMPP</option>
                                                   <option value="Apache.linux">Apache.linux</option>
                                                   <option value="Other">Other</option>
