@@ -217,7 +217,7 @@ if($bgmod==0){
 <form method="post" action="nu_supedit.php?SerID=<?php echo "$idx"; ?>">
 
 
-    <table width="100%" border="1" cellspacing="0" cellpadding="0" align="center">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
                     
 			<tr bgcolor="#AFEEEE" > 
 
@@ -343,7 +343,7 @@ if($bgmod==0){
 
 								</td>									
 		 
-								<td width="10%" bgcolor='#AFEEEE' align="left">
+								<td width="10%" bgcolor='#FFFFFF' align="left">
 
 								&nbsp;						
 								<textarea name="info6" type="text" id="" id="info6" cols="47" rows="1" readonly><?php echo $info6; ?></textarea>
