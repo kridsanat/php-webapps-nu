@@ -325,7 +325,7 @@ if($bgmod==0){
 											
 									
 								&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >&nbsp;
-								<i><?php echo "<font face=tahoma size=4 color=#eef901 >$info4 </font>"; ?></i>
+								<i><b><?php echo "<font face=tahoma size=4 color=#eef901 >$info4 </font>"; ?></b></i>
 									
 										<!--
 								&nbsp;&nbsp;
