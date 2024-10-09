@@ -318,11 +318,10 @@ if($bgmod==0){
 									?>
 						
 						
+															
 												
-						
 												
-												
-								<td bgcolor="#eef901" width="28%" valign="top" >
+								<td bgcolor="#f90145" width="28%" valign="top" >
 											
 									
 								&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >&nbsp;
