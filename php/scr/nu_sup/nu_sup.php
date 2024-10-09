@@ -217,7 +217,7 @@ if($bgmod==0){
 <form method="post" action="nu_supedit.php?SerID=<?php echo "$idx"; ?>">
 
 
-    <table width="100%" border="1" cellspacing="1" cellpadding="1" align="center">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
                     
 			<tr bgcolor="#AFEEEE" > 
 
