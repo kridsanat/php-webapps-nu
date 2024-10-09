@@ -161,7 +161,7 @@ $infono =$result1['infono'];
                                           :</font></div></td>
                                       <td><font size="3"> 
                                         
-										<textarea name="info6" type="text" id="" id="info6"  cols="20" rows="30"><?php echo $info6; ?></textarea>
+										<textarea name="info6" type="text" id="" id="info6"  cols="120" rows="10"><?php echo $info6; ?></textarea>
                                         </font></td>
                                     </tr>									
 									
