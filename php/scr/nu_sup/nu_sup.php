@@ -337,7 +337,7 @@ if($bgmod==0){
 											
 								</td>
 
-								<td width="10%" bgcolor='#000000' align="left">
+								<td width="10%" bgcolor='#FFFFFF' align="left">
 								&nbsp;&nbsp;	
 								<?php echo "<font face=tahoma size=4 color=#3709e2 >$info1 </font>"; ?>	
 
