@@ -128,6 +128,7 @@ $infono =$result1['infono'];
                                                   <option value="XAMPP">XAMPP</option>
                                                   <option value="Apache.linux">Apache.linux</option>
                                                   <option value="Firewall">Firewall</option>
+                                                  <option value="Cloud">Cloud</option>
                                                   <option value="Other">Other</option>
                                         </select>
 

@@ -266,9 +266,9 @@ if($bgmod==0){
 			}else if ($infono == 'Firewall')
 			{
 			  echo "<td bgcolor='#B0C4DE' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Firewall</b></font></td>";
-			}else if ($infono == 'Site.WHN')
+			}else if ($infono == 'Cloud')
 			{
-			  echo "<td bgcolor='#8FBC8F' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.UM</b></font></td>";
+			  echo "<td bgcolor='#8FBC8F' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Cloud</b></font></td>";
 			}else if ($infono == 'Site.WHN')
 			{
 			  echo "<td bgcolor='#B03060' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.WHN</b></font></td>";
