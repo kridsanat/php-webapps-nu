@@ -263,10 +263,10 @@ if($bgmod==0){
 			}else if ($infono == 'Other')
 			{
 			  echo "<td bgcolor='#66CCCC' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Other</b></font></td>";
-			}else if ($infono == 'Other')
+			}else if ($infono == 'Firewall')
 			{
 			  echo "<td bgcolor='#B0C4DE' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Firewall</b></font></td>";
-			}else if ($infono == 'Firewall')
+			}else if ($infono == 'Site.WHN')
 			{
 			  echo "<td bgcolor='#8FBC8F' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.UM</b></font></td>";
 			}else if ($infono == 'Site.WHN')
