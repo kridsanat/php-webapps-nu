@@ -247,12 +247,7 @@ if($bgmod==0){
 									</a>
 									</center>			
 												
-									<td  width="3%" bgcolor='#AFEEEE' align="left" >	
-								&nbsp;&nbsp;	
-									<font face="tahoma" size="2" color="red">
-										&nbsp;<b><?php echo "$info5"; ?></b>												
-									</font>
-								</td>
+
 										
 			<?php
 			
@@ -334,7 +329,12 @@ if($bgmod==0){
 									
 										
 								
-
+								<td  width="3%" bgcolor='#AFEEEE' align="left" >	
+								&nbsp;&nbsp;	
+									<font face="tahoma" size="2" color="red">
+										&nbsp;<b><?php echo "$info5"; ?></b>												
+									</font>
+								</td>
 								
 											
 								</td>
