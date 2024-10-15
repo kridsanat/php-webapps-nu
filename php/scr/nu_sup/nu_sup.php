@@ -329,12 +329,12 @@ if($bgmod==0){
 									
 										
 								
-								</td>	
+								<td>	
 								&nbsp;&nbsp;	
 									<font width="2%" face="tahoma" size="2" color="#3e3d36">
 										&nbsp;Status : &nbsp;<b><?php echo "$info5"; ?></b>												
 									</font>
-								<td>
+								</td>
 								
 											
 								</td>
