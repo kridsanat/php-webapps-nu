@@ -147,14 +147,14 @@ require_once "../include/connectdb.php";
 
 $page = isset($_GET['page']) ? $_GET['page'] : '';
 
-$select_type="select * from nu_sup order by info5, info1 asc";
+$select_type="select * from nu_sup order by info5, infono, info1 asc";
 $query_select=mysqli_query($connect, $select_type);
 $num_rows=mysqli_num_rows($query_select);
 
 if($num_rows<1){
 echo "<br><br><center><font color=#666666 face=tahoma size=2><b>No item</b></font></center>";
 }else{
-		$select="select * from nu_sup order by info5, info1 asc";
+		$select="select * from nu_sup order by info5, infono, info1 asc";
 		$q_ry = mysqli_query($connect,$select);
 	 	$num_rows=mysqli_num_rows($q_ry);
   		$pagesize=100;
@@ -174,7 +174,7 @@ echo "<br><br><center><font color=#666666 face=tahoma size=2><b>No item</b></fon
 			}
 		mysqli_free_result($q_ry);
 		$goto=($page-1)*$pagesize;
-$sql_select_mem="Select * From nu_sup order by info5, info1 asc limit $goto,$pagesize";
+$sql_select_mem="Select * From nu_sup order by info5, infono, info1 asc limit $goto,$pagesize";
 		$fect=mysqli_query($connect,$sql_select_mem);
 		if(!$fect)
 		{
