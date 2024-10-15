@@ -328,11 +328,13 @@ if($bgmod==0){
 								<i><b><?php echo "<font face=tahoma size=4 color=#eef901 >$info4 </font>"; ?></b></i>
 									
 										
-								&nbsp;&nbsp;
-
+								
+								</td>	
+								&nbsp;&nbsp;	
 									<font face="tahoma" size="2" color="#3e3d36">
-										&nbsp;SSL cert - Expire : &nbsp;<b><?php echo "$info5"; ?></b>												
+										&nbsp;Status : &nbsp;<b><?php echo "$info5"; ?></b>												
 									</font>
+								<td>
 								
 											
 								</td>
