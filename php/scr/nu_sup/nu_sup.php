@@ -353,14 +353,14 @@ if($bgmod==0){
 
 
 
-								<!--
+								
 								<td width="6%" bgcolor='#AFEEEE' align="right">						
 	
 								&nbsp;<?php echo "<font face=tahoma size=4 color=#000000 >$supprice </font>"; ?>			
 								
 
 								</td>												
-								-->				
+											
 												
 
 											
