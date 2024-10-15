@@ -269,9 +269,9 @@ if($bgmod==0){
 			}else if ($infono == 'Cloud')
 			{
 			  echo "<td bgcolor='#8FBC8F' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Cloud</b></font></td>";
-			}else if ($infono == 'Site.WHN')
+			}else if ($infono == 'Nginx.Container')
 			{
-			  echo "<td bgcolor='#B03060' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.WHN</b></font></td>";
+			  echo "<td bgcolor='#B03060' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Nginx.Container</b></font></td>";
 			}else if ($infono == 'Site.Bangpoo')
 			{
 			  echo "<td bgcolor='#B03060' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.Bangpoo</b></font></td>";
