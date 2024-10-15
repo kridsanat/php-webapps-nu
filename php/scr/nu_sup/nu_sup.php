@@ -327,13 +327,13 @@ if($bgmod==0){
 								&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >&nbsp;
 								<i><b><?php echo "<font face=tahoma size=4 color=#eef901 >$info4 </font>"; ?></b></i>
 									
-										<!--
+										
 								&nbsp;&nbsp;
 
 									<font face="tahoma" size="2" color="#3e3d36">
 										&nbsp;SSL cert - Expire : &nbsp;<b><?php echo "$info5"; ?></b>												
 									</font>
-								-->
+								
 											
 								</td>
 
@@ -353,14 +353,14 @@ if($bgmod==0){
 
 
 
-								
+								<!--
 								<td width="6%" bgcolor='#AFEEEE' align="right">						
 	
 								&nbsp;<?php echo "<font face=tahoma size=4 color=#000000 >$supprice </font>"; ?>			
 								
 
 								</td>												
-											
+								-->				
 												
 
 											
