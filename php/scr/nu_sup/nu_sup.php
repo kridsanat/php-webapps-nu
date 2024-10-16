@@ -284,8 +284,9 @@ if($bgmod==0){
 						
 			?>
 																		
-											
-							
+			
+			
+					
 							
 							<td width="17%" bgcolor='#AFEEEE' align="left" >
 								
@@ -332,7 +333,22 @@ if($bgmod==0){
 								<td  width="3%" bgcolor='#AFEEEE' align="left" >	
 								&nbsp;&nbsp;	
 									<font face="tahoma" size="2" color="blue">
-										&nbsp;<b><?php echo "$info5"; ?></b>												
+										&nbsp;<b>
+											
+										<?php
+			
+			if ($info5 == 'PRD')
+			  {
+			  	echo "<td bgcolor='#4682B4' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;PRD</b></font></td>";
+			}else if ($info5 == 'DEV')
+			  {
+				echo "<td bgcolor='#3CB371' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;DEV</b></font></td>";
+			}								
+			?>		
+
+
+
+										</b>												
 									</font>
 								</td>
 								
