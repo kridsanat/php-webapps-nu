@@ -296,7 +296,7 @@ if($bgmod==0){
 								
 
 								&nbsp;<?php echo "<font face=tahoma size=2 color=#27408B><b> $info2</b></font>"; ?>
-
+								<br>
 								&nbsp;<font face="tahoma" size="2" color="#"></font>
 								<?php echo "<font face=tahoma size=2 color=#	><b>$info3</b></font>"; ?>
 								
