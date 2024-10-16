@@ -329,28 +329,22 @@ if($bgmod==0){
 								<i><b><?php echo "<font face=tahoma size=4 color=#eef901 >$info4 </font>"; ?></b></i>
 									
 										
-								
-								<td  width="3%" bgcolor='#AFEEEE' align="left" >	
-								&nbsp;&nbsp;	
-									<font face="tahoma" size="2" color="blue">
-										&nbsp;<b>
+							
 											
 										<?php
 			
 			if ($info5 == 'PRD')
 			  {
-			  	echo "<td bgcolor='#4682B4' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;PRD</b></font></td>";
+			  	echo "<td bgcolor='#4682B4' width='3%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;PRD</b></font></td>";
 			}else if ($info5 == 'DEV')
 			  {
-				echo "<td bgcolor='#3CB371' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;DEV</b></font></td>";
+				echo "<td bgcolor='#3CB371' width='3%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;DEV</b></font></td>";
 			}								
-			?>		
+										?>		
 
 
 
-										</b>												
-									</font>
-								</td>
+								
 								
 											
 								</td>
