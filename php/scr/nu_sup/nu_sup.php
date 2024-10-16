@@ -335,10 +335,10 @@ if($bgmod==0){
 			
 			if ($info5 == 'PRD')
 			  {
-			  	echo "<td bgcolor='#4682B4' width='3%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;PRD</b></font></td>";
+			  	echo "<td bgcolor='#4682B4' width='3%' ><font face= 'tahoma' color='#FFFACD' size='2'><b>&nbsp;&nbsp;PRD</b></font></td>";
 			}else if ($info5 == 'DEV')
 			  {
-				echo "<td bgcolor='#3CB371' width='3%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;DEV</b></font></td>";
+				echo "<td bgcolor='#3CB371' width='3%' ><font face= 'tahoma' color='#FFFACD' size='2'><b>&nbsp;&nbsp;DEV</b></font></td>";
 			}								
 										?>		
 
