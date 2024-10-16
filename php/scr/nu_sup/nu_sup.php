@@ -288,7 +288,7 @@ if($bgmod==0){
 			
 					
 							
-							<td width="17%" bgcolor='#AFEEEE' align="left" >
+							<td width="10%" bgcolor='#AFEEEE' align="left" >
 								
 			
 
@@ -353,14 +353,13 @@ if($bgmod==0){
 
 								</td>									
 		 
-								<td width="8%" bgcolor='#FFFFFF' align="left">
+								<td width="17%" bgcolor='#FFFFFF' align="left">
 
 								&nbsp;						
 								<textarea name="info6" type="text" id="" id="info6" cols="47" rows="1" readonly><?php echo $info6; ?></textarea>
-
 								&nbsp;<a href="nu_delsup.php?SerID=<?php echo "$idx"; ?>" onclick="return confirm('Are you sure?')" ><img src="../images/icon_close.jpg" alt="ลบข้อมูล" width="" height="" border="0" ></a></div>
 
-								</td>	
+  								</td>	
 					
 				
 
