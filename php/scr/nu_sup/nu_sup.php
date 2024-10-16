@@ -299,7 +299,6 @@ if($bgmod==0){
 								&nbsp;<font face="tahoma" size="2" color="#"></font>
 								<?php echo "<font face=tahoma size=2 color=#	><b>$info3</b></font>"; ?>
 								
-								&nbsp;<a href="nu_delsup.php?SerID=<?php echo "$idx"; ?>" onclick="return confirm('Are you sure?')" ><img src="../images/icon_close.jpg" alt="ลบข้อมูล" width="" height="" border="0" ></a></div>
 											
 							</td>
 							
@@ -358,6 +357,9 @@ if($bgmod==0){
 
 								&nbsp;						
 								<textarea name="info6" type="text" id="" id="info6" cols="47" rows="1" readonly><?php echo $info6; ?></textarea>
+								
+								&nbsp;<a href="nu_delsup.php?SerID=<?php echo "$idx"; ?>" onclick="return confirm('Are you sure?')" ><img src="../images/icon_close.jpg" alt="ลบข้อมูล" width="" height="" border="0" ></a></div>
+
 								</td>	
 					
 				
