@@ -369,6 +369,10 @@ if($bgmod==0){
 			{
 			  echo "<td bgcolor='#B03060' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.WHN</b></font></td>";
 			
+			}else if ($infono == 'Site.Nirvana2')
+			{
+			  echo "<td bgcolor='#B03060' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.Nirvana2</b></font></td>";
+			
 			}else if ($infono == 'Site.Bangpoo')
 			{
 			  echo "<td bgcolor='#FFDAB9' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.Bangpoo</b></font></td>";
