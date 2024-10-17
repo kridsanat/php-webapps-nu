@@ -349,37 +349,37 @@ if($bgmod==0){
 			
 			if ($infono == 'HQ.Jatuchot')
 			  {
-			  	echo "<td bgcolor='#4682B4' width='14%' ><font face= 'tahoma' color='#ef6c00' size='+1'><b>&nbsp;&nbsp;HQ.Jatuchot</b></font></td>";
+			  	echo "<td bgcolor='#4682B4' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+1'><b>&nbsp;&nbsp;HQ.Jatuchot</b></font></td>";
 			}else if ($infono == 'Factory.TIP9')
 			  {
-				echo "<td bgcolor='#3CB371' width='14%' ><font face= 'tahoma' color='#ef6c00' size='+1'><b>&nbsp;&nbsp;Factory.TIP9</b></font></td>";
+				echo "<td bgcolor='#3CB371' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+1'><b>&nbsp;&nbsp;Factory.TIP9</b></font></td>";
 			}else if ($infono == 'CLOUD')
 			{
-			  echo "<td bgcolor='#e84e40' width='14%' ><font face= 'tahoma' color='#ef6c00' size='+1'><b>&nbsp;&nbsp;CLOUD</b></font></td>";
+			  echo "<td bgcolor='#e84e40' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+1'><b>&nbsp;&nbsp;CLOUD</b></font></td>";
 			}else if ($infono == 'Site.Central')
 			{
-			  echo "<td bgcolor='#cddc39' width='14%' ><font face= 'tahoma' color='#ef6c00' size='+1'><b>&nbsp;&nbsp;Site.Central</b></font></td>";
+			  echo "<td bgcolor='#cddc39' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+1'><b>&nbsp;&nbsp;Site.Central</b></font></td>";
 			}else if ($infono == 'Site.Nirvana')
 			{
-			  echo "<td bgcolor='#ab47bc' width='14%' ><font face= 'tahoma' color='#ef6c00' size='+1'><b>&nbsp;&nbsp;Site.Nirvana</b></font></td>";
+			  echo "<td bgcolor='#ab47bc' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+1'><b>&nbsp;&nbsp;Site.Nirvana</b></font></td>";
 			}else if ($infono == 'Site.UM')
 			{
-			  echo "<td bgcolor='#8FBC8F' width='14%' ><font face= 'tahoma' color='#ef6c00' size='+1'><b>&nbsp;&nbsp;Site.UM</b></font></td>";
+			  echo "<td bgcolor='#8FBC8F' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+1'><b>&nbsp;&nbsp;Site.UM</b></font></td>";
 			}else if ($infono == 'Site.WHN')
 			{
-			  echo "<td bgcolor='#B03060' width='14%' ><font face= 'tahoma' color='#ef6c00' size='+1'><b>&nbsp;&nbsp;Site.WHN</b></font></td>";
+			  echo "<td bgcolor='#B03060' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+1'><b>&nbsp;&nbsp;Site.WHN</b></font></td>";
 			
 			}else if ($infono == 'Site.Nirvana2')
 			{
-			  echo "<td bgcolor='#9c27b0' width='14%' ><font face= 'tahoma' color='#ef6c00' size='+1'><b>&nbsp;&nbsp;Site.Nirvana2</b></font></td>";
+			  echo "<td bgcolor='#9c27b0' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+1'><b>&nbsp;&nbsp;Site.Nirvana2</b></font></td>";
 			
 			}else if ($infono == 'Site.Bangpoo')
 			{
-			  echo "<td bgcolor='#ffc107' width='14%' ><font face= 'tahoma' color='#ef6c00' size='+1'><b>&nbsp;&nbsp;Site.Bangpoo</b></font></td>";
+			  echo "<td bgcolor='#ffc107' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+1'><b>&nbsp;&nbsp;Site.Bangpoo</b></font></td>";
 			
 			}else
 			  {
-				echo "<td bgcolor='#66CCCC' width='14%' ><font face= 'tahoma' color='#ef6c00' size='+1'><b>&nbsp;&nbsp;$infono</b></font></td>";
+				echo "<td bgcolor='#66CCCC' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+1'><b>&nbsp;&nbsp;$infono</b></font></td>";
 			}
 			
 			
