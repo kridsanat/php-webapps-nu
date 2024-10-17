@@ -371,7 +371,7 @@ if($bgmod==0){
 			
 			}else if ($infono == 'Site.Nirvana2')
 			{
-			  echo "<td bgcolor='#B03060' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.Nirvana2</b></font></td>";
+			  echo "<td bgcolor='#99CCCC' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.Nirvana2</b></font></td>";
 			
 			}else if ($infono == 'Site.Bangpoo')
 			{
