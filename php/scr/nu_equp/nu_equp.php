@@ -358,7 +358,7 @@ if($bgmod==0){
 			  echo "<td bgcolor='#e84e40' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+2'><b>&nbsp;&nbsp;CLOUD</b></font></td>";
 			}else if ($infono == 'Site.Central')
 			{
-			  echo "<td bgcolor='#cddc39' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+2'><b>&nbsp;&nbsp;Site.Central</b></font></td>";
+			  echo "<td bgcolor='#6c2c10' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+2'><b>&nbsp;&nbsp;Site.Central</b></font></td>";
 			}else if ($infono == 'Site.Nirvana')
 			{
 			  echo "<td bgcolor='#ab47bc' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+2'><b>&nbsp;&nbsp;Site.Nirvana</b></font></td>";
@@ -375,7 +375,7 @@ if($bgmod==0){
 			
 			}else if ($infono == 'Site.Bangpoo')
 			{
-			  echo "<td bgcolor='#ffc107' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+2'><b>&nbsp;&nbsp;Site.Bangpoo</b></font></td>";
+			  echo "<td bgcolor='#795548' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+2'><b>&nbsp;&nbsp;Site.Bangpoo</b></font></td>";
 			
 			}else
 			  {
