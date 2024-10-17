@@ -355,13 +355,13 @@ if($bgmod==0){
 				echo "<td bgcolor='#3CB371' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Factory.TIP9</b></font></td>";
 			}else if ($infono == 'CLOUD')
 			{
-			  echo "<td bgcolor='#99CCFF' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;CLOUD</b></font></td>";
+			  echo "<td bgcolor='#e84e40' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;CLOUD</b></font></td>";
 			}else if ($infono == 'Site.Central')
 			{
 			  echo "<td bgcolor='#66CCCC' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.Central</b></font></td>";
 			}else if ($infono == 'Site.Nirvana')
 			{
-			  echo "<td bgcolor='#B0C4DE' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.Nirvana</b></font></td>";
+			  echo "<td bgcolor='#ab47bc' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.Nirvana</b></font></td>";
 			}else if ($infono == 'Site.UM')
 			{
 			  echo "<td bgcolor='#8FBC8F' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.UM</b></font></td>";
@@ -371,7 +371,7 @@ if($bgmod==0){
 			
 			}else if ($infono == 'Site.Nirvana2')
 			{
-			  echo "<td bgcolor='#99CCCC' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.Nirvana2</b></font></td>";
+			  echo "<td bgcolor='#9c27b0' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.Nirvana2</b></font></td>";
 			
 			}else if ($infono == 'Site.Bangpoo')
 			{
