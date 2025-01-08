@@ -138,13 +138,16 @@ require_once "../include/connectdb.php";
 
 <table width="90%" border="0" align="center" cellspacing="1" cellpadding="1">
 
-			<div>
-				<p>
-				<a href="../main.php" class="button" >
-				<< BACK
+			<tr>
+				<td>
+				<a href="../main.php"  style="text-decoration: none;" >
+				<font face="tahoma" color="#000033" size="4"><< BACK </font>
 				</a>
-				<p>
-			</div>
+				<br>
+				<br>
+				</td>
+			</tr>
+
 
     		<tr class=""> 
        	 		<td bgcolor="#FFFFFF"> 
