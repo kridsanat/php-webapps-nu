@@ -66,11 +66,21 @@ $adminname = htmlspecialchars($result["name"], ENT_QUOTES, 'UTF-8');
             align-items: flex-end;
         }
 
-        .top-right a {
-            color: white;
-            text-decoration: none;
+        .top-right button {
+            background-color: #ffffff;
+            color: #007bff;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            padding: 5px 10px;
             margin: 5px 0;
             font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .top-right button:hover {
+            background-color: #007bff;
+            color: white;
         }
 
         .container {
@@ -154,8 +164,8 @@ $adminname = htmlspecialchars($result["name"], ENT_QUOTES, 'UTF-8');
     <header>
         <h1>Admin Dashboard</h1>
         <div class="top-right">
-            <a href="../ChangePass.php">Change Password</a>
-            <a href="../logout.php">Sign Out</a>
+            <button onclick="location.href='../ChangePass.php'">Change Password</button>
+            <button onclick="location.href='../logout.php'">Sign Out</button>
         </div>
         <p>Welcome, <?php echo $adminname; ?>!</p>
     </header>
