@@ -115,7 +115,7 @@ require_once "../include/connectdb.php";
 
 <button type='button' name='myButton' size="5" >
 				<a href="../main.php"  style="text-decoration: none;" >
-				<font face="tahoma" color="#000033" size="4"><< BACK </font>
+				<font face="tahoma" color="#000033" size="5"><< BACK </font>
 				</a>
 </button>
 <br>
