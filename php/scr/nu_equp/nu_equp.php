@@ -33,110 +33,75 @@ require_once "../include/connectdb.php";
 			<link href="" rel="" type="">
 		</head>
 
-
-
-
-
-
-
-
-		<style>
-        body {
-            font-family: Tahoma, sans-serif;
-            color: #000033;
-            margin: 0;
-            padding: 0;
-        }
-        .header-container {
-            width: 90%;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 2px solid #ddd;
-        }
-        .header-left {
-            width: 40%;
-        }
-        .header-left h1 {
-            font-size: 1.5rem;
-            color: #000080;
-            margin: 0;
-        }
-        .header-left .page-info {
-            font-size: 1.2rem;
-            color: #000;
-        }
-        .header-right {
-            width: 60%;
-            text-align: right;
-        }
-        .header-right h2 {
-            font-size: 2rem;
-            color: #000;
-            margin: 0;
-        }
-        .header-right .admin-name {
-            font-size: 2rem;
-            color: #6495ED;
-            font-weight: bold;
-        }
-        .header-right .button {
-            display: inline-block;
-            padding: 10px 15px;
-            margin: 5px;
-            font-size: 1rem;
-            color: #fff;
-            background-color: #6495ED;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .header-right .button:hover {
-            background-color: #4169E1;
-        }
-    </style>
-
-
-
-
-
 <body bgcolor="#ffffff">
 
 		<!-- ส่วนหัว -->
-
+		<TABLE width="90%" border="0" align="center" cellpadding="1" cellspacing="1">
+		  
+			<tr valign="center"> 
+			
+			
+				<td width="40%">
+			
+						<?php echo "<font size=4 color=#000080>$headtxt | $e_date $etime</font>"; ?>
 		
-		<div class="header-container">
-        <!-- Left Section -->
-        <div class="header-left">
-            <?php echo "<h1>$headtxt | $e_date $etime</h1>"; ?>
-            <p class="page-info">Presently Page: <strong>MAIN PAGE</strong></p>
-        </div>
+						<br>
+		
+						<div align="left">
+			
+						<font color="#000000" size="4">Presently Page : <strong>MAIN PAGE</strong></font>
 
-        <!-- Right Section -->
-        <div class="header-right">
-            <h2>WELCOME : <span class="admin-name"><?php echo "$adminname"; ?></span></h2>
-            <p>
-                <a href="../ChangePass.php" class="button">Change password</a>
-                <a href="../logout.php" class="button">Sign Out</a>
-            </p>
-        </div>
-    
+						</div>
+			
+				</td>
+				
+				
+				<!--
+				<td width="40%" valign="center" >
+				<div >
+				<font face="tahoma" color="#000000" size="2"><img src="images/warning.gif" width="" >
+				
+				ข้อความตรงกลางบนหัวหน้าเว็บ
+				
+				</font>
+				</div>
+				</td>
+				-->
 
+				<td width="60%">
 
+							<DIV align="right">
 
-	<div class="header-left">
+								<font color="#000000" size="6" face="tahoma">
+										
+										<b>WELLCOME</b> : 
+								</font>
+		
+								<font color="#6495ED" size="6" face="tahoma"><b><?php echo "$adminname"; ?></b></font>
+								
+								<BR>
 
-				<p>
-					<a href="../main.php"  class="button"><< BACK</a>
-				</p>
+								<font color="#">[</font> <a href="../ChangePass.php"><font color="#000033"><u>Change password</u></font></a> ] 
+								<a href="../logout.php"><font color="#000033"><b><u>Sign Out</u></b></font></a> </font></font>
+			
+							</DIV>
+				</td>
+			</tr>
+			
+			
+			<tr>
 
-	</div>	
+				<td colspan="2" >
 
+	
+				</td>	
 
+			</tr>
+		
+
+	
+			
+		</TABLE>
 		<!-- ส่วนหัว จบ-->
 			
 
@@ -145,7 +110,15 @@ require_once "../include/connectdb.php";
 
 <table width="90%" border="0" align="center" cellspacing="1" cellpadding="1">
 
-			
+			<tr>
+				<td>
+				<a href="../main.php"  style="text-decoration: none;" >
+				<font face="tahoma" color="#000033" size="4"><< BACK </font>
+				</a>
+				<br>
+				<br>
+				</td>
+			</tr>
 
 
     		<tr class=""> 
