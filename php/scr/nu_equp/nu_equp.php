@@ -109,16 +109,16 @@ require_once "../include/connectdb.php";
 <br>										  
 
 <table width="90%" border="0" align="center" cellspacing="1" cellpadding="1">
-<button type='button' name='myButton'>
-	Click me!
-</button>
+
 			<tr>
 				<td>
+					
+<button type='button' name='myButton'>
 				<a href="../main.php"  style="text-decoration: none;" >
 				<font face="tahoma" color="#000033" size="4"><< BACK </font>
 				</a>
-				<br>
-				<br>
+</button>
+
 				</td>
 			</tr>
 
