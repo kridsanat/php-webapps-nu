@@ -92,11 +92,6 @@ $adminname = htmlspecialchars($result["name"], ENT_QUOTES, 'UTF-8');
             margin: 20px 0;
         }
 
-        .welcome h2 {
-            font-size: 2em;
-            color: #007bff;
-        }
-
         .links {
             display: flex;
             flex-wrap: wrap;
@@ -171,10 +166,6 @@ $adminname = htmlspecialchars($result["name"], ENT_QUOTES, 'UTF-8');
     </header>
 
     <div class="container">
-        <div class="welcome">
-            <h2>Currently Logged In as: <?php echo $adminname; ?></h2>
-        </div>
-
         <div class="links">
             <a href="nu_news/newmain.php" class="link">Manual</a>
             <a href="nu_equp/nu_equp.php" class="link">System and Networks</a>
