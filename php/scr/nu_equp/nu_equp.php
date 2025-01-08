@@ -140,8 +140,8 @@ require_once "../include/connectdb.php";
 
 			<tr>
 				<td>
-				<a href="../main.php" class="button"  style="text-decoration: none;" >
-				<font face="tahoma" color="#000033" size="4"><< BACK </font>
+				<a href="../main.php" class="button" >
+				<< BACK
 				</a>
 				<br>
 				<br>
