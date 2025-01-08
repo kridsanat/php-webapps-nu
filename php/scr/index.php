@@ -37,7 +37,8 @@
         }
 
         .login-container input[type="text"],
-        .login-container input[type="password"] {
+        .login-container input[type="password"],
+        .login-container input[type="submit"] {
             width: calc(100% - 20px);
             margin: 10px 0;
             padding: 10px;
@@ -50,29 +51,12 @@
             background-color: #007bff;
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
             cursor: pointer;
-            font-size: 1em;
             transition: background-color 0.3s;
         }
 
         .login-container input[type="submit"]:hover {
             background-color: #0056b3;
-        }
-
-        .download-link {
-            margin-top: 20px;
-        }
-
-        .download-link a {
-            color: #007bff;
-            text-decoration: none;
-            font-size: 0.9em;
-        }
-
-        .download-link a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
@@ -84,9 +68,6 @@
             <input name="passadmin" type="password" placeholder="Password" required>
             <input type="submit" value="Sign In">
         </form>
-        <div class="download-link">
-            <a href="nu_sys/pdf/FM-DIT-001%20R00%20%E0%B9%81%E0%B8%9A%E0%B8%9A%E0%B8%9F%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%A1%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%82%E0%B8%AD%E0%B8%94%E0%B8%B3%E0%B9%80%E0%B8%99%E0%B8%B4%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%94%E0%B9%89%E0%B8%B2%E0%B8%99%20IT%2001-03-22.pdf" target="_blank">Download Request Form</a>
-        </div>
     </div>
 </body>
 </html>
