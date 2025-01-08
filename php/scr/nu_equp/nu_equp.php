@@ -124,11 +124,12 @@ require_once "../include/connectdb.php";
                 <a href="../logout.php" class="button">Sign Out</a>
             </p>
         </div>
-    </div>
+    
 
 
 
 	<div class="header-left">
+
 				<p>
 					<a href="../main.php"  class="button"><< BACK</a>
 				</p>
