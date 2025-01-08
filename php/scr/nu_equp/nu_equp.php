@@ -129,9 +129,8 @@ require_once "../include/connectdb.php";
 
 
 	<div class="header-left">
-				<p><a href="../main.php"  class="button">
-				<font face="tahoma" color="#000033" size="4"><< BACK </font>
-				</a>
+				<p>
+					<a href="../main.php"  class="button"><< BACK</a>
 				</p>
 
 	</div>	
