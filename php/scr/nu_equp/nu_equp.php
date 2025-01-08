@@ -138,46 +138,24 @@ require_once "../include/connectdb.php";
 
 <table width="90%" border="0" align="center" cellspacing="1" cellpadding="1">
 
-			<tr>
-				<td>
-				<a href="../main.php"  style="text-decoration: none;" >
-				<font face="tahoma" color="#000033" size="4"><< BACK </font>
-				</a>
-				<br>
-				<br>
-				</td>
-			</tr>
+<div class="container">
+        <!-- Back Link -->
+        <a href="../main.php" class="back-link">&laquo; BACK</a>
+        
+        <!-- PHP Section -->
+        <?php
+            // Fetch number of products
+            $numproducts = "SELECT * FROM nu_equps";
+            $query_select = mysqli_query($connect, $numproducts);
+            $numall = mysqli_num_rows($query_select);
+        ?>
 
-
-    		<tr class=""> 
-       	 		<td bgcolor="#FFFFFF"> 
-
-<?php
-	$numproducts ="select * from nu_equps";
-	$query_select=mysqli_query($connect, $numproducts);
-	$numall=mysqli_num_rows($query_select);
-?>																											  
-
-<a href="nu_equpadd.php">
-	<font face="tahoma" color="#000033" size="4">
-
-		<u><i>Create New</i></u>
-
-	</font>
-</a>
-
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-
-<a href="nu_equp_view.php">
-	<font face="tahoma" color="#000033" size="4">
-
-		<u><i>View Page</i></u>
-
-	</font>
-</a>
+        <!-- Actions -->
+        <div class="actions">
+            <a href="nu_equpadd.php"><i>Create New</i></a>
+            <a href="nu_equp_view.php"><i>View Page</i></a>
+        </div>
+    </div>
 
 &nbsp;
 
