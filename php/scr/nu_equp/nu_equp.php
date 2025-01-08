@@ -139,8 +139,8 @@ require_once "../include/connectdb.php";
 <table width="90%" border="0" align="center" cellspacing="1" cellpadding="1">
 
 			<tr>
-				<td class="button" >
-				<a href="../main.php"  style="text-decoration: none;" >
+				<td>
+				<a href="../main.php" class="button"  style="text-decoration: none;" >
 				<font face="tahoma" color="#000033" size="4"><< BACK </font>
 				</a>
 				<br>
