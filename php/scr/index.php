@@ -1,93 +1,92 @@
-<?php
-require_once "include/connectdb.php";
-?>
-
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-<title><?php echo "$headtxt"; ?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620">
-<!-- Fireworks MX Dreamweaver MX target.  Created Sat Apr 02 10:29:23 GMT+0700 (SE Asia Standard Time) 2011-->
-<link href="css/style.css" rel="stylesheet" type="text/css">
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .login-container h1 {
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .login-container form {
+            width: 100%;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: calc(100% - 20px);
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .login-container input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .login-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .download-link {
+            margin-top: 20px;
+        }
+
+        .download-link a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .download-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-<body bgcolor="#ffffff" background="images/background.jpg" onLoad="javascript:document.getElementById('useradmin').focus();">
-<div align="center"><font color="#990000" size="+1"><strong><font color="#333333" size="2"><br>
-  <br>
-  <br>
-  </font></strong></font>
-  <table width="43%" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#E9E9E6">
-    <tr>
-      <td bgcolor="#FFFFFF">
-<div align="center"><font color="#990000" size="+1"><strong><font color="#333333" size="2">
-
-			<br><br>
-			<br><br>
-          :: Information Managedment System ::</font><br>
-			</strong></font> <br>
-			<table width="356" border="0" align="center" cellpadding="1" cellspacing="1">
-            <form method="post" action="SignIn.php">
-              <tr> 
-                <td width="156"><div align="right"><font size="2">Username 
-                    :</font></div></td>
-                <td width="286"><font size="3"> 
-                  <input name="useradmin" type="text" class="input" id="useradmin" size="15">
-                  </font></td>
-              </tr>
-              <tr> 
-                <td><div align="right"><font size="2">Password :</font></div></td>
-                <td><font size="3"> 
-                  <input name="passadmin" type="password" class="input" id="passadmin" size="15">
-                  </font></td>
-              </tr>
-              <tr> 
-                <td><font size="3">&nbsp;</font></td>
-                <td><input name="submit" type="submit" class="submit" value="Sign-In!"></td>
-              </tr>
-            </form>
-          </table>
-          <br>
-          <br>
-		  
-		  
-		   <table width="100%" border="0" align="center" cellpadding="1" cellspacing="1">
-            <form method="post" action=".php">
-              <tr> 
-                <td width="156">
-				
-				<div align="left">
-				
-				<font size="2"></font>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="nu_sys\pdf\FM-DIT-001 R00 แบบฟอร์มร้องขอดำเนินการด้าน IT 01-03-22.pdf">Download Request From</A>
-				<br>
-				<br>
-
-				</div>
-					
-				</td>
-                
-              </tr>
-             
-            </form>
-          </table>
-		  
-		  
-        </div></td>
-    </tr>
-	
-	
-	
-	
-	
-  </table>
-  <!--
-  <br>
-  <a href="toppig.php">��纺���</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="webboom\index.php">���ͺ����红�¢ͧ</a>
-  
-  
-  <br>
-  <br>
-  -->
-  
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form method="post" action="SignIn.php">
+            <input name="useradmin" type="text" placeholder="Username" required>
+            <input name="passadmin" type="password" placeholder="Password" required>
+            <input type="submit" value="Sign In">
+        </form>
+        <div class="download-link">
+            <a href="nu_sys/pdf/FM-DIT-001%20R00%20%E0%B9%81%E0%B8%9A%E0%B8%9A%E0%B8%9F%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%A1%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%82%E0%B8%AD%E0%B8%94%E0%B8%B3%E0%B9%80%E0%B8%99%E0%B8%B4%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%94%E0%B9%89%E0%B8%B2%E0%B8%99%20IT%2001-03-22.pdf" target="_blank">Download Request Form</a>
+        </div>
+    </div>
 </body>
 </html>
