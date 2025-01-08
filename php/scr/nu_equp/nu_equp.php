@@ -33,6 +33,13 @@ require_once "../include/connectdb.php";
 			<link href="" rel="" type="">
 		</head>
 
+
+
+
+
+
+
+
 		<style>
         body {
             font-family: Tahoma, sans-serif;
@@ -75,20 +82,34 @@ require_once "../include/connectdb.php";
             color: #6495ED;
             font-weight: bold;
         }
-        .header-right a {
-            color: #000033;
-            text-decoration: underline;
-            margin: 0 10px;
-        }
-        .header-right a:hover {
+        .header-right .button {
+            display: inline-block;
+            padding: 10px 15px;
+            margin: 5px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #6495ED;
+            border: none;
+            border-radius: 5px;
             text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .header-right .button:hover {
+            background-color: #4169E1;
         }
     </style>
+
+
+
+
 
 <body bgcolor="#ffffff">
 
 		<!-- ส่วนหัว -->
-<div class="header-container">
+
+		
+		<div class="header-container">
         <!-- Left Section -->
         <div class="header-left">
             <?php echo "<h1>$headtxt | $e_date $etime</h1>"; ?>
@@ -99,12 +120,16 @@ require_once "../include/connectdb.php";
         <div class="header-right">
             <h2>WELCOME : <span class="admin-name"><?php echo "$adminname"; ?></span></h2>
             <p>
-                <a href="../ChangePass.php">Change password</a>
-                <a href="../logout.php"><strong>Sign Out</strong></a>
+                <a href="../ChangePass.php" class="button">Change password</a>
+                <a href="../logout.php" class="button">Sign Out</a>
             </p>
         </div>
     </div>
-	
+
+
+
+
+
 		<!-- ส่วนหัว จบ-->
 			
 
