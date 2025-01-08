@@ -202,12 +202,14 @@ if (!$fect) {
 }
 $index = 1;
 while ($row = mysqli_fetch_array($fect)) {
-    $total = $row["info1"] * $row["equpprice"];
+    $quantity = is_numeric($row["info1"]) ? $row["info1"] : 0;
+    $unit_price = is_numeric($row["equpprice"]) ? $row["equpprice"] : 0;
+    $total = $quantity * $unit_price;
     echo "<tr>";
     echo "<td style='text-align: center;'>{$index}</td>";
     echo "<td>{$row['info2']}</td>";
-    echo "<td style='text-align: right;'>{$row['info1']}</td>";
-    echo "<td style='text-align: right;'>" . number_format($row['equpprice'], 2) . "</td>";
+    echo "<td style='text-align: right;'>{$quantity}</td>";
+    echo "<td style='text-align: right;'>" . number_format($unit_price, 2) . "</td>";
     echo "<td style='text-align: right;'>" . number_format($total, 2) . "</td>";
     echo "<td style='text-align: center;'>";
     echo "<a href='nu_equpedit.php?SerID={$row['id']}'>Edit</a> | ";
