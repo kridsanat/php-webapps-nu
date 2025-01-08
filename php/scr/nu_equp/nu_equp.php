@@ -128,6 +128,13 @@ require_once "../include/connectdb.php";
 
 
 
+	<div class="header-right">
+				<p><a href="../main.php"  class="button">
+				<font face="tahoma" color="#000033" size="4"><< BACK </font>
+				</a>
+				</p>
+
+	</div>	
 
 
 		<!-- ส่วนหัว จบ-->
@@ -138,15 +145,7 @@ require_once "../include/connectdb.php";
 
 <table width="90%" border="0" align="center" cellspacing="1" cellpadding="1">
 
-			<tr>
-				<td>
-				<a href="../main.php"  style="text-decoration: none;" >
-				<font face="tahoma" color="#000033" size="4"><< BACK </font>
-				</a>
-				<br>
-				<br>
-				</td>
-			</tr>
+			
 
 
     		<tr class=""> 
