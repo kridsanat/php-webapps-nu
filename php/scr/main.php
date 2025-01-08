@@ -1,318 +1,129 @@
 <?php
 @session_start();
 
+// Start session and check user admin
 ob_start();
 $useradmin = $_SESSION["useradmin"];
-if(empty($useradmin)) 
-{
-echo "<script>alert('Only Administrator');</script>";
-header("Location: ../index.php");
-exit();
+if (empty($useradmin)) {
+    echo "<script>alert('Only Administrator');</script>";
+    header("Location: ../index.php");
+    exit();
 }
+
 require_once "include/tdate.php";
 require_once "include/connectdb.php";
 
-						  $sql="select * from useradmin where useradmin='$useradmin'";
-						  $db_query=mysqli_query($connect, $sql);					
-						  $result=mysqli_fetch_array($db_query);
-						  $id=$result["id"];
-						  $adminname=$result["name"];
-						  $user_admin=$result["useradmin"];
-						  $pass_admin=$result["passadmin"];
+// Query user information
+$stmt = $connect->prepare("SELECT * FROM useradmin WHERE useradmin = ?");
+$stmt->bind_param("s", $useradmin);
+$stmt->execute();
+$result = $stmt->get_result()->fetch_assoc();
 
+if (!$result) {
+    header("Location: ../index.php");
+    exit();
+}
 
+$id = $result["id"];
+$adminname = htmlspecialchars($result["name"], ENT_QUOTES, 'UTF-8');
 
 ?>
-<!--refresh หน้าเพจ-->
-<SCRIPT language="JavaScript">
-function timerefresh(t)
-{
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="900;url=logout.php">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
-if(t==0)
-{
-window.location.reload();
-}
-else
-{
-t--;
-}
-window.setTimeout("timerefresh('"+t+"')",1000)
-}
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-timerefresh(60);
-</script>
-<!--refresh หน้าเพจ-->
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
 
+        .container {
+            padding: 20px;
+        }
 
+        .welcome {
+            text-align: center;
+            margin: 20px 0;
+        }
 
-<!--ปุ่ม-->
-<style>
-.button {
-  display: inline-block;
-  border-radius: 4px;
-  background-color: #00CC33;
-  border: none;
-  color: #FFFFFF;
-  text-align: right;
-  font-size: 28px;
-  padding: 20px;
-  width: 300px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-}
+        .welcome h2 {
+            font-size: 2em;
+            color: #007bff;
+        }
 
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
 
-.button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
+        .link {
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
 
-.button:hover span {
-  padding-right: 25px;
-}
+        .link:hover {
+            background-color: #218838;
+        }
 
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-}
-</style>
-<!--จบ ส่วน ปุ่ม-->
-
-
-
-
-<html>
-
-		<head>
-			<title><?php echo "$headtxt_web"; ?></title>
-			<meta http-equiv="Content-Type" content="text/html; charset=tis-620">
-			<meta http-equiv="refresh" content="900;url=logout.php" />
-			<link href="" rel="" type="">
-		</head>
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
 <body>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <p>Welcome, <?php echo $adminname; ?>!</p>
+    </header>
 
-		<!-- ส่วนหัว -->
-		<TABLE width="90%" border="0" align="left" cellpadding="1" cellspacing="1">
-		  
-			<tr valign="center"> 
-			
-			
-				<td width="">
+    <div class="container">
+        <div class="welcome">
+            <h2>Currently Logged In as: <?php echo $adminname; ?></h2>
+        </div>
 
-						<?php echo "<font size=8 color=#000080>$headtxt | $e_date $etime</font>"; ?>
+        <div class="links">
+            <a href="nu_news/newmain.php" class="link">Manual</a>
+            <a href="nu_equp/nu_equp.php" class="link">System and Networks</a>
+            <a href="nu_sup/nu_sup.php" class="link">Sub Domain SSL</a>
+            <a href="../ChangePass.php" class="link">Change Password</a>
+            <a href="../logout.php" class="link">Sign Out</a>
+        </div>
+    </div>
 
-						<br>
-
-						<div align="left">
-
-							<font color="#000000" size="4">Presently Page : <strong>MAIN PAGE</strong></font>
-
-						<br>
-						<br>
-						</div>
-			
-				<!--</td>
-				
-				
-				
-				<td width="40%" valign="center" >
-				<div >
-				<font face="tahoma" color="#000000" size="2"><img src="images/warning.gif" width="" >
-				
-				ข้อความตรงกลางบนหัวหน้าเว็บ
-				
-				</font>
-				</div>
-				</td>
-				
-
-				<td width="40%">-->
-
-							<DIV align="left">
-
-								<font color="#000000" size="8" face="tahoma">
-										
-										<b>Wellcome</b> : 
-								</font>
-		
-								<font color="#FF6600" size="8" face="tahoma"><b><?php echo "$adminname"; ?></b></font>
-								
-								<BR>
-
-								<font color="#">[</font> <a href="../ChangePass.php"><font color="#000033"><u>Change password</u></font></a> ] 
-								<a href="../logout.php"><font color="#000033"><b><u>Sign Out</u></b></font></a> </font></font>
-			
-							</DIV>
-				</td>
-			</tr>
-			
-			
-			<tr>
-
-				<td colspan="2" >
-
-	
-				</td>	
-
-			</tr>
-		
-
-	
-			
-		</TABLE>
-		<!-- ส่วนหัว จบ-->
-
-
-		<!-- ส่วนกลาง -->
-
-
-		<TABLE width="" border="0" align="left" cellpadding="1" cellspacing="1">
-		  
-			<tr valign="center"> 
-			
-			
-
-                <td align=left width=100%>
-
-				<br>
-				<br>
-							<font face="tahoma" color="#000033" size="5">
-                            <a href="nu_news/newmain.php" style="text-decoration: none;" >
-                                <b>
-                                ==== Manual ====
-                                </b>
-                            </a>
-                            </font> 
-
-
-                        <!--
-                            <br>
-							<br>
-							
-                            <font face="tahoma" color="#000033" size="2">
-                            <a href="nu_prints/nu_prints.php" style="text-decoration: none;" >
-                                <b>
-                                <button class="button" style="vertical-align:middle" ><span>Printers</span></button>
-                                </b>
-                            </a>
-                            </font>
-							
-                            <br>
-                            <br>
-						-->
-                            
-
-			
-				</td>
-            </tr>
-		<!--	<tr valign="center"> 
-			
-			
-
-			<td align=left width=100%>
-
-			<br>
-			<br>				
-					
-						<font face="tahoma" color="#000033" size="5">
-                            <a href="nu_sys\nu_ssds.php" style="text-decoration: none;" >
-                                <b>
-                               ==== Licenses ====
-                                </b>
-                            </a>
-                            </font>
-						
-						
-
-		
-			</td>
-		</tr>	-->
-		<tr valign="center"> 
-			
-			
-
-			<td align=left width=100%>
-			<br>
-			<br>
-				
-					
-						<font face="tahoma" color="#000033" size="5">
-                            <a href="nu_equp/nu_equp.php" style="text-decoration: none;" >
-                            <b>
-							==== System and Networks ====
-                            </a>
-                            </font>
-	
-
-		
-			</td>
-		</tr>	
-			<!--<tr valign="center"> 
-			
-			
-
-                <td align=left width=100%>
-
-                            <br>
-			                <br>
-			            
-							<img src="../images/nutrilogo.png" alt="" width="" height="" border="0" >
-							
-                            <br>
-                            <br>
-
-			
-				</td>
-            </tr>-->	
-			<tr valign="center"> 
-			
-			
-
-			<td align=left width=100%>
-			<br>
-			<br>
-				
-					
-						<font face="tahoma" color="#000033" size="5">
-                            <a href="nu_sup/nu_sup.php" style="text-decoration: none;" >
-                            <b>
-							==== Sub Domain SSL ====
-                            </a>
-                            </font>
-	
-
-		
-			</td>
-		</tr>	
-			<!--<tr valign="center"> 
-			
-			
-
-                <td align=left width=100%>
-
-                            <br>
-			                <br>
-			            
-							<img src="../images/nutrilogo.png" alt="" width="" height="" border="0" >
-							
-                            <br>
-                            <br>
-
-			
-				</td>
-            </tr>-->		
-        </TABLE>
-
+    <footer>
+        &copy; <?php echo date('Y'); ?> Admin Dashboard. All rights reserved.
+    </footer>
 </body>
 </html>
