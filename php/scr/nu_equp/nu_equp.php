@@ -33,75 +33,78 @@ require_once "../include/connectdb.php";
 			<link href="" rel="" type="">
 		</head>
 
+		<style>
+        body {
+            font-family: Tahoma, sans-serif;
+            color: #000033;
+            margin: 0;
+            padding: 0;
+        }
+        .header-container {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 2px solid #ddd;
+        }
+        .header-left {
+            width: 40%;
+        }
+        .header-left h1 {
+            font-size: 1.5rem;
+            color: #000080;
+            margin: 0;
+        }
+        .header-left .page-info {
+            font-size: 1.2rem;
+            color: #000;
+        }
+        .header-right {
+            width: 60%;
+            text-align: right;
+        }
+        .header-right h2 {
+            font-size: 2rem;
+            color: #000;
+            margin: 0;
+        }
+        .header-right .admin-name {
+            font-size: 2rem;
+            color: #6495ED;
+            font-weight: bold;
+        }
+        .header-right a {
+            color: #000033;
+            text-decoration: underline;
+            margin: 0 10px;
+        }
+        .header-right a:hover {
+            text-decoration: none;
+        }
+    </style>
+
 <body bgcolor="#ffffff">
 
 		<!-- ส่วนหัว -->
-		<TABLE width="90%" border="0" align="center" cellpadding="1" cellspacing="1">
-		  
-			<tr valign="center"> 
-			
-			
-				<td width="40%">
-			
-						<?php echo "<font size=4 color=#000080>$headtxt | $e_date $etime</font>"; ?>
-		
-						<br>
-		
-						<div align="left">
-			
-						<font color="#000000" size="4">Presently Page : <strong>MAIN PAGE</strong></font>
+<div class="header-container">
+        <!-- Left Section -->
+        <div class="header-left">
+            <?php echo "<h1>$headtxt | $e_date $etime</h1>"; ?>
+            <p class="page-info">Presently Page: <strong>MAIN PAGE</strong></p>
+        </div>
 
-						</div>
-			
-				</td>
-				
-				
-				<!--
-				<td width="40%" valign="center" >
-				<div >
-				<font face="tahoma" color="#000000" size="2"><img src="images/warning.gif" width="" >
-				
-				ข้อความตรงกลางบนหัวหน้าเว็บ
-				
-				</font>
-				</div>
-				</td>
-				-->
-
-				<td width="60%">
-
-							<DIV align="right">
-
-								<font color="#000000" size="6" face="tahoma">
-										
-										<b>WELLCOME</b> : 
-								</font>
-		
-								<font color="#6495ED" size="6" face="tahoma"><b><?php echo "$adminname"; ?></b></font>
-								
-								<BR>
-
-								<font color="#">[</font> <a href="../ChangePass.php"><font color="#000033"><u>Change password</u></font></a> ] 
-								<a href="../logout.php"><font color="#000033"><b><u>Sign Out</u></b></font></a> </font></font>
-			
-							</DIV>
-				</td>
-			</tr>
-			
-			
-			<tr>
-
-				<td colspan="2" >
-
+        <!-- Right Section -->
+        <div class="header-right">
+            <h2>WELCOME : <span class="admin-name"><?php echo "$adminname"; ?></span></h2>
+            <p>
+                <a href="../ChangePass.php">Change password</a>
+                <a href="../logout.php"><strong>Sign Out</strong></a>
+            </p>
+        </div>
+    </div>
 	
-				</td>	
-
-			</tr>
-		
-
-	
-			
-		</TABLE>
 		<!-- ส่วนหัว จบ-->
 			
 
