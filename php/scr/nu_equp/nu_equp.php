@@ -1,3 +1,25 @@
+<?php
+@session_start();
+
+ob_start();
+$useradmin = $_SESSION["useradmin"];
+if(empty($useradmin)) 
+{
+echo "<script>alert('Only Administrator');</script>";
+header("Location: ../index.php");
+exit();
+}
+require_once "../include/tdate.php";
+require_once "../include/connectdb.php";
+
+$sql="select * from useradmin where useradmin='$useradmin'";
+$db_query=mysqli_query($connect, $sql);                    
+$result=mysqli_fetch_array($db_query);
+$id=$result["id"];
+$adminname=$result["name"];
+$user_admin=$result["useradmin"];
+$pass_admin=$result["passadmin"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,31 +28,33 @@
     <title>Admin System</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
             color: #333;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background-color: #007bff;
+            background-color: #1d3557;
             color: white;
             padding: 20px;
             text-align: center;
+            border-bottom: 5px solid #457b9d;
         }
 
         header h1 {
             margin: 0;
+            font-size: 2.5em;
         }
 
         .container {
             max-width: 1200px;
-            margin: 20px auto;
+            margin: 30px auto;
             padding: 20px;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
         }
 
         .user-info {
@@ -39,8 +63,24 @@
         }
 
         .user-info span {
-            font-size: 1.2em;
-            color: #007bff;
+            font-size: 1.3em;
+            color: #1d3557;
+            font-weight: bold;
+        }
+
+        .user-info a {
+            text-decoration: none;
+            margin-left: 15px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            background-color: #457b9d;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .user-info a:hover {
+            background-color: #1d3557;
         }
 
         .links {
@@ -51,17 +91,16 @@
 
         .links a {
             text-decoration: none;
-            color: #007bff;
-            font-size: 1.1em;
-            border: 1px solid #007bff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
+            color: white;
+            font-size: 1em;
+            padding: 12px 25px;
+            border-radius: 8px;
+            background-color: #457b9d;
+            transition: background-color 0.3s;
         }
 
         .links a:hover {
-            background-color: #007bff;
-            color: white;
+            background-color: #1d3557;
         }
 
         .table {
@@ -72,30 +111,57 @@
 
         .table th, .table td {
             border: 1px solid #ddd;
-            padding: 10px;
+            padding: 15px;
             text-align: left;
         }
 
         .table th {
-            background-color: #f4f4f9;
+            background-color: #457b9d;
+            color: white;
+            text-align: center;
+        }
+
+        .table tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        .table tr:hover {
+            background-color: #f1f5f9;
+        }
+
+        .table a {
+            text-decoration: none;
+            color: #457b9d;
+            font-weight: bold;
+        }
+
+        .table a:hover {
+            color: #1d3557;
         }
 
         footer {
             text-align: center;
-            padding: 10px;
-            background-color: #007bff;
+            padding: 15px;
+            background-color: #1d3557;
             color: white;
-            margin-top: 20px;
+            margin-top: 30px;
+            font-size: 0.9em;
         }
 
         @media (max-width: 768px) {
             .links {
                 flex-direction: column;
-                gap: 10px;
+                gap: 15px;
+                text-align: center;
             }
 
-            .links a {
+            .user-info {
                 text-align: center;
+            }
+
+            .table th, .table td {
+                font-size: 0.9em;
+                padding: 10px;
             }
         }
     </style>
@@ -106,14 +172,14 @@
     </header>
     <div class="container">
         <div class="user-info">
-            Welcome, <span>Admin Name</span>
-            <a href="../ChangePass.php" style="margin-left: 20px;">Change Password</a>
+            Welcome, <span><?php echo $adminname; ?></span>
+            <a href="../ChangePass.php">Change Password</a>
             <a href="../logout.php">Sign Out</a>
         </div>
 
         <div class="links">
-            <a href="create_new.php">Create New</a>
-            <a href="view_page.php">View Page</a>
+            <a href="nu_equpadd.php">Create New</a>
+            <a href="nu_equp_view.php">View Page</a>
         </div>
 
         <table class="table">
@@ -128,18 +194,29 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Sample Item</td>
-                    <td>10</td>
-                    <td>100.00</td>
-                    <td>1,000.00</td>
-                    <td>
-                        <a href="edit_item.php">Edit</a> |
-                        <a href="delete_item.php" onclick="return confirm('Are you sure?')">Delete</a>
-                    </td>
-                </tr>
-                <!-- Additional rows can be dynamically added here -->
+<?php
+$sql_select_mem = "SELECT * FROM nu_equps";
+$fect = mysqli_query($connect, $sql_select_mem);
+if (!$fect) {
+    die("Database error: " . mysqli_error($connect));
+}
+$index = 1;
+while ($row = mysqli_fetch_array($fect)) {
+    $total = $row["info1"] * $row["equpprice"];
+    echo "<tr>";
+    echo "<td style='text-align: center;'>{$index}</td>";
+    echo "<td>{$row['info2']}</td>";
+    echo "<td style='text-align: right;'>{$row['info1']}</td>";
+    echo "<td style='text-align: right;'>" . number_format($row['equpprice'], 2) . "</td>";
+    echo "<td style='text-align: right;'>" . number_format($total, 2) . "</td>";
+    echo "<td style='text-align: center;'>";
+    echo "<a href='nu_equpedit.php?SerID={$row['id']}'>Edit</a> | ";
+    echo "<a href='nu_delequp.php?SerID={$row['id']}' onclick=\"return confirm('Are you sure?')\">Delete</a>";
+    echo "</td>";
+    echo "</tr>";
+    $index++;
+}
+?>
             </tbody>
         </table>
     </div>
