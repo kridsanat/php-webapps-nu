@@ -59,14 +59,17 @@ $adminname = htmlspecialchars($result["name"], ENT_QUOTES, 'UTF-8');
 
         .top-right {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
         }
 
         .top-right a {
             color: white;
             text-decoration: none;
-            margin-left: 15px;
+            margin: 5px 0;
             font-size: 1em;
         }
 
@@ -113,6 +116,37 @@ $adminname = htmlspecialchars($result["name"], ENT_QUOTES, 'UTF-8');
             position: fixed;
             bottom: 0;
             width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                text-align: left;
+                padding: 10px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .top-right {
+                position: static;
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .link {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
         }
     </style>
 </head>
