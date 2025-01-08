@@ -49,11 +49,25 @@ $adminname = htmlspecialchars($result["name"], ENT_QUOTES, 'UTF-8');
             color: white;
             padding: 20px;
             text-align: center;
+            position: relative;
         }
 
         header h1 {
             margin: 0;
             font-size: 2.5em;
+        }
+
+        .top-right {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .top-right a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 1em;
         }
 
         .container {
@@ -105,6 +119,10 @@ $adminname = htmlspecialchars($result["name"], ENT_QUOTES, 'UTF-8');
 <body>
     <header>
         <h1>Admin Dashboard</h1>
+        <div class="top-right">
+            <a href="../ChangePass.php">Change Password</a>
+            <a href="../logout.php">Sign Out</a>
+        </div>
         <p>Welcome, <?php echo $adminname; ?>!</p>
     </header>
 
@@ -117,8 +135,6 @@ $adminname = htmlspecialchars($result["name"], ENT_QUOTES, 'UTF-8');
             <a href="nu_news/newmain.php" class="link">Manual</a>
             <a href="nu_equp/nu_equp.php" class="link">System and Networks</a>
             <a href="nu_sup/nu_sup.php" class="link">Sub Domain SSL</a>
-            <a href="../ChangePass.php" class="link">Change Password</a>
-            <a href="../logout.php" class="link">Sign Out</a>
         </div>
     </div>
 
