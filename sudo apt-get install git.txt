@@ -63,7 +63,11 @@ Change "cd /" to point to your desired folder เข้าไป floder ขอ�
 
 https://github.com/kridsanat/php-webapps-nu.git
 
+git status
+git add .
+git commit -m "Save local changes after rebase"
 git push origin main เอาที่แก้ไขขึ้นไป local to remote
+
 git pull origin main เอาที่แก้ไขลงมา remote to local
 
 git fetch origin
