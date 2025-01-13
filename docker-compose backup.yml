@@ -6,7 +6,7 @@ services:
       context: ./php
       dockerfile: Dockerfile
     depends_on:
-      - dbpostgres
+      - db
     volumes:
       - ./php/scr:/var/www/html/
     ports:
