@@ -6,49 +6,41 @@ services:
       context: ./php
       dockerfile: Dockerfile
     depends_on:
-      - dbpostgres
+      - postgres
     volumes:
       - ./php/scr:/var/www/html/
     ports:
       - 8080:80 
 
-  db:
-    container_name: db
-    image: mysql
+  postgres:
+    container_name: postgres-db
+    image: postgres:15
     restart: always
     environment: 
-      MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
-      MYSQL_DATABASE: u576316930_nupj
-      MYSQL_USER: MYSQL_USER
-      MYSQL_PASSWORD: MYSQL_PASSWORD
+      POSTGRES_USER: MYSQL_USER
+      POSTGRES_PASSWORD: MYSQL_PASSWORD
+      POSTGRES_DB: au576316930_nup
     ports:
-      - "9906:3306"
-
-  dbpostgres:
-    container_name: postgres-container
-    image: postgres:latest
-    restart: always
-    environment:
-      POSTGRES_USER: postgres_user
-      POSTGRES_PASSWORD: postgres_password
-      POSTGRES_DB: postgres_db
-    ports:
-      - "5432:9443"
+      - "9443:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
-volumes:
-  postgres_data:
-  
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin
+    image: nazarpc/phpmyadmin-pgsql
+    container_name: phpmyadmin
     ports:
      - "8000:80"
     restart: always
     environment:
-      PMA_HOST: db
+      PMA_HOST: postgres
+      PMA_PORT: 5432
+      PMA_USER: app_user
+      PMA_PASSWORD: secure_password
     depends_on:
-      - db
+      - postgres
+
+volumes:
+  postgres_data:
       
   nginxproxy:
     container_name: nginxproxy
