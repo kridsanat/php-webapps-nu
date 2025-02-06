@@ -23,22 +23,6 @@ services:
       MYSQL_PASSWORD: MYSQL_PASSWORD
     ports:
       - "9906:3306"
-
-  dbpostgres:
-    container_name: postgres-container
-    image: postgres:latest
-    restart: always
-    environment:
-      POSTGRES_USER: postgres_user
-      POSTGRES_PASSWORD: postgres_password
-      POSTGRES_DB: postgres_db
-    ports:
-      - "5432:9443"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-volumes:
-  postgres_data:
   
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
