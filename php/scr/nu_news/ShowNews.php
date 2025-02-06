@@ -88,7 +88,7 @@ background-attachment : fixed
 
          
          
-          <td width="719">
+          <td width="800">
 		  
 		  
 		  <table width="1000" border="1" align="center" cellpadding="1" cellspacing="1">
