@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  php-apache-environment:
+    container_name: php-webapp
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    volumes:
+      - ./php/scr:/var/www/html/
+    ports:
+      - 8080:80 
+
+  db:
+    container_name: db
+    image: mysql:latest
+    restart: always
+    environment: 
+      MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
+      MYSQL_DATABASE: u576316930_nupj
+      MYSQL_USER: MYSQL_USER
+      MYSQL_PASSWORD: MYSQL_PASSWORD
+    ports:
+      - "3306:3306"  # Changed to default MySQL port for easier access
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+     - "8000:80"
+    restart: always
+    environment:
+      PMA_HOST: db
+    depends_on:
+      - db
+      
+  nginxproxy:
+    container_name: nginxproxy
+    image: 'jc21/nginx-proxy-manager:latest'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt 
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+
+  portainer:
+    container_name: portainerr
+    image: portainer/portainer
+    volumes:
+      - ./portainer_data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+    ports:
+      - "8890:9000"
+
+networks:
+  default:
+    name: web_network

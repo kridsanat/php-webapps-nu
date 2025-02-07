@@ -29,6 +29,7 @@ sudo docker rm ตามด้วยชื่อ container เพื่อลบ
 
 คำสั่ง run ตัว compose
 sudo docker compose up
+sudo docker-compose -f docker-compose-mysql.yml up --build -d
 
 ---------------------------------
 
