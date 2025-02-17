@@ -73,11 +73,12 @@ if (mysqli_num_rows($fect) == 0) {
 } else {
     echo "<table border='1'>
             <tr>
+                <th>รูปภาพ</th>
                 <th>หมายเลข</th>
                 <th>ข้อมูล 1</th>
                 <th>ข้อมูล 2</th>
                 <th>ราคา</th>
-                <th>รูปภาพ</th>
+                
             </tr>";
 
     while ($rows = mysqli_fetch_array($fect)) {
@@ -92,11 +93,12 @@ if (mysqli_num_rows($fect) == 0) {
         }
 
         echo "<tr style='background-color: $bgcolor;'>
+                <td width='20' ><img src=../pic/$printsphoto width=50 height=50 border=1 ></td>
                 <td bgcolor='#4682B4' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;" . $rows["infono"] . "&nbsp;&nbsp;</b></font></td>
                 <td>" . $info1 . "</td>
                 <td>" . $rows["info2"] . "</td>
                 <td>" . $printsprice . "</td>
-                <td width='20' ><img src=../pic/$printsphoto width=50 height=50 border=1 ></td>
+                
               </tr>";
         $bgcount++;
     }
