@@ -184,7 +184,7 @@ $bgcount = 0;
 if (mysqli_num_rows($fect) == 0) {
     echo "<p>ไม่พบข้อมูลที่ตรงกับการค้นหาา</p>";
 } else {
-    echo "<table border='1' width='100%' >
+    echo "<table border='1' width='90%' align='center' cellspacing='1' cellpadding='1' >
             <tr>
                 <th><font face= 'tahoma' color='#27408B' size='1'>รูปภาพ</font></th>
                 <th><font face= 'tahoma' color='#27408B' size='1'>สถาณที่</font></th>
