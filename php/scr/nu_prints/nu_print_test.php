@@ -1,44 +1,83 @@
-<!DOCTYPE html>
-<html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>แยกหมวดหมู่</title>
-</head>
-<body>
-    <h2>เลือกหมวดหมู่</h2>
-    <form method="GET" action="">
-        <!-- ปุ่มเลือกหมวดหมู่ -->
-        <button type="submit" name="category" value="cat1">หมวดหมู่ 1</button>
-        <button type="submit" name="category" value="cat2">หมวดหมู่ 2</button>
-        <button type="submit" name="category" value="cat3">หมวดหมู่ 3</button>
-    </form>
+<?php
+$page = isset($_GET['page']) ? $_GET['page'] : 1;
+$infono_filter = isset($_GET['infono']) ? $_GET['infono'] : ''; // รับค่าจาก URL ถ้ามีการเลือก
 
-    <h3>ข้อมูลที่แสดงตามหมวดหมู่:</h3>
-    <?php
-    // เชื่อมต่อฐานข้อมูล
-    require_once "../include/connectdb.php";
+// ดึงข้อมูลประเภท infono ที่ไม่ซ้ำ
+$select_infono = "SELECT DISTINCT infono FROM nu_prints ORDER BY infono";
+$query_infono = mysqli_query($connect, $select_infono);
+if (!$query_infono) {
+    echo "ไม่สามารถดึงข้อมูลประเภท infono: " . mysqli_error($connect);
+    exit;
+}
 
-    // ตรวจสอบว่ามีการเลือกหมวดหมู่หรือไม่
-    if (isset($_GET['category'])) {
-        $category = $_GET['category'];
-        
-        // สร้าง SQL ตามหมวดหมู่ที่เลือก
-        $sql = "SELECT * FROM products WHERE category = '$category'";
-        $result = mysqli_query($connect, $sql);
-        
-        // ตรวจสอบผลลัพธ์
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<p>" . $row['product_name'] . " - " . $row['price'] . " บาท</p>";
-            }
-        } else {
-            echo "<p>ไม่พบข้อมูลในหมวดหมู่นี้</p>";
-        }
-    } else {
-        echo "<p>กรุณาเลือกหมวดหมู่เพื่อดูข้อมูล</p>";
+// สร้างปุ่มเลือก infono
+echo "<form method='GET' action=''>";
+echo "<input type='hidden' name='page' value='$page'>"; // ส่งค่าหน้าปัจจุบันไปด้วย
+echo "<select name='infono' onchange='this.form.submit()'>";
+echo "<option value=''>เลือกประเภท</option>";
+while ($row = mysqli_fetch_assoc($query_infono)) {
+    $selected = ($row['infono'] == $infono_filter) ? 'selected' : '';
+    echo "<option value='" . $row['infono'] . "' $selected>" . $row['infono'] . "</option>";
+}
+echo "</select>";
+echo "</form>";
+
+// การกรองข้อมูลตาม infono ที่เลือก
+$select = "SELECT * FROM nu_prints WHERE infono LIKE '%$infono_filter%' ORDER BY infono, info4 ASC";
+$q_ry = mysqli_query($connect, $select);
+$num_rows = mysqli_num_rows($q_ry);
+
+$pagesize = 100;
+$rt = $num_rows % $pagesize;
+$totalpage = ($rt != 0) ? floor($num_rows / $pagesize) + 1 : floor($num_rows / $pagesize);
+$goto = ($page - 1) * $pagesize;
+
+mysqli_free_result($q_ry);
+$sql_select_mem = "SELECT * FROM nu_prints WHERE infono LIKE '%$infono_filter%' ORDER BY infono, info4 ASC LIMIT $goto, $pagesize";
+$fect = mysqli_query($connect, $sql_select_mem);
+
+if (!$fect) {
+    echo "ติดต่อฐานข้อมูลไม่ได้: " . mysqli_error($connect);
+    exit;
+}
+
+$sum = 0;
+$bgcount = 0;
+echo "<table border='1'>
+        <tr>
+            <th>หมายเลข</th>
+            <th>ข้อมูล 1</th>
+            <th>ข้อมูล 2</th>
+            <th>ราคา</th>
+            <th>รูปภาพ</th>
+        </tr>";
+
+while ($rows = mysqli_fetch_array($fect)) {
+    $info1 = $rows["info1"];
+    $printsprice = $rows["printsprice"];
+    $printsphoto = $rows["printsphoto"];
+    $bgcolor = ($bgcount % 2 == 0) ? "#E9E9E8" : "#FFFFFF";
+
+    if (is_numeric($info1) && is_numeric($printsprice)) {
+        $total = $printsprice * $info1;
+        $sum += $total;
     }
-    ?>
-</body>
-</html>
+
+    echo "<tr style='background-color: $bgcolor;'>
+            <td>" . $rows["infono"] . "</td>
+            <td>" . $info1 . "</td>
+            <td>" . $rows["info2"] . "</td>
+            <td>" . $printsprice . "</td>
+            <td><img src='" . $printsphoto . "' width='50' height='50'></td>
+          </tr>";
+    $bgcount++;
+}
+
+echo "</table>";
+echo "<p>ผลรวมทั้งหมด: " . number_format($sum, 2) . " บาท</p>";
+
+// แสดงลิงค์แบ่งหน้า
+for ($i = 1; $i <= $totalpage; $i++) {
+    echo "<a href='?page=$i&infono=$infono_filter'>$i</a> ";
+}
+?>

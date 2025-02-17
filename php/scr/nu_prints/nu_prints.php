@@ -363,8 +363,6 @@ if($bgmod==0){
 			  {
 				echo "<td bgcolor='#66CCCC' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;$infono</b></font></td>";
 			}
-			
-			
 						
 			?>
 																		
