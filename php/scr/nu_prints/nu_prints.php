@@ -56,7 +56,7 @@ require_once "../include/connectdb.php";
 				</td>
 				
 				<?php
-include 'config.php'; // เชื่อมต่อฐานข้อมูล
+include '../include/connectdb.php'; // เชื่อมต่อฐานข้อมูล
 
 // ดึงค่า infono ที่ไม่ซ้ำ
 $infono_list = [];
