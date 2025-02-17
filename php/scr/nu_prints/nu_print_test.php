@@ -93,12 +93,13 @@ if (mysqli_num_rows($fect) == 0) {
         }
 
         echo "<tr style='background-color: $bgcolor;'>
+        <font face= 'tahoma' color='#FFFACD' size='+1'><b>
                 <td width='20' ><img src=../pic/$printsphoto width=50 height=50 border=1 ></td>
                 <td bgcolor='#4682B4' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;" . $rows["infono"] . "&nbsp;&nbsp;</b></font></td>
                 <td>" . $info1 . "</td>
                 <td>" . $rows["info2"] . "</td>
                 <td>" . $printsprice . "</td>
-                
+        </b></font>        
               </tr>";
         $bgcount++;
     }
