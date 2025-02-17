@@ -184,7 +184,7 @@ $bgcount = 0;
 if (mysqli_num_rows($fect) == 0) {
     echo "<p>ไม่พบข้อมูลที่ตรงกับการค้นหาา</p>";
 } else {
-    echo "<table border='1' width='90%' >
+    echo "<table border='1' width='100%' >
             <tr>
                 <th><font face= 'tahoma' color='#27408B' size='1'>รูปภาพ</font></th>
                 <th><font face= 'tahoma' color='#27408B' size='1'>สถาณที่</font></th>
@@ -224,7 +224,7 @@ $infono =$rows["infono"];
 
               </tr>
               <tr>
-              <td colspan='4' ><textarea width='1000' cols='150' rows='1' readonly>" . $info6 . "</textarea></td>
+              <td colspan='4' ><textarea width='1000' cols='250' rows='1' readonly>" . $info6 . "</textarea></td>
                </tr>
               ";
            
