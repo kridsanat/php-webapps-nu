@@ -109,7 +109,7 @@ $infono =$rows["infono"];
                 
 
               </tr>
-              <tr style='background-color: $bgcolor;'>
+              <tr>
               <td colspan='4' ><textarea >" . $info6 . "</textarea></td>
                </tr>
               ";
