@@ -199,7 +199,7 @@ timerefresh(60);
 						
 
 						<font face="tahoma" color="#000033" size="2">
-						<a href="../nu_printers/nu_printers.php" style="text-decoration: none;" >
+						<a href="../nu_prints/nu_prints.php" style="text-decoration: none;" >
 							<b>
 							<button class="button" style="vertical-align:middle"><span>Printers</span></button>
 							</b>
