@@ -76,7 +76,7 @@ if (mysqli_num_rows($fect) == 0) {
                 <th>รูปภาพ</th>
                 <th>หมายเลข</th>
                 <th>ข้อมูล 1</th>
-                <th>ข้อมูล 2</th>
+                <th><font face=tahoma size=2 color=#>ผู้แก้ไข</font></th>
                 <th>ราคา</th>
                 
             </tr>";
