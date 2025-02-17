@@ -55,29 +55,7 @@ require_once "../include/connectdb.php";
 			
 				</td>
 				
-				<?php
-include '../include/connectdb.php'; // เชื่อมต่อฐานข้อมูล
 
-// ดึงค่า infono ที่ไม่ซ้ำ
-$infono_list = [];
-$sql_select_distinct = "SELECT DISTINCT infono FROM nu_prints ORDER BY infono ASC";
-$query_select_distinct = mysqli_query($connect, $sql_select_distinct);
-
-while ($row = mysqli_fetch_assoc($query_select_distinct)) {
-    $infono_list[] = $row['infono'];
-}
-
-// กรองข้อมูลตาม infono ที่เลือก
-$filter = "";
-if (!empty($_GET['infono'])) {
-    $selected_infono = mysqli_real_escape_string($connect, $_GET['infono']);
-    $filter = "WHERE infono = '$selected_infono'";
-}
-
-// ดึงข้อมูลจากตาราง nu_prints
-$sql_select_mem = "SELECT * FROM nu_prints $filter ORDER BY infono, info4 ASC";
-$fect = mysqli_query($connect, $sql_select_mem);
-?>
 				
 				<!--
 				<td width="40%" valign="center" >
