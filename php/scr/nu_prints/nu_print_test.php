@@ -3,29 +3,28 @@
 
 ob_start();
 $useradmin = $_SESSION["useradmin"];
-if(empty($useradmin)) 
-{
-echo "<script>alert('Only Administrator');</script>";
-header("Location: ../index.php");
-exit();
+if (empty($useradmin)) {
+    echo "<script>alert('Only Administrator');</script>";
+    header("Location: ../index.php");
+    exit();
 }
+
 require_once "../include/tdate.php";
 require_once "../include/connectdb.php";
 
-						  $sql="select * from useradmin where useradmin='$useradmin'";
-						  $db_query=mysqli_query($connect, $sql);					
-						  $result=mysqli_fetch_array($db_query);
-						  $id=$result["id"];
-						  $adminname=$result["name"];
-						  $user_admin=$result["useradmin"];
-						  $pass_admin=$result["passadmin"];
-
-
+// เช็คข้อมูลผู้ใช้
+$sql = "select * from useradmin where useradmin='$useradmin'";
+$db_query = mysqli_query($connect, $sql);                    
+$result = mysqli_fetch_array($db_query);
+$id = $result["id"];
+$adminname = $result["name"];
+$user_admin = $result["useradmin"];
+$pass_admin = $result["passadmin"];
 
 ?>
 <?php
-$page = isset($_GET['page']) ? $_GET['page'] : 1;
-$infono_filter = isset($_GET['infono']) ? $_GET['infono'] : ''; // รับค่าจาก URL ถ้ามีการเลือก
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$infono_filter = isset($_GET['infono']) ? mysqli_real_escape_string($connect, $_GET['infono']) : ''; // ป้องกัน SQL Injection
 
 // ดึงข้อมูลประเภท infono ที่ไม่ซ้ำ
 $select_infono = "SELECT DISTINCT infono FROM nu_prints ORDER BY infono";
@@ -68,41 +67,54 @@ if (!$fect) {
 
 $sum = 0;
 $bgcount = 0;
-echo "<table border='1'>
-        <tr>
-            <th>หมายเลข</th>
-            <th>ข้อมูล 1</th>
-            <th>ข้อมูล 2</th>
-            <th>ราคา</th>
-            <th>รูปภาพ</th>
-        </tr>";
 
-while ($rows = mysqli_fetch_array($fect)) {
-    $info1 = $rows["info1"];
-    $printsprice = $rows["printsprice"];
-    $printsphoto = $rows["printsphoto"];
-    $bgcolor = ($bgcount % 2 == 0) ? "#E9E9E8" : "#FFFFFF";
+// ถ้าไม่มีข้อมูล
+if (mysqli_num_rows($fect) == 0) {
+    echo "<p>ไม่พบข้อมูลที่ตรงกับการค้นหา</p>";
+} else {
+    echo "<table border='1'>
+            <tr>
+                <th>หมายเลข</th>
+                <th>ข้อมูล 1</th>
+                <th>ข้อมูล 2</th>
+                <th>ราคา</th>
+                <th>รูปภาพ</th>
+            </tr>";
 
-    if (is_numeric($info1) && is_numeric($printsprice)) {
-        $total = $printsprice * $info1;
-        $sum += $total;
+    while ($rows = mysqli_fetch_array($fect)) {
+        $info1 = $rows["info1"];
+        $printsprice = $rows["printsprice"];
+        $printsphoto = $rows["printsphoto"];
+        $bgcolor = ($bgcount % 2 == 0) ? "#E9E9E8" : "#FFFFFF";
+
+        if (is_numeric($info1) && is_numeric($printsprice)) {
+            $total = $printsprice * $info1;
+            $sum += $total;
+        }
+
+        echo "<tr style='background-color: $bgcolor;'>
+                <td>" . $rows["infono"] . "</td>
+                <td>" . $info1 . "</td>
+                <td>" . $rows["info2"] . "</td>
+                <td>" . $printsprice . "</td>
+                <td><img src='" . $printsphoto . "' width='50' height='50'></td>
+              </tr>";
+        $bgcount++;
     }
-
-    echo "<tr style='background-color: $bgcolor;'>
-            <td>" . $rows["infono"] . "</td>
-            <td>" . $info1 . "</td>
-            <td>" . $rows["info2"] . "</td>
-            <td>" . $printsprice . "</td>
-            <td><img src='" . $printsphoto . "' width='50' height='50'></td>
-          </tr>";
-    $bgcount++;
+    echo "</table>";
+    echo "<p>ผลรวมทั้งหมด: " . number_format($sum, 2) . " บาท</p>";
 }
 
-echo "</table>";
-echo "<p>ผลรวมทั้งหมด: " . number_format($sum, 2) . " บาท</p>";
-
 // แสดงลิงค์แบ่งหน้า
+echo "<div>";
+if ($page > 1) {
+    echo "<a href='?page=" . ($page - 1) . "&infono=$infono_filter'>ก่อนหน้า</a> ";
+}
 for ($i = 1; $i <= $totalpage; $i++) {
     echo "<a href='?page=$i&infono=$infono_filter'>$i</a> ";
 }
+if ($page < $totalpage) {
+    echo "<a href='?page=" . ($page + 1) . "&infono=$infono_filter'>ถัดไป</a> ";
+}
+echo "</div>";
 ?>
