@@ -158,7 +158,7 @@ $adminname = htmlspecialchars($result["name"], ENT_QUOTES, 'UTF-8');
 <body>
     <header>
         
-        <h1>ยินดีตอนรับเข้าสู่ระบบ : <font face= 'tahoma' color='#0000CC' size='+3'><b><?php echo $adminname; ?>!</b></font></h1>
+        <h1>ยินดีตอนรับเข้าสู่ระบบ คุณ <font face= 'tahoma' color='#0000CC' size='+3'><b><?php echo $adminname; ?>!</b></font></h1>
         
         
         <div class="top-right">
