@@ -71,7 +71,7 @@ $bgcount = 0;
 if (mysqli_num_rows($fect) == 0) {
     echo "<p>ไม่พบข้อมูลที่ตรงกับการค้นหาา</p>";
 } else {
-    echo "<table border='1'>
+    echo "<table border='1' width='800' >
             <tr>
                 <th>รูปภาพ</th>
                 <th>หมายเลข</th>
@@ -97,7 +97,7 @@ if (mysqli_num_rows($fect) == 0) {
                 <td width='20' ><img src=../pic/$printsphoto width=50 height=50 border=1 ></td>
                 <td bgcolor='#4682B4' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;" . $rows["infono"] . "&nbsp;&nbsp;</b></font></td>
                 <td>" . $info1 . "</td>
-                <td width='50' ><font face= 'tahoma' color='#27408B' size='+1'><b>&nbsp;&nbsp;" . $rows["info2"] . "&nbsp;&nbsp;</b></font></td>
+                <td width='100' ><font face= 'tahoma' color='#27408B' size='+1'><b>&nbsp;&nbsp;" . $rows["info2"] . "&nbsp;&nbsp;</b></font></td>
                 <td>" . $printsprice . "</td>
                 
               </tr>";
