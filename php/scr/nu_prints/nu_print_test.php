@@ -74,7 +74,7 @@ if (mysqli_num_rows($fect) == 0) {
     echo "<table border='1' width='1000' >
             <tr>
                 <th><font face= 'tahoma' color='#27408B' size='1'>รูปภาพ</font></th>
-                <th><font face= 'tahoma' color='#27408B' size='1'>หมายเลข</font></th>
+                <th><font face= 'tahoma' color='#27408B' size='1'>สถาณที่</font></th>
                 <th><font face= 'tahoma' color='#27408B' size='1'>ผู้แก้ไข</font></th>
                 <th><font face= 'tahoma' color='#27408B' size='1'>รายละเอียด</font></th>
                 
