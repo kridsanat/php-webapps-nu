@@ -75,9 +75,7 @@ if (mysqli_num_rows($fect) == 0) {
             <tr>
                 <th>รูปภาพ</th>
                 <th>หมายเลข</th>
-                <th>ข้อมูล 1</th>
                 <th>ผู้แก้ไข</th>
-                <th>ราคา</th>
                 
             </tr>";
 
@@ -105,10 +103,8 @@ $infono =$rows["infono"];
         
                 <td width='20' ><img src=../pic/$printsphoto width=50 height=50 border=1 ></td>
                 <td bgcolor='#4682B4' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;" . $rows["infono"] . "&nbsp;&nbsp;</b></font></td>
-                <td>" . $info1 . "</td>
                 <td><font face= 'tahoma' color='#27408B' size='+1'><b>&nbsp;&nbsp;" . $rows["info2"] . "&nbsp;&nbsp;</b></font></td>
-                <td>" . $printsprice . "</td>
-                <td>" . $info4 . "</td>
+                <td><font face= 'tahoma' color='#27408B' size='+1'><b>&nbsp;&nbsp;" . $info4 . "&nbsp;&nbsp;</b></font></td>
                 
               </tr>";
         $bgcount++;
