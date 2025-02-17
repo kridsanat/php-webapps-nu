@@ -40,7 +40,7 @@ echo "<input type='hidden' name='page' value='$page'>"; // ส่งค่าห
 echo "<div style='margin-bottom: 10px;'>"; // ใช้ div เพื่อจัดการรูปแบบการแสดงผล
 while ($row = mysqli_fetch_assoc($query_infono)) {
     $selected = ($row['infono'] == $infono_filter) ? 'style="background-color: #ddd;"' : ''; // เปลี่ยนสีเมื่อเลือก
-    echo "<button type='submit' name='infono' value='" . $row['infono'] . "' $selected style='padding: 10px 20px; margin-right: 15px; margin-bottom: 10px; display: inline-block;'>" . $row['infono'] . "</button>";
+    echo "<button type='submit' name='infono' value='" . $row['infono'] . "' $selected class='btn-style'>" . $row['infono'] . "</button>";
 }
 echo "</div>";
 echo "</form>";
@@ -117,3 +117,28 @@ if ($page < $totalpage) {
 }
 echo "</div>";
 ?>
+
+<!-- เพิ่ม CSS สำหรับการจัดรูปแบบปุ่ม -->
+<style>
+    .btn-style {
+        padding: 10px 20px;
+        margin-right: 15px;
+        margin-bottom: 10px;
+        display: inline-block;
+        background-color: #4CAF50; /* สีพื้นหลัง */
+        color: white; /* สีข้อความ */
+        border: none; /* ขอบปุ่ม */
+        border-radius: 5px; /* มุมโค้ง */
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-style:hover {
+        background-color: #45a049; /* เปลี่ยนสีเมื่อ hover */
+    }
+
+    .btn-style:focus {
+        outline: none; /* ลบเส้นขอบเมื่อคลิก */
+    }
+</style>
