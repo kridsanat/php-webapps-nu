@@ -101,12 +101,13 @@ $infono =$rows["infono"];
         }
 
         echo "<tr style='background-color: $bgcolor;'>
-        
+                <form method='post' action='nu_printsedit.php?SerID=" . $idx . "
                 <td width='20' ><img src=../pic/$printsphoto width=50 height=50 border=1 ></td>
                 <td bgcolor='#4682B4' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;" . $rows["infono"] . "&nbsp;&nbsp;</b></font></td>
                 <td><font face= 'tahoma' color='#27408B' size='+1'><b>&nbsp;&nbsp;" . $rows["info2"] . "&nbsp;&nbsp;</b></font></td>
-                <td><font face= 'tahoma' color='#27408B' size='+1'>&nbsp;&nbsp;" . $info4 . "&nbsp;&nbsp;</font></td>
-                
+                <td><font face= 'tahoma' color='#27408B' size='+1'>&nbsp;&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >
+                &nbsp;&nbsp;" . $info4 . "&nbsp;&nbsp;</font></td>
+                </form>
 
               </tr>
               <tr>
