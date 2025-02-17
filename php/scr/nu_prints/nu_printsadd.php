@@ -146,6 +146,7 @@ function checkprd()
                                                   <option value="Factory.TIP9">Factory.TIP9</option>
                                                   <option value="Site.Central">Site.Central</option>
                                                   <option value="Site.Nirvana">Site.Nirvana</option>
+                                                  <option value="Site.Nirvana.2">Site.Nirvana.2</option>
                                                   <option value="Site.UM">Site.UM</option>
                                                   <option value="Site.WHN">Site.WHN</option>
                                                   <option value="Site.Bangpoo">Site.Bangpoo</option>
