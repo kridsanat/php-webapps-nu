@@ -40,7 +40,7 @@ echo "<input type='hidden' name='page' value='$page'>"; // ส่งค่าห
 echo "<div style='margin-bottom: 10px;'>"; // ใช้ div เพื่อจัดการรูปแบบการแสดงผล
 while ($row = mysqli_fetch_assoc($query_infono)) {
     $selected = ($row['infono'] == $infono_filter) ? 'style="background-color: #ddd;"' : ''; // เปลี่ยนสีเมื่อเลือก
-    echo "<button type='submit' name='infono' value='" . $row['infono'] . "' $selected style='padding: 5px 15px; margin-right: 5px;'>" . $row['infono'] . "</button>";
+    echo "<button type='submit' name='infono' value='" . $row['infono'] . "' $selected style='padding: 10px 20px; margin-right: 15px; margin-bottom: 10px; display: inline-block;'>" . $row['infono'] . "</button>";
 }
 echo "</div>";
 echo "</form>";
