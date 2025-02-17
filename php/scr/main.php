@@ -157,7 +157,7 @@ $adminname = htmlspecialchars($result["name"], ENT_QUOTES, 'UTF-8');
 </head>
 <body>
     <header>
-        <h1>Admin Dashboard</h1>
+        
         <div class="top-right">
             <button onclick="location.href='../ChangePass.php'">Change Password</button>
             <button onclick="location.href='../logout.php'">Sign Out</button>
