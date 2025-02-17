@@ -22,6 +22,119 @@ $user_admin = $result["useradmin"];
 $pass_admin = $result["passadmin"];
 
 ?>
+
+
+
+		<!-- ส่วนหัว -->
+		<TABLE width="90%" border="0" align="center" cellpadding="1" cellspacing="1">
+		  
+			<tr valign="center"> 
+			
+			
+				<td width="40%">
+			
+						<?php echo "<font size=4 color=#000080>$headtxt | $e_date $etime</font>"; ?>
+		
+						<br>
+		
+						<div align="left">
+			
+						<font color="#000000" size="4">Presently Page : <strong>PRINTERS PAGE</strong></font>
+
+						</div>
+			
+				</td>
+				
+
+				
+				<!--
+				<td width="40%" valign="center" >
+				<div >
+				<font face="tahoma" color="#000000" size="2"><img src="images/warning.gif" width="" >
+				
+				ข้อความตรงกลางบนหัวหน้าเว็บ
+				
+				</font>
+				</div>
+				</td>
+				-->
+
+				<td width="60%">
+
+							<DIV align="right">
+
+								<font color="#000000" size="6" face="tahoma">
+										
+										<b>WELLCOME</b> : 
+								</font>
+		
+								<font color="#6495ED" size="6" face="tahoma"><b><?php echo "$adminname"; ?></b></font>
+								
+								<BR>
+
+								<font color="#">[</font> <a href="../ChangePass.php"><font color="#000033"><u>Change password</u></font></a> ] 
+								<a href="../logout.php"><font color="#000033"><b><u>Sign Out</u></b></font></a> </font></font>
+			
+							</DIV>
+				</td>
+			</tr>
+			
+			
+			<tr>
+
+				<td colspan="2" >
+
+	
+				</td>	
+
+			</tr>
+		
+
+	
+			
+		</TABLE>
+		<!-- ส่วนหัว จบ-->
+			
+
+<br>
+<br>										  
+
+<table width="90%" border="0" align="center" cellspacing="1" cellpadding="1">
+
+			<tr>
+				<td>
+				<a href="../main.php"  style="text-decoration: none;" >
+				<font face="tahoma" color="#000033" size="4"><< BACK </font>
+				</a>
+				<br>
+				<br>
+				</td>
+			</tr>
+
+
+    		<tr class=""> 
+       	 		<td bgcolor="#FFFFFF"> 
+
+<?php
+	$numproducts ="select * from nu_prints";
+	$query_select=mysqli_query($connect, $numproducts);
+	$numall=mysqli_num_rows($query_select);
+?>																											  
+
+<a href="nu_printsadd.php">
+	<font face="tahoma" color="#000033" size="4">
+
+		<u><i>Create New</i></u>
+
+	</font>
+</a>
+
+&nbsp;
+
+<br>
+<br>
+
+
 <?php
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $infono_filter = isset($_GET['infono']) ? mysqli_real_escape_string($connect, $_GET['infono']) : ''; // ป้องกัน SQL Injection
