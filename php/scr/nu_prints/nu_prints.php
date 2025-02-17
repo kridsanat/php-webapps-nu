@@ -226,7 +226,7 @@ $infono =$rows["infono"];
 
               </tr>
               <tr>
-              <td colspan='4' ><textarea width='1000' cols='230' rows='1' readonly>" . $info6 . "</textarea></td>
+              <td colspan='4' ><textarea width='1000' cols='230' rows='1' style='resize: vertical;' readonly>" . $info6 . "</textarea></td>
                </tr>
               ";
            
