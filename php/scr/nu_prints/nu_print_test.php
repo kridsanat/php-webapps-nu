@@ -82,9 +82,18 @@ if (mysqli_num_rows($fect) == 0) {
             </tr>";
 
     while ($rows = mysqli_fetch_array($fect)) {
-        $info1 = $rows["info1"];
-        $printsprice = $rows["printsprice"];
-        $printsphoto = $rows["printsphoto"];
+
+$idx =$rows["id"];
+$info1 =$rows["info1"];
+$info2 =$rows["info2"];
+$info3 =$rows["info3"];
+$info4 =$rows["info4"];
+$info5 =$rows["info5"];
+$info6 =$rows["info6"];
+$printsprice =$rows["printsprice"];
+$printsphoto =$rows["printsphoto"];
+$status =$rows["status"];
+$infono =$rows["infono"];
         $bgcolor = ($bgcount % 2 == 0) ? "#E9E9E8" : "#FFFFFF";
 
         if (is_numeric($info1) && is_numeric($printsprice)) {
@@ -99,6 +108,7 @@ if (mysqli_num_rows($fect) == 0) {
                 <td>" . $info1 . "</td>
                 <td><font face= 'tahoma' color='#27408B' size='+1'><b>&nbsp;&nbsp;" . $rows["info2"] . "&nbsp;&nbsp;</b></font></td>
                 <td>" . $printsprice . "</td>
+                <td>" . $info4 . "</td>
                 
               </tr>";
         $bgcount++;
