@@ -108,7 +108,7 @@ $infono =$rows["infono"];
                 <td><font face= 'tahoma' color='#27408B' size='+1'>&nbsp;&nbsp;" . $info4 . "&nbsp;&nbsp;</font></td>
                 
               </tr>";
-              <br>
+           
         $bgcount++;
     }
     echo "</table>";
@@ -116,7 +116,7 @@ $infono =$rows["infono"];
 }
 
 // แสดงลิงค์แบ่งหน้า
-echo "<div>";
+echo "<div><br>";
 if ($page > 1) {
     echo "<a href='?page=" . ($page - 1) . "&infono=$infono_filter'>ก่อนหน้า</a> ";
 }
