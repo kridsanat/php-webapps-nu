@@ -23,31 +23,13 @@ require_once "../include/connectdb.php";
 
 
 ?>
-<!--refresh หน้าเพจ-->
-<SCRIPT language="JavaScript">
-function timerefresh(t)
-{
 
-if(t==0)
-{
-window.location.reload();
-}
-else
-{
-t--;
-}
-window.setTimeout("timerefresh('"+t+"')",1000)
-}
-
-timerefresh(60);
-</script>
-<!--refresh หน้าเพจ-->
 <html>
 
 		<head>
 			<title><?php echo "$headtxt_web"; ?></title>
 			<meta http-equiv="Content-Type" content="text/html; charset=tis-620">
-			<meta http-equiv="refresh" content="900;url=../logout.php" />
+			<meta http-equiv="refresh" content="8900;url=../logout.php" />
 			<link href="" rel="" type="">
 		</head>
 
@@ -125,46 +107,49 @@ timerefresh(60);
 
 <br>
 <br>										  
-                        
-                        
-							
-<table width="90%" border="0" align="center" cellspacing="1" cellpadding="1">
 
+<table width="90%" border="0" align="center" cellspacing="1" cellpadding="1">
 
 			<tr>
 				<td>
+
+<button type='button' name='myButton' size="5" >
 				<a href="../main.php"  style="text-decoration: none;" >
-				<font face="tahoma" color="#000033" size="4"><< BACK </font>
+				<font face="tahoma" color="#000033" size="5"><< BACK </font>
 				</a>
-				<br>
-				<br>
+</button>
+<br>
+<br>
 				</td>
-			</tr>	
+			</tr>
+
 
     		<tr class=""> 
        	 		<td bgcolor="#FFFFFF"> 
 
 <?php
-	$numproducts ="select * from nu_ssds";
+	$numproducts ="select * from nu_equps";
 	$query_select=mysqli_query($connect, $numproducts);
 	$numall=mysqli_num_rows($query_select);
 ?>																											  
-						  
-<a href="nu_ssdsprint.php">
+
+<a href="nu_equpadd.php">
 	<font face="tahoma" color="#000033" size="4">
 
-		<u><i>Print Report</i></u>
+		<u><i>Create New</i></u>
 
 	</font>
 </a>
 
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
 
-
-|
-<a href="nu_ssdsadd.php">
+<a href="nu_equp_view.php">
 	<font face="tahoma" color="#000033" size="4">
 
-		<u><i>Create New</i></u>
+		<u><i>View Page</i></u>
 
 	</font>
 </a>
@@ -175,7 +160,7 @@ timerefresh(60);
 <br>
 
 <?php 
-$sql_select_mem = "SELECT * FROM nu_ssds";
+$sql_select_mem = "SELECT * FROM nu_equps";
 $fect = mysqli_query($connect, $sql_select_mem);
 if (!$fect) {
     die("ติดต่อฐานข้อมูลไม่ได้" . mysqli_error());
@@ -187,9 +172,9 @@ $bgcount = 0;
 
 while ($rows = mysqli_fetch_array($fect)) {
     $info1 = $rows["info1"];
-    $ssdsprice = $rows["ssdsprice"];
-	if (is_numeric($info1) && is_numeric($ssdsprice)) {
-		$total = $ssdsprice * $info1;
+    $equpprice = $rows["equpprice"];
+	if (is_numeric($info1) && is_numeric($equpprice)) {
+		$total = $equpprice * $info1;
 		$sum += $total;
 		// Rest of the code
 	} else {
@@ -197,12 +182,10 @@ while ($rows = mysqli_fetch_array($fect)) {
 	}
 }
 
-echo "<font face='tahoma' color='#000033' size='28'>SUMMARY: <b>" . number_format($sum, 2, '.', ',') . "</b>&nbsp;THB.</font>";
-?>	
+echo "<font face='tahoma' color='#000033' size='28'>MA SUMMARY: <b>" . number_format($sum, 2, '.', ',') . "</b>&nbsp;THB.</font>";
+?>
 <br>
-<font face='tahoma' color='#0000FF' size='5'>
-[ No.xx = อ้างอิงจากลำดับเอกสาร Certificat ในแฟ้ม ]
-</font>
+
 <br>
 <br>								  
 									 
@@ -210,14 +193,14 @@ echo "<font face='tahoma' color='#000033' size='28'>SUMMARY: <b>" . number_forma
 
 $page = isset($_GET['page']) ? $_GET['page'] : '';
 
-$select_type="select * from nu_ssds order by infono desc";
+$select_type="select * from nu_equps order by infono, info4 asc";
 $query_select=mysqli_query($connect, $select_type);
 $num_rows=mysqli_num_rows($query_select);
 
 if($num_rows<1){
 echo "<br><br><center><font color=#666666 face=tahoma size=2><b>No item</b></font></center>";
 }else{
-		$select="select * from nu_ssds order by infono desc";
+		$select="select * from nu_equps order by infono, info4 asc";
 		$q_ry = mysqli_query($connect,$select);
 	 	$num_rows=mysqli_num_rows($q_ry);
   		$pagesize=100;
@@ -237,7 +220,7 @@ echo "<br><br><center><font color=#666666 face=tahoma size=2><b>No item</b></fon
 			}
 		mysqli_free_result($q_ry);
 		$goto=($page-1)*$pagesize;
-$sql_select_mem="Select * From nu_ssds order by infono desc limit $goto,$pagesize";
+$sql_select_mem="Select * From nu_equps order by infono, info4 asc limit $goto,$pagesize";
 		$fect=mysqli_query($connect,$sql_select_mem);
 		if(!$fect)
 		{
@@ -255,12 +238,12 @@ $info3 =$rows["info3"];
 $info4 =$rows["info4"];
 $info5 =$rows["info5"];
 $info6 =$rows["info6"];
-$ssdsprice =$rows["ssdsprice"];
-$ssdsphoto =$rows["ssdsphoto"];
+$equpprice =$rows["equpprice"];
+$equpphoto =$rows["equpphoto"];
 $status =$rows["status"];
 $infono =$rows["infono"];
-if (is_numeric($info1) && is_numeric($ssdsprice)) {
-    $total = $ssdsprice * $info1;
+if (is_numeric($info1) && is_numeric($equpprice)) {
+    $total = $equpprice * $info1;
     $sum += $total;
     // Rest of the code
 } else {
@@ -277,7 +260,7 @@ if($bgmod==0){
 ?>
 	
 
-<form method="post" action="nu_ssdsedit.php?SerID=<?php echo "$idx"; ?>">
+<form method="post" action="nu_equpedit.php?SerID=<?php echo "$idx"; ?>">
 
 
     <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
@@ -286,19 +269,19 @@ if($bgmod==0){
 
 
 
-								<td width="5.7%" bgcolor='#AFEEEE' align="left">
-																		
+								<td width="8%" bgcolor='#AFEEEE' align="left">
+								&nbsp;&nbsp;									
 									<?php
 			
 									if ($info1 == 0)
 					  				{
-					  				echo "<b><font face=tahoma size=1 color=#>&nbsp;&nbsp;Qty.</font><font face=tahoma size=2 color=#B8860B>0</font></b>";
+					  				echo "<b><font face=tahoma size=2 color=#>Qty.</font><font face=tahoma size=2 color=#B8860B>0</font></b>";
 									}else if ($info1 < 4)
 					  				{
-					 				echo "<b><font face=tahoma size=1 color=#>&nbsp;&nbsp;Qty.</font> <font face=tahoma size=2 color=#B8860B>$info1</font></b> ";
+					 				echo "<b><font face=tahoma size=2 color=#>Qty.</font> <font face=tahoma size=2 color=#B8860B>$info1</font></b> ";
 									}else
 					  				{
-									echo "<b><font face=tahoma size=1 color=#>&nbsp;&nbsp;Qty.</font> <font face=tahoma size=2 color=#B8860B>$info1</font></b>";
+									echo "<b><font face=tahoma size=2 color=#>Qty.</font> <font face=tahoma size=2 color=#B8860B>$info1</font></b>";
 									}
 						
 									?>	
@@ -307,16 +290,16 @@ if($bgmod==0){
 								</td>	
 					
 				
-								<td width="6%" bgcolor='#AFEEEE' align="left" >
+								<td width="8%" bgcolor='#AFEEEE' align="left" >
 
 									<?php
 						
 			
-									if ($ssdsprice == 0) {
-  									echo "<font face=tahoma size=1 color=#><b>Unit/Price</b><br></font><font face=tahoma size=2 color=#FF0000><b>-</b></font>";
-									} else if ($ssdsprice >= 1) {
- 									 $formattedPrice = number_format($ssdsprice, 2, '.', ',');
- 									 echo "<font face=tahoma size=1 color=#><b>Unit/Price</b><br></font> <font face=tahoma size=2 color=#000000>$formattedPrice</font>";
+									if ($equpprice == 0) {
+  									echo "<font face=tahoma size=2 color=#><b>Unit/Price</b><br></font><font face=tahoma size=2 color=#FF0000><b>-</b></font>";
+									} else if ($equpprice >= 1) {
+ 									 $formattedPrice = number_format($equpprice, 2, '.', ',');
+ 									 echo "<font face=tahoma size=2 color=#><b>Unit/Price</b><br></font> <font face=tahoma size=2 color=#000000>$formattedPrice</font>";
 									}
 									?>	
 											
@@ -342,14 +325,14 @@ if($bgmod==0){
 								
 												
 
-								<td bgcolor="#FFFFFF" width="2%" valign="middle"  >
+								<td bgcolor="#AFEEEE" width="1%" valign="right"  >
 
-										<a href="<?php echo "../pic/$ssdsphoto"; ?>" rel="lightbox" target="_blank" >
+										<a href="<?php echo "../pic/$equpphoto"; ?>" rel="lightbox" target="_blank" >
 												
 										<?php
-							 			 if ($ssdsphoto >= 100)
+							 			 if ($equpphoto >= 100)
 							  			{
-							 			echo "<img src=../pic/$ssdsphoto width=50 height=50 border=1 >";
+							 			echo "<img src=../pic/$equpphoto width=50 height=50 border=1 >";
 							 			}else
 										{
 										echo "&nbsp;&nbsp;No Pic";	
@@ -361,24 +344,67 @@ if($bgmod==0){
 												
 								</td>	
 												
+										<td width="1%" bgcolor="#FFFFFF">
+										
+										</td>
+										
+			<?php
+			
+			if ($infono == 'HQ.Jatuchot')
+			  {
+			  	echo "<td bgcolor='#4682B4' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+2'><b><i>&nbsp;&nbsp;HQ.Jatuchot</i></b></font></td>";
+			}else if ($infono == 'Factory.TIP9')
+			  {
+				echo "<td bgcolor='#3CB371' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+2'><b><i>&nbsp;&nbsp;Factory.TIP9</i></b></font></td>";
+			}else if ($infono == 'CLOUD')
+			{
+			  echo "<td bgcolor='#e84e40' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+2'><b><i>&nbsp;&nbsp;CLOUD</i></b></font></td>";
+			}else if ($infono == 'Site.Central')
+			{
+			  echo "<td bgcolor='#6c2c10' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+2'><b><i>&nbsp;&nbsp;Site.Central</i></b></font></td>";
+			}else if ($infono == 'Site.Nirvana')
+			{
+			  echo "<td bgcolor='#9292D1' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+2'><b><i>&nbsp;&nbsp;Site.Nirvana</i></b></font></td>";
+			}else if ($infono == 'Site.UM')
+			{
+			  echo "<td bgcolor='#8FBC8F' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+2'><b><i>&nbsp;&nbsp;Site.UM</i></b></font></td>";
+			}else if ($infono == 'Site.WHN')
+			{
+			  echo "<td bgcolor='#B03060' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+2'><b><i>&nbsp;&nbsp;Site.WHN</i></b></font></td>";
+			
+			}else if ($infono == 'Site.Nirvana2')
+			{
+			  echo "<td bgcolor='#9c27b0' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+2'><b><i>&nbsp;&nbsp;Site.Nirvana2</i></b></font></td>";
+			
+			}else if ($infono == 'Site.Bangpoo')
+			{
+			  echo "<td bgcolor='#3a3420' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+2'><b><i>&nbsp;&nbsp;Site.Bangpoo</i></b></font></td>";
+			
+			}else
+			  {
+				echo "<td bgcolor='#66CCCC' width='14%' ><font face= 'tahoma' color='#fff3e0' size='+2'><b><i>&nbsp;&nbsp;$infono</i></b></font></td>";
+			}
+			
+			
+						
+			?>
+									
+									
+											
+									<td width="1%" bgcolor="#FFFFFF">
+										
+									</td>
 
-								<td bgcolor="#6A5ACD" width="3%" >
-									<font size="3" color="#F0FFFF" ><b>&nbsp;No.<?php echo "$infono"; ?></b></font>
-								</td>
-												
-								<td bgcolor="#FFFFFF" width="0.3%" >
-
-								</td>				
 												
 												
 												
 									<?php
 									if ($status == "Active")
 					 				{
-									  echo "<td width='0.3%' align='center' bgcolor='33FF99'></td>";
+									  echo "<td width='0.3%' align='center' bgcolor='#0099CC'></td>";
 									}else if ($status == "Deactive")
 									{
-									  echo "<td width='0.3%' align='center' bgcolor='#FF3300'></td>";
+									  echo "<td width='0.3%' align='center' bgcolor='#FF0033'></td>";
 									}						
 									?>
 						
@@ -387,54 +413,49 @@ if($bgmod==0){
 						
 												
 												
-								<td bgcolor="#F5F5F5" width="49%" >
+								<td bgcolor="#F5F5F5" width="54.5%" valign="top" >
 											
 									
-									&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >&nbsp;<?php echo "<font face=tahoma size=4 color=#2F4F4F >$info4</font>"; ?></u>
-									&nbsp;&nbsp;<textarea name="info6" type="text" id="" id="info6"  cols="1" rows="1" readonly><?php echo $info6; ?></textarea>
+								&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >&nbsp;
+								<?php echo "<font face=tahoma size=4 color=#000000 >$info4 </font>"; ?></u>
+									
 
 											<br>
 
-									<font face="tahoma" size="4" color="0000CC">
-										&nbsp;Preroid Expire : </font><font face="tahoma" size="3" color="0000CC">&nbsp;<?php echo "$info5"; ?>												
+									<font face="tahoma" size="2" color="#778899">
+										&nbsp;Preroid Expire : &nbsp;<b><?php echo "$info5"; ?></b>												
 									</font>
-
+											<br>
+											
 								</td>
                                               
 		 
 												
 												
 												
-                                <td width="12%" bgcolor='#FFFFFF' align="left" >
 
-									&nbsp;<?php echo "<font face=tahoma size=2 color=#27408B><b> $info2</b></font>"; ?>
-										<br>
-									&nbsp;<font face="tahoma" size="2" color="#"></font>
-									<?php echo "<font face=tahoma size=2 color=#	><b>$info3</b></font>"; ?>
-											
-								</td>
-                                                
-                                                
-											
-												
-								<td width="3.5%" bgcolor="#FFFFFF" ><div align="right">
-
-											<a href="nu_delssds.php?SerID=<?php echo "$idx"; ?>" onclick="return confirm('Are you sure?')" ><img src="../images/icon_close.jpg" alt="ลบข้อมูล" width="" height="" border="0" ></a></div>
-	
-								</td>
 											
 											
                                         
 											
 					<tr height="">
 
-						<td colspan="6" >  
+						<td colspan="8" valign="top">  
 
+						<a href="nu_delequp.php?SerID=<?php echo "$idx"; ?>" onclick="return confirm('Are you sure?')" ><img src="../images/icon_close.jpg" alt="ลบข้อมูล" width="" height="" border="0" ></a></div>
+						
+
+						&nbsp;<?php echo "<font face=tahoma size=2 color=#27408B><b> $info2</b></font>"; ?>
+
+						&nbsp;<font face="tahoma" size="2" color="#"></font>
+						<?php echo "<font face=tahoma size=2 color=#	><b>$info3</b></font>"; ?>
+				
 						</td>
 
-						<td colspan="4" >
-						
-						
+						<td colspan="5" >
+
+						<textarea name="info6" type="text" id="" id="info6"  cols="1" rows="1" readonly><?php echo $info6; ?></textarea>
+
 						</td>
 
 					</tr>		
@@ -471,7 +492,18 @@ if($bgmod==0){
 	echo"[<a href='$PHP_SELF?page=$i'><font size=2 color='#000000'>$i</font></a>]";
 	}
 	?>
-	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
                                             </span></font><font color="#FFFFFF" size="2"><span class="maekhawtom"> 
                                             </span></font>
 
