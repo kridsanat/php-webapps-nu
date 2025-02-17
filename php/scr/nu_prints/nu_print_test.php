@@ -106,8 +106,9 @@ $infono =$rows["infono"];
                 <td bgcolor='#4682B4' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;" . $rows["infono"] . "&nbsp;&nbsp;</b></font></td>
                 <td><font face= 'tahoma' color='#27408B' size='+1'><b>&nbsp;&nbsp;" . $rows["info2"] . "&nbsp;&nbsp;</b></font></td>
                 <td><font face= 'tahoma' color='#27408B' size='+1'>&nbsp;&nbsp;" . $info4 . "&nbsp;&nbsp;</font></td>
-                <br>
+                
               </tr>";
+              <br>
         $bgcount++;
     }
     echo "</table>";
