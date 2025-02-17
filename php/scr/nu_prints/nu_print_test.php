@@ -73,10 +73,10 @@ if (mysqli_num_rows($fect) == 0) {
 } else {
     echo "<table border='1' width='1000' >
             <tr>
-                <th>รูปภาพ</th>
-                <th>หมายเลข</th>
-                <th>ผู้แก้ไข</th>
-                <th>รายละเอียด</th>
+                <th><font face= 'tahoma' color='#27408B' size='1'>รูปภาพ</font></th>
+                <th><font face= 'tahoma' color='#27408B' size='1'>หมายเลข</font></th>
+                <th><font face= 'tahoma' color='#27408B' size='1'>ผู้แก้ไข</font></th>
+                <th><font face= 'tahoma' color='#27408B' size='1'>รายละเอียด</font></th>
                 
             </tr>";
 
