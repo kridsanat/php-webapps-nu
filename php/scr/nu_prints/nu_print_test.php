@@ -37,13 +37,12 @@ if (!$query_infono) {
 // สร้างปุ่มเลือก infono
 echo "<form method='GET' action=''>";
 echo "<input type='hidden' name='page' value='$page'>"; // ส่งค่าหน้าปัจจุบันไปด้วย
-echo "<select name='infono' onchange='this.form.submit()'>";
-echo "<option value=''>เลือกประเภท</option>";
+echo "<div style='margin-bottom: 10px;'>"; // ใช้ div เพื่อจัดการรูปแบบการแสดงผล
 while ($row = mysqli_fetch_assoc($query_infono)) {
-    $selected = ($row['infono'] == $infono_filter) ? 'selected' : '';
-    echo "<option value='" . $row['infono'] . "' $selected>" . $row['infono'] . "</option>";
+    $selected = ($row['infono'] == $infono_filter) ? 'style="background-color: #ddd;"' : ''; // เปลี่ยนสีเมื่อเลือก
+    echo "<button type='submit' name='infono' value='" . $row['infono'] . "' $selected style='padding: 5px 15px; margin-right: 5px;'>" . $row['infono'] . "</button>";
 }
-echo "</select>";
+echo "</div>";
 echo "</form>";
 
 // การกรองข้อมูลตาม infono ที่เลือก
