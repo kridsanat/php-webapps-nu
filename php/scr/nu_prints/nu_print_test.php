@@ -69,7 +69,7 @@ $bgcount = 0;
 
 // ถ้าไม่มีข้อมูล
 if (mysqli_num_rows($fect) == 0) {
-    echo "<p>ไม่พบข้อมูลที่ตรงกับการค้นหา</p>";
+    echo "<p>ไม่พบข้อมูลที่ตรงกับการค้นหาา</p>";
 } else {
     echo "<table border='1'>
             <tr>
