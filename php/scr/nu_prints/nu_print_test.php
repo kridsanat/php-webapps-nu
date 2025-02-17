@@ -96,7 +96,7 @@ if (mysqli_num_rows($fect) == 0) {
                 <td>" . $info1 . "</td>
                 <td>" . $rows["info2"] . "</td>
                 <td>" . $printsprice . "</td>
-                <td width="20" ><img src=../pic/$printsphoto width=50 height=50 border=1 ></td>
+                <td width='20' ><img src=../pic/$printsphoto width=50 height=50 border=1 ></td>
               </tr>";
         $bgcount++;
     }
