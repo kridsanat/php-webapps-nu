@@ -167,8 +167,9 @@ $adminname = htmlspecialchars($result["name"], ENT_QUOTES, 'UTF-8');
 
     <div class="container">
         <div class="links">
-            <a href="../nu_news/newmain.php" class="link">Manual</a>
-            <a href="../nu_prints/nu_prints.php" class="link">Printers</a>
+            <a href="nu_news/newmain.php" class="link">Manual</a>
+            <a href="nu_equp/nu_equp.php" class="link">System and Networks</a>
+            <a href="nu_printers/nu_printers.php" class="link">Printers</a>
         </div>
     </div>
 
