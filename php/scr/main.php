@@ -157,9 +157,9 @@ $adminname = htmlspecialchars($result["name"], ENT_QUOTES, 'UTF-8');
 </head>
 <body>
     <header>
-    <div class="top-left">
+        
         <h3>Welcome : <font face= 'tahoma' color='#27408B' size='+5'><b><?php echo $adminname; ?>!</b></font></h1>
-        </div>
+        
         
         <div class="top-right">
             <button onclick="location.href='../ChangePass.php'">Change Password</button>
