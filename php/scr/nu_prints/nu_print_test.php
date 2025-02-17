@@ -71,7 +71,7 @@ $bgcount = 0;
 if (mysqli_num_rows($fect) == 0) {
     echo "<p>ไม่พบข้อมูลที่ตรงกับการค้นหาา</p>";
 } else {
-    echo "<table border='1' width='1000' >
+    echo "<table border='0' width='1000' >
             <tr>
                 <th>รูปภาพ</th>
                 <th>หมายเลข</th>
