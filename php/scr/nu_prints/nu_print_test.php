@@ -110,7 +110,7 @@ $infono =$rows["infono"];
 
               </tr>
               <tr>
-              <td colspan='4' ><textarea width='1000' cols='50' rows='1' readonly>" . $info6 . "</textarea></td>
+              <td colspan='4' ><textarea width='1000' cols='120' rows='1' readonly>" . $info6 . "</textarea></td>
                </tr>
               ";
            
