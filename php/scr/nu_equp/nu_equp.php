@@ -225,7 +225,7 @@ $infono =$rows["infono"];
                         <td>
                             <font face= 'tahoma' color='#27408B' size='+1'><b>&nbsp;&nbsp;" . $rows["info2"] . "&nbsp;&nbsp;</font>
                             <br>
-                            <font face= 'tahoma' color='#27408B' size='1'>&nbsp;&nbsp;&nbsp;&nbsp;" . $rows["info3"] . "&nbsp;&nbsp;</font>
+                            <font face= 'tahoma' color='#FF0033' size='1'>&nbsp;&nbsp;&nbsp;&nbsp;" . $rows["info3"] . "&nbsp;&nbsp;</font>
                         </td>
 
                         <td>
