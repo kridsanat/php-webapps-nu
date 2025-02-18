@@ -232,6 +232,20 @@ $infono =$rows["infono"];
                             </font>
                         </td>
 
+<td width='8%' bgcolor='#AFEEEE' align='left'>
+                        &nbsp;&nbsp;";
+
+        // Fixed the condition for Qty.
+        if ($info1 == 0) {
+            echo "<b><font face='tahoma' size='2' color='#'>Qty.</font><font face='tahoma' size='2' color='#B8860B'>0</font></b>";
+        } else if ($info1 < 4) {
+            echo "<b><font face='tahoma' size='2' color='#'>Qty.</font> <font face='tahoma' size='2' color='#B8860B'>$info1</font></b>";
+        } else {
+            echo "<b><font face='tahoma' size='2' color='#'>Qty.</font> <font face='tahoma' size='2' color='#B8860B'>$info1</font></b>";
+        }
+
+        echo "      
+</td>
 
                     </form>
 
