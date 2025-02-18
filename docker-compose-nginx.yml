@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  nginxproxy:
+    container_name: nginxproxy
+    image: 'jc21/nginx-proxy-manager:latest'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+    restart: unless-stopped
+    ports:
+      - '8080:80'   # เปลี่ยนพอร์ต 80 เป็น 8080
+      - '8081:81'   # เปลี่ยนพอร์ต 81 เป็น 8081
+      - '8443:443'  # เปลี่ยนพอร์ต 443 เป็น 8443
+    networks:
+      - web_network
+
+networks:
+  web_network:
+    driver: bridge
