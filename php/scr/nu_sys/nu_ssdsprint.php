@@ -105,8 +105,8 @@ $numall=mysqli_num_rows($query_select);
 										   <table  width="100%" border="0" cellspacing="1" cellpadding="1">
 										  <tr >
 													<td >
-													<!-- <img src="../images/DIT-Logo-Original.png" alt="ź������" width="" height="50" border="0" > -->
-													&nbsp;&nbsp;&nbsp;&nbsp;
+													<!-- <img src="../images/DIT-Logo-Original.png" alt="ź������" width="" height="50" border="0" > 
+													&nbsp;&nbsp;&nbsp;&nbsp;-->
 													<font face="tahoma" color="#" size="8"><?php echo $e_date; ?> <?php echo $etime; ?> </font>*วันที่ ปริ้นเอกสาร ออกมา
 													<br>
 													<br>
