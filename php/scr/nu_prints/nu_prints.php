@@ -213,21 +213,71 @@ $infono =$rows["infono"];
             $sum += $total;
         }
 
-        echo "<tr style='background-color: $bgcolor;'>
-                <form method='post' action='nu_printsedit.php?SerID=" . $idx . "' >
-                <td width='20' ><img src=../pic/$printsphoto width=50 height=50 border=1 ></td>
-                <td bgcolor='#4682B4' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;" . $rows["infono"] . "&nbsp;&nbsp;</b></font></td>
-                <td><font face= 'tahoma' color='#27408B' size='+1'><b>&nbsp;&nbsp;" . $rows["info2"] . "&nbsp;&nbsp;</font>
-                <br>
-                <font face= 'tahoma' color='#27408B' size='1'>&nbsp;&nbsp;&nbsp;&nbsp;" . $rows["info3"] . "&nbsp;&nbsp;</font></td>
-                <td><font face= 'tahoma' color='#27408B' size='+1'>&nbsp;&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >
-                &nbsp;&nbsp;" . $info4 . "&nbsp;&nbsp;</font></td>
-                </form>
+        echo "  <tr style='background-color: $bgcolor;'>
 
-              </tr>
-              <tr>
-              <td colspan='4' ><textarea width='1000' cols='230' rows='1' style='resize: vertical;' readonly>" . $info6 . "</textarea></td>
-               </tr>
+                    <form method='post' action='nu_equpedit.php?SerID=" . $idx . "' >
+                        <td width='20' ><img src=../pic/$equpphoto width=50 height=50 border=1 ></td>
+                    
+                        <td bgcolor='#4682B4' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;" . $rows["infono"] . "&nbsp;&nbsp;</b></font></td>
+                    
+                        <td>
+                            <font face= 'tahoma' color='#27408B' size='+1'><b>&nbsp;&nbsp;" . $rows["info2"] . "&nbsp;&nbsp;</font>
+                            <br>
+                            <font face= 'tahoma' color='#FF0033' size='1'>&nbsp;&nbsp;&nbsp;&nbsp;" . $rows["info3"] . "&nbsp;&nbsp;</font>
+                        </td>
+
+                        <td>
+                            <font face= 'tahoma' color='#27408B' size='+1'>&nbsp;&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >
+                                &nbsp;&nbsp;" . $info4 . "&nbsp;&nbsp;
+                            </font>
+                        </td>
+
+<td bgcolor='#AFEEEE' align='left'>
+                            &nbsp;&nbsp;";
+        
+        // Fixed the condition for Qty.
+        if ($info1 == 0) {
+            echo "<b><font face='tahoma' size='2' color='#'>Qty.</font><font face='tahoma' size='2' color='#B8860B'>0</font></b>";
+        } else if ($info1 < 4) {
+            echo "<b><font face='tahoma' size='2' color='#'>Qty.</font><font face='tahoma' size='2' color='#B8860B'>$info1</font></b>";
+        } else {
+            echo "<b><font face='tahoma' size='2' color='#'>Qty.</font><font face='tahoma' size='2' color='#B8860B'>$info1</font></b>";
+        }
+
+        echo "  </td>
+
+                <td bgcolor='#AFEEEE' align='left'>
+                    <font face='tahoma' size='2' color='#'>&nbsp;&nbsp;<b>Unit/Price</b><br></font>";
+                    
+        if ($equpprice == 0) {
+            echo "<font face='tahoma' size='2' color='#FF0000'><b>&nbsp;&nbsp;-</b></font>";
+        } else {
+            $formattedPrice = number_format($equpprice, 2, '.', ',');
+            echo "<font face='tahoma' size='2' color='#000000'>&nbsp;&nbsp;$formattedPrice</font>";
+        }
+        
+        echo "  </td>
+
+                <td bgcolor='#AFEEEE' align='right'>
+                    <font face='tahoma' size='2' color='#'><b>&nbsp;Total&nbsp;</b><br></font>
+                    <font face='tahoma' size='2' color='#000000'>
+                        <span>
+                            " . number_format($total, 2, '.', ',') . "&nbsp;
+                        </span>
+                    </font>
+</td>
+
+
+
+                    </form>
+
+                </tr>
+
+                <tr>
+
+                        <td colspan='7' ><textarea width='1000' cols='230' rows='1' style='resize: vertical;' readonly>" . $info6 . "</textarea></td>
+                
+                </tr>
               ";
            
         $bgcount++;
