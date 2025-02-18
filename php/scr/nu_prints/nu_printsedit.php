@@ -122,7 +122,7 @@ $infono =$result1['infono'];
                                           :</font></div></td>
                                       <td width="428"><font size="3"> 
 
-                                      <input name="infono" type="text" class="input"  id="infono" width="125">
+                                      <input name="infono" type="text"  id="infono" class="input" value='<?php echo "$infono"; ?>' size="10">
 
                                         </font></td>
                                     </tr>
