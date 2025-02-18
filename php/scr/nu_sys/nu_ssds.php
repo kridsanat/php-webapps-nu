@@ -428,8 +428,8 @@ if($bgmod==0){
 											
 					<tr height="">
 
-						<td colspan="10" >  
-						<textarea width='1000' cols='230' rows='1' style='resize: vertical;' readonly><?php echo $info6; ?></textarea>
+						<td colspan="6" >  
+
 						</td>
 
 						<td colspan="4" >
