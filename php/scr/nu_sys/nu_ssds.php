@@ -429,7 +429,7 @@ if($bgmod==0){
 					<tr height="">
 
 						<td colspan="10" >  
-						<textarea name="info6" type="text" id="" id="info6"  cols="1" rows="1" readonly><?php echo $info6; ?></textarea>
+						<textarea width='1000' cols='230' rows='1' style='resize: vertical;' readonly><?php echo $info6; ?></textarea>
 						</td>
 
 						<td colspan="4" >
