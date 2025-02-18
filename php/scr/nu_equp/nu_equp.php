@@ -247,13 +247,13 @@ $infono =$rows["infono"];
         echo "  </td>
 
                 <td width='8%' bgcolor='#AFEEEE' align='left'>
-                    <font face='tahoma' size='2' color='#'><b>Unit/Price</b><br></font>";
+                    <font face='tahoma' size='2' color='#'>&nbsp;&nbsp;<b>Unit/Price</b><br></font>";
                     
         if ($equpprice == 0) {
-            echo "<font face='tahoma' size='2' color='#FF0000'><b>-</b></font>";
+            echo "<font face='tahoma' size='2' color='#FF0000'><b>&nbsp;&nbsp;-</b></font>";
         } else {
             $formattedPrice = number_format($equpprice, 2, '.', ',');
-            echo "<font face='tahoma' size='2' color='#000000'>$formattedPrice</font>";
+            echo "<font face='tahoma' size='2' color='#000000'>&nbsp;&nbsp;$formattedPrice</font>";
         }
         
         echo "  </td>
