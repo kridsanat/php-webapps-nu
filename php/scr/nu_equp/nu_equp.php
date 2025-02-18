@@ -23,6 +23,7 @@ $pass_admin = $result["passadmin"];
 
 ?>
 <?php echo "$fav"; ?>
+<title><?php echo "$headtxt_web"; ?></title>
 
 
 		<!-- ส่วนหัว -->
