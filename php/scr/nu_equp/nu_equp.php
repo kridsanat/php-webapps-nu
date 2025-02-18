@@ -22,7 +22,7 @@ $user_admin = $result["useradmin"];
 $pass_admin = $result["passadmin"];
 
 ?>
-
+<?php echo "$fav"; ?>
 
 
 		<!-- ส่วนหัว -->

@@ -10,8 +10,8 @@ if ($connect->connect_error){
     die("Connection failed: " . $connect->connect_error);
 }
 
-$headtxt_web =  "Wellcome <link rel='icon' href='../images/favicon.ico' type='image/x-icon'>";
+$headtxt_web =  "Wellcome";
 $headtxt = "Hello .. Have a good day!";
-
+$fav = "<link rel='icon' href='../images/favicon.ico' type='image/x-icon'>"
 
 ?>
