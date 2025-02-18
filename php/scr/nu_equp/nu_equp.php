@@ -24,7 +24,6 @@ $pass_admin = $result["passadmin"];
 ?>
 <?php echo "$fav"; ?>
 <title><?php echo "$headtxt_web"; ?></title>
-<body style="background-color: #f0f0f0;">
 
 
 		<!-- ส่วนหัว -->
@@ -232,7 +231,7 @@ $infono =$rows["infono"];
 
                         <td>
                             <font face= 'tahoma' color='#000000' size='+1'>&nbsp;&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >
-                                &nbsp;&nbsp;<b>" . $info4 . "<b/>&nbsp;&nbsp;
+                                &nbsp;&nbsp;" . $info4 . "&nbsp;&nbsp;
                             </font>
                         </td>
 
@@ -328,4 +327,3 @@ echo "</div>";
         outline: none; /* ลบเส้นขอบเมื่อคลิก */
     }
 </style>
-</body>
