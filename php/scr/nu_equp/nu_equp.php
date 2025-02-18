@@ -233,19 +233,19 @@ $infono =$rows["infono"];
                         </td>
 
 
-								<td width="8%" bgcolor='#AFEEEE' align="left">
+								<td width='8%' bgcolor='#AFEEEE' align='left'>
 								&nbsp;&nbsp;									
 									<?php
 			
 									if ($info1 == 0)
 					  				{
-					  				echo "<b><font face=tahoma size=2 color=#>Qty.</font><font face=tahoma size=2 color=#B8860B>0</font></b>";
+					  				echo '<b><font face=tahoma size=2 color=#>Qty.</font><font face=tahoma size=2 color=#B8860B>0</font></b>';
 									}else if ($info1 < 4)
 					  				{
-					 				echo "<b><font face=tahoma size=2 color=#>Qty.</font> <font face=tahoma size=2 color=#B8860B>$info1</font></b> ";
+					 				echo '<b><font face=tahoma size=2 color=#>Qty.</font> <font face=tahoma size=2 color=#B8860B>$info1</font></b> ';
 									}else
 					  				{
-									echo "<b><font face=tahoma size=2 color=#>Qty.</font> <font face=tahoma size=2 color=#B8860B>$info1</font></b>";
+									echo '<b><font face=tahoma size=2 color=#>Qty.</font> <font face=tahoma size=2 color=#B8860B>$info1</font></b>';
 									}
 						
 									?>	
@@ -254,16 +254,16 @@ $infono =$rows["infono"];
 								</td>	
 					
 				
-								<td width="8%" bgcolor='#AFEEEE' align="left" >
+								<td width='8%' bgcolor='#AFEEEE' align='left' >
 
 									<?php
 						
 			
 									if ($equpprice == 0) {
-  									echo "<font face=tahoma size=2 color=#><b>Unit/Price</b><br></font><font face=tahoma size=2 color=#FF0000><b>-</b></font>";
+  									echo '<font face=tahoma size=2 color=#><b>Unit/Price</b><br></font><font face=tahoma size=2 color=#FF0000><b>-</b></font>';
 									} else if ($equpprice >= 1) {
  									 $formattedPrice = number_format($equpprice, 2, '.', ',');
- 									 echo "<font face=tahoma size=2 color=#><b>Unit/Price</b><br></font> <font face=tahoma size=2 color=#000000>$formattedPrice</font>";
+ 									 echo '<font face=tahoma size=2 color=#><b>Unit/Price</b><br></font> <font face=tahoma size=2 color=#000000>$formattedPrice</font>';
 									}
 									?>	
 											
@@ -293,7 +293,7 @@ $infono =$rows["infono"];
 
                 <tr>
 
-                        <td colspan='4' ><textarea width='1000' cols='230' rows='1' style='resize: vertical;' readonly>" . $info6 . "</textarea></td>
+                        <td colspan='4' ><textarea width='1000' cols='230' rows='1' style='resize: vertical;' readonly>' . $info6 . '</textarea></td>
                 
                 </tr>
               ";
