@@ -229,7 +229,7 @@ $infono =$rows["infono"];
                         </td>
 
                         <td>
-                            <font face= 'tahoma' color='#FFA500' size='+1'>&nbsp;&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >
+                            <font face= 'tahoma' color='#D2691E' size='+1'>&nbsp;&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >
                                 &nbsp;&nbsp;<b>" . $info4 . "<b/>&nbsp;&nbsp;
                             </font>
                         </td>
