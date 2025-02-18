@@ -24,6 +24,7 @@ $pass_admin = $result["passadmin"];
 ?>
 <?php echo "$fav"; ?>
 <title><?php echo "$headtxt_web"; ?></title>
+<body style="background-color: #f0f0f0;">
 
 
 		<!-- ส่วนหัว -->
@@ -327,3 +328,4 @@ echo "</div>";
         outline: none; /* ลบเส้นขอบเมื่อคลิก */
     }
 </style>
+</body>
