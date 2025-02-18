@@ -122,17 +122,7 @@ $infono =$result1['infono'];
                                           :</font></div></td>
                                       <td width="428"><font size="3"> 
 
-								                      	<select name="infono" id="infono" width="300">
-                                                  <option selected value="<?php echo "$infono"; ?>"><?php echo "$infono"; ?></option>
-                                                  <option value="HQ.Jatuchot">HQ.Jatuchot</option>
-                                                  <option value="Factory.TIP9">Factory.TIP9</option>
-                                                  <option value="Site.Central">Site.Central</option>
-                                                  <option value="Site.Nirvana">Site.Nirvana</option>
-                                                  <option value="Site.Nirvana.2">Site.Nirvana.2</option>
-                                                  <option value="Site.UM">Site.UM</option>
-                                                  <option value="Site.WHN">Site.WHN</option>
-                                                  <option value="Site.Bangpoo">Site.Bangpoo</option>
-                                        </select>
+                                      <input name="infono" type="text" class="input"  id="infono" width="125">
 
                                         </font></td>
                                     </tr>
