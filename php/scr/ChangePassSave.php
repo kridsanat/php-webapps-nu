@@ -25,6 +25,7 @@ mysqli_query($connect,$sql_pass);
 ?>
 <html>
 <head>
+<?php echo "$fav"; ?>
 <title><?PHP echo "$headtxt"; ?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=tis-620">
 <!-- Fireworks MX Dreamweaver MX target.  Created Sat Apr 02 10:29:23 GMT+0700 (SE Asia Standard Time) 2011-->

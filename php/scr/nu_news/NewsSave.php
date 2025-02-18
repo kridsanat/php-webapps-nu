@@ -46,6 +46,7 @@ if (!$result) {
 ?>
 <html>
 <head>
+<?php echo "$fav"; ?>
 <title><? echo "$headtxt"; ?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=tis-620">
 <meta http-equiv="refresh" content="900;url=../logout.php" />
