@@ -216,7 +216,7 @@ $infono =$rows["infono"];
         echo "  <tr style='background-color: $bgcolor;'>
 
                     <form method='post' action='nu_equpedit.php?SerID=" . $idx . "' >
-                        <td width='20' ><img src=../pic/$equpphoto width=50 height=50 border=1 ></td>
+                        <td width='20' ><img src=../pic/$printsphoto width=50 height=50 border=1 ></td>
                     
                         <td bgcolor='#4682B4' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;" . $rows["infono"] . "&nbsp;&nbsp;</b></font></td>
                     
