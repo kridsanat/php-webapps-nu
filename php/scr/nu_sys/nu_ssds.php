@@ -395,7 +395,7 @@ if($bgmod==0){
 
 											<br>
 
-									<font face="tahoma" size="4" color="0000CC">
+									<font face="tahoma" size="3" color="0000CC">
 										&nbsp;Preroid Expire : </font><font face="tahoma" size="3" color="0000CC">&nbsp;<?php echo "$info5"; ?>												
 									</font>
 
