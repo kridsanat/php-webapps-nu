@@ -190,9 +190,9 @@ if (mysqli_num_rows($fect) == 0) {
                 <th><font face= 'tahoma' color='#27408B' size='1'>สถาณที่</font></th>
                 <th width='200' ><font face= 'tahoma' color='#27408B' size='1'>ผู้แก้ไข</font></th>
                 <th><font face= 'tahoma' color='#27408B' size='1'>รายละเอียด</font></th>
-                <th><font face= 'tahoma' color='#27408B' size='1'>จำนวน</font></th>
-                <th><font face= 'tahoma' color='#27408B' size='1'>ราคา</font></th>
-                <th><font face= 'tahoma' color='#27408B' size='1'>รวม</font></th>
+                <th width='20'><font face= 'tahoma' color='#27408B' size='1'>จำนวน</font></th>
+                <th width='50'><font face= 'tahoma' color='#27408B' size='1'>ราคา</font></th>
+                <th width='50'><font face= 'tahoma' color='#27408B' size='1'>รวม</font></th>
             </tr>";
 
     while ($rows = mysqli_fetch_array($fect)) {
@@ -234,7 +234,7 @@ $infono =$rows["infono"];
                             </font>
                         </td>
 
-<td width='8%' bgcolor='#AFEEEE' align='left'>
+<td bgcolor='#AFEEEE' align='left'>
                             &nbsp;&nbsp;";
         
         // Fixed the condition for Qty.
@@ -248,7 +248,7 @@ $infono =$rows["infono"];
 
         echo "  </td>
 
-                <td width='8%' bgcolor='#AFEEEE' align='left'>
+                <td bgcolor='#AFEEEE' align='left'>
                     <font face='tahoma' size='2' color='#'>&nbsp;&nbsp;<b>Unit/Price</b><br></font>";
                     
         if ($equpprice == 0) {
@@ -260,7 +260,7 @@ $infono =$rows["infono"];
         
         echo "  </td>
 
-                <td width='6%' bgcolor='#AFEEEE' align='right'>
+                <td bgcolor='#AFEEEE' align='right'>
                     <font face='tahoma' size='2' color='#'><b>&nbsp;Total&nbsp;</b><br></font>
                     <font face='tahoma' size='2' color='#000000'>
                         <span>
