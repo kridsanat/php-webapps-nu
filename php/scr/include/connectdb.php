@@ -12,4 +12,7 @@ if ($connect->connect_error){
 
 $headtxt_web =  "Wellcome ";
 $headtxt = "Hello .. Have a good day! ";
+<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+
+
 ?>
