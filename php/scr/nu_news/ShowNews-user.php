@@ -1,25 +1,8 @@
 <?php
 @session_start();
 
-ob_start();
-$useradmin = $_SESSION["useradmin"];
-if(empty($useradmin)) 
-{
-echo "<script>alert('Only Administrator');</script>";
-header("Location: ../index.php");
-exit();
-}
 require_once "../include/tdate.php";
 require_once "../include/connectdb.php";
-
-						  $sql="select * from useradmin where useradmin='$useradmin'";
-						  $db_query=mysqli_query($connect, $sql);					
-						  $result=mysqli_fetch_array($db_query);
-						  $id=$result["id"];
-						  $adminname=$result["name"];
-						  $user_admin=$result["useradmin"];
-						  $pass_admin=$result["passadmin"];
-
 
 
 ?>
