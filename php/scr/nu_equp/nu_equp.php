@@ -231,6 +231,8 @@ $infono =$rows["infono"];
                         <td>
                             <font face= 'tahoma' color='#27408B' size='+1'>&nbsp;&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >
                                 &nbsp;&nbsp;" . $info4 . "&nbsp;&nbsp;
+                                <br>
+                                &nbsp;&nbsp;" . $info5 . "&nbsp;&nbsp;
                             </font>
                         </td>
 
