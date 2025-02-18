@@ -224,22 +224,16 @@ $infono =$rows["infono"];
                     
                         <td>
                             <font face= 'tahoma' color='#27408B' size='+1'><b>&nbsp;&nbsp;" . $rows["info2"] . "&nbsp;&nbsp;</font>
-                            
                             <br>
-                            &nbsp;&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >
-                            <font face= 'tahoma' color='#27408B' size='1'>&nbsp;&nbsp;" . $rows["info3"] . "&nbsp;&nbsp;</font>
-                            
+                            <font face= 'tahoma' color='#27408B' size='1'>&nbsp;&nbsp;&nbsp;&nbsp;" . $rows["info3"] . "&nbsp;&nbsp;</font>
                         </td>
-                   
 
-                
-                        <td >
-                            <font face= 'tahoma' color='#27408B' size='+1'>
+                        <td>
+                            <font face= 'tahoma' color='#27408B' size='+1'>&nbsp;&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >
                                 &nbsp;&nbsp;" . $info4 . "&nbsp;&nbsp;
                                 <br>
                                 <font face='tahoma' size='2' color='#778899'>
                                 &nbsp;&nbsp;" . $info5 . "&nbsp;&nbsp;
-                                </font>
                             </font>
                         </td>
 
