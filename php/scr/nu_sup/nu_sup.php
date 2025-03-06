@@ -117,12 +117,12 @@ $pass_admin = $result["passadmin"];
        	 		<td bgcolor="#FFFFFF"> 
 
 <?php
-	$numproducts ="select * from nu_equps";
+	$numproducts ="select * from nu_sup";
 	$query_select=mysqli_query($connect, $numproducts);
 	$numall=mysqli_num_rows($query_select);
 ?>																											  
 
-<a href="nu_equpsadd.php">
+<a href="nu_supadd.php">
 	<font face="tahoma" color="#000033" size="4">
 
 		<u><i>Create New</i></u>
@@ -141,7 +141,7 @@ $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $infono_filter = isset($_GET['infono']) ? mysqli_real_escape_string($connect, $_GET['infono']) : ''; // ป้องกัน SQL Injection
 
 // ดึงข้อมูลประเภท infono ที่ไม่ซ้ำ
-$select_infono = "SELECT DISTINCT infono FROM nu_equps ORDER BY infono";
+$select_infono = "SELECT DISTINCT infono FROM nu_sup ORDER BY infono";
 $query_infono = mysqli_query($connect, $select_infono);
 if (!$query_infono) {
     echo "ไม่สามารถดึงข้อมูลประเภท infono: " . mysqli_error($connect);
@@ -160,7 +160,7 @@ echo "</div>";
 echo "</form>";
 
 // การกรองข้อมูลตาม infono ที่เลือก
-$select = "SELECT * FROM nu_equps WHERE infono LIKE '%$infono_filter%' ORDER BY infono, info4 ASC";
+$select = "SELECT * FROM nu_sup WHERE infono LIKE '%$infono_filter%' ORDER BY infono, info4 ASC";
 $q_ry = mysqli_query($connect, $select);
 $num_rows = mysqli_num_rows($q_ry);
 
@@ -170,7 +170,7 @@ $totalpage = ($rt != 0) ? floor($num_rows / $pagesize) + 1 : floor($num_rows / $
 $goto = ($page - 1) * $pagesize;
 
 mysqli_free_result($q_ry);
-$sql_select_mem = "SELECT * FROM nu_equps WHERE infono LIKE '%$infono_filter%' ORDER BY infono, info4 ASC LIMIT $goto, $pagesize";
+$sql_select_mem = "SELECT * FROM nu_sup WHERE infono LIKE '%$infono_filter%' ORDER BY infono, info4 ASC LIMIT $goto, $pagesize";
 $fect = mysqli_query($connect, $sql_select_mem);
 
 if (!$fect) {
@@ -218,7 +218,7 @@ if (mysqli_num_rows($fect) == 0) {
 
         echo "  <tr style='background-color: $bgcolor;'>
 
-                    <form method='post' action='nu_equpedit.php?SerID=" . $idx . "' >
+                    <form method='post' action='nu_supedit.php?SerID=" . $idx . "' >
                         <td width='20' ><img src=../pic/$equpphoto width=50 height=50 border=1 ></td>
                     
                         <td bgcolor='#4682B4' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;" . $rows["infono"] . "&nbsp;&nbsp;</b></font></td>
