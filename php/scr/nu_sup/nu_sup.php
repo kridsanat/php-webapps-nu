@@ -40,7 +40,7 @@ $pass_admin = $result["passadmin"];
 		
 						<div align="left">
 			
-						<font color="#000000" size="4">Presently Page : <strong>SUB DOMAIN PAGE</strong></font>
+						<font color="#000000" size="4">Presently Page : <strong>WAN-IP & Production SubDomain Management</strong></font>
 
 						</div>
 			
