@@ -278,7 +278,7 @@ if (mysqli_num_rows($fect) == 0) {
 
                 <tr>
 
-                        <td colspan='7' ><textarea width='1000' cols='230' rows='1' style='resize: vertical;' readonly>" . $info6 . "</textarea></td>
+                        <td colspan='8' ><textarea width='1000' cols='230' rows='1' style='resize: vertical;' readonly>" . $info6 . "</textarea></td>
                 
                 </tr>
               ";
