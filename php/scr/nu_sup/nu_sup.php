@@ -170,7 +170,7 @@ $totalpage = ($rt != 0) ? floor($num_rows / $pagesize) + 1 : floor($num_rows / $
 $goto = ($page - 1) * $pagesize;
 
 mysqli_free_result($q_ry);
-$sql_select_mem = "SELECT * FROM nu_sup WHERE infono LIKE '%$infono_filter%' ORDER BY infono, info4 ASC LIMIT $goto, $pagesize";
+$sql_select_mem = "SELECT * FROM nu_sup WHERE infono LIKE '%$infono_filter%' ORDER BY infono, info5 ASC LIMIT $goto, $pagesize";
 $fect = mysqli_query($connect, $sql_select_mem);
 
 if (!$fect) {
