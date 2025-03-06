@@ -117,24 +117,6 @@ $infono =$result1['infono'];
                                         
                                         </font></td>
                                     </tr>
-									<tr bgcolor="#FFFFFF"> 
-                                      <td width="140"> <div align="right"><font size="2">Location 
-                                          :</font></div></td>
-                                      <td width="428"><font size="3"> 
-
-								                      	<select name="infono" id="infono" width="300">
-                                                  <option selected value="<?php echo "$infono"; ?>"><?php echo "$infono"; ?></option>
-                                                  <option value="IIS">IIS</option>
-                                                  <option value="XAMPP">XAMPP</option>
-                                                  <option value="Apache.linux">Apache.linux</option>
-                                                  <option value="Nginx.Container">Nginx.Container</option>
-                                                  <option value="Firewall">Firewall</option>
-                                                  <option value="Cloud">Cloud</option>
-                                                  <option value="Other">Other</option>
-                                        </select>
-
-                                        </font></td>
-                                    </tr>
 
                                     <tr bgcolor="#FFFFFF"> 
                                       <td width="160"> <div align="right"><font size="2">Location.
