@@ -140,7 +140,7 @@ function checkprd()
                                       <td width="160"> <div align="right"><font size="2">Location.
                                           :</font></div></td>
                                       <td width="501"><font size="3"> 
-                                        <input name="info" type="text" id="info" class="input" size="30">
+                                        <input name="infono" type="text" id="infono" class="input" size="30">
                                         </font></td>
                                     </tr>
 
