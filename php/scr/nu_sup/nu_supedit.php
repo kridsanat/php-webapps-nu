@@ -143,7 +143,7 @@ $infono =$result1['infono'];
                                         </font></td>
                                     </tr>   									
 									 <tr bgcolor="#FFFFFF"> 
-                                      <td> <div align="right"><font size="2">Status type.
+                                      <td> <div align="right"><font size="2">WAN.
                                           :</font></div></td>
                                       <td><font size="3"> 
                                         <input name="info5" type="text" class="input" id="info5" value='<?php echo $info5; ?>' size="30">

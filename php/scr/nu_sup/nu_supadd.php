@@ -161,7 +161,7 @@ function checkprd()
                                     </tr>                                    
 																		
 									<tr bgcolor="#FFFFFF"> 
-                                      <td> <div align="right"><font size="2">Status type. 
+                                      <td> <div align="right"><font size="2">WAN. 
                                           :</font></div></td>
                                       <td><font size="3"> 
                                         <input name="info5" type="text" class="input" id="info5" size="5" maxlength="30">
