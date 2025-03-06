@@ -231,7 +231,7 @@ if (mysqli_num_rows($fect) == 0) {
 
                         <td>
                             <font face= 'tahoma' color='#000000' size='+1'>&nbsp;&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >
-                                &nbsp;&nbsp;Public IP: " . $info5 . "&nbsp;&nbsp;|&nbsp;&nbsp;" . $info4 . "
+                                &nbsp;&nbsp;Public IP: <font face= 'tahoma' color='#FFCC33' size='+1'>" . $info5 . "</font>ฬ&nbsp;&nbsp;|&nbsp;&nbsp;" . $info4 . "
                             </font>
                         </td>
 
