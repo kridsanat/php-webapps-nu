@@ -233,9 +233,7 @@ if (mysqli_num_rows($fect) == 0) {
                         <td>
                             <font face= 'tahoma' color='#000000' size='3'>&nbsp;&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >
                                 &nbsp;&nbsp;" . $info4 . " &nbsp;&nbsp;" . $status . "
-                            </font>สุกี้แห้งรวม
-หมูกรอบผัดผงกะหรี่
-คะน้าหมูกรอบ + ไข่ดาว(ไข่แดงสุก)ๆ
+                            </font>
                         </td>
 
 <td bgcolor='#AFEEEE' align='left'>
