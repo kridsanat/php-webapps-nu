@@ -173,7 +173,7 @@ $adminname = htmlspecialchars($result["name"], ENT_QUOTES, 'UTF-8');
         <div class="links">
             <a href="nu_news/newmain.php" class="link">Manual</a>
             <a href="nu_equp/nu_equp.php" class="link">System and Networks Management</a>
-            <a href="nu_sup/nu_sup.php" class="link">Sub Domain Management</a>
+            <a href="nu_sup/nu_sup.php" class="link">WAN IP Management</a>
             <a href="nu_prints/nu_prints.php" class="link">Printers Management</a>
         </div>
     </div>
