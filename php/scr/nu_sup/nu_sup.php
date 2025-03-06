@@ -190,6 +190,7 @@ if (mysqli_num_rows($fect) == 0) {
                 <th><font face= 'tahoma' color='#27408B' size='1'>รูปภาพ</font></th>
                 <th><font face= 'tahoma' color='#27408B' size='1'>สถาณที่</font></th>
                 <th width='200' ><font face= 'tahoma' color='#27408B' size='1'>ผู้แก้ไข</font></th>
+				<th width='200' ><font face= 'tahoma' color='#27408B' size='1'>WAN</font></th>
                 <th><font face= 'tahoma' color='#27408B' size='1'>รายละเอียด</font></th>
                 <th width='100'><font face= 'tahoma' color='#27408B' size='1'>จำนวน</font></th>
                 <th width='100'><font face= 'tahoma' color='#27408B' size='1'>ราคา</font></th>
@@ -261,7 +262,7 @@ if (mysqli_num_rows($fect) == 0) {
         
         echo "  </td>
 
-                <td width='100' bgcolor='#AFEEEE' align='right'>
+                <td width='50' bgcolor='#AFEEEE' align='right'>
                     <font face='tahoma' size='2' color='#'><b>&nbsp;Total&nbsp;</b><br></font>
                     <font face='tahoma' size='2' color='#000000'>
                         <span>
