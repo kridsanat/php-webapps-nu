@@ -211,15 +211,15 @@ if (mysqli_num_rows($fect) == 0) {
 		$infono =$rows["infono"];
         $bgcolor = ($bgcount % 2 == 0) ? "#E9E9E8" : "#FFFFFF";
 
-        if (is_numeric($info1) && is_numeric($equpprice)) {
-            $total = $equpprice * $info1;
+        if (is_numeric($info1) && is_numeric($supprice)) {
+            $total = $supprice * $info1;
             $sum += $total;
         }
 
         echo "  <tr style='background-color: $bgcolor;'>
 
                     <form method='post' action='nu_supedit.php?SerID=" . $idx . "' >
-                        <td width='20' ><img src=../pic/$equpphoto width=50 height=50 border=1 ></td>
+                        <td width='20' ><img src=../pic/$supphoto width=50 height=50 border=1 ></td>
                     
                         <td bgcolor='#4682B4' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;" . $rows["infono"] . "&nbsp;&nbsp;</b></font></td>
                     
@@ -252,10 +252,10 @@ if (mysqli_num_rows($fect) == 0) {
                 <td bgcolor='#AFEEEE' align='left'>
                     <font face='tahoma' size='2' color='#'>&nbsp;&nbsp;<b>Unit/Price</b><br></font>";
                     
-        if ($equpprice == 0) {
+        if ($supprice == 0) {
             echo "<font face='tahoma' size='2' color='#FF0000'><b>&nbsp;&nbsp;-</b></font>";
         } else {
-            $formattedPrice = number_format($equpprice, 2, '.', ',');
+            $formattedPrice = number_format($supprice, 2, '.', ',');
             echo "<font face='tahoma' size='2' color='#000000'>&nbsp;&nbsp;$formattedPrice</font>";
         }
         
