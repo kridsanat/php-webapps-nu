@@ -3,37 +3,28 @@
 
 ob_start();
 $useradmin = $_SESSION["useradmin"];
-if(empty($useradmin)) 
-{
-echo "<script>alert('Only Administrator');</script>";
-header("Location: ../index.php");
-exit();
+if (empty($useradmin)) {
+    echo "<script>alert('Only Administrator');</script>";
+    header("Location: ../index.php");
+    exit();
 }
+
 require_once "../include/tdate.php";
 require_once "../include/connectdb.php";
 
-						  $sql="select * from useradmin where useradmin='$useradmin'";
-						  $db_query=mysqli_query($connect, $sql);					
-						  $result=mysqli_fetch_array($db_query);
-						  $id=$result["id"];
-						  $adminname=$result["name"];
-						  $user_admin=$result["useradmin"];
-						  $pass_admin=$result["passadmin"];
-
-
+// เช็คข้อมูลผู้ใช้
+$sql = "select * from useradmin where useradmin='$useradmin'";
+$db_query = mysqli_query($connect, $sql);                    
+$result = mysqli_fetch_array($db_query);
+$id = $result["id"];
+$adminname = $result["name"];
+$user_admin = $result["useradmin"];
+$pass_admin = $result["passadmin"];
 
 ?>
+<?php echo "$fav"; ?>
+<title><?php echo "$headtxt_web"; ?></title>
 
-<html>
-
-		<head>
-			<title><?php echo "$headtxt_web"; ?></title>
-			<meta http-equiv="Content-Type" content="text/html; charset=tis-620">
-			<meta http-equiv="refresh" content="8900;url=../logout.php" />
-			<link href="" rel="" type="">
-		</head>
-
-<body bgcolor="#ffffff">
 
 		<!-- ส่วนหัว -->
 		<TABLE width="90%" border="0" align="center" cellpadding="1" cellspacing="1">
@@ -49,12 +40,13 @@ require_once "../include/connectdb.php";
 		
 						<div align="left">
 			
-						<font color="#000000" size="4">Presently Page : <strong>.....</strong></font>
+						<font color="#000000" size="4">Presently Page : <strong>SYSTEMS PAGE</strong></font>
 
 						</div>
 			
 				</td>
 				
+
 				
 				<!--
 				<td width="40%" valign="center" >
@@ -125,12 +117,12 @@ require_once "../include/connectdb.php";
        	 		<td bgcolor="#FFFFFF"> 
 
 <?php
-	$numproducts ="select * from nu_sup";
+	$numproducts ="select * from nu_equps";
 	$query_select=mysqli_query($connect, $numproducts);
 	$numall=mysqli_num_rows($query_select);
 ?>																											  
 
-<a href="nu_supadd.php">
+<a href="nu_equpsadd.php">
 	<font face="tahoma" color="#000033" size="4">
 
 		<u><i>Create New</i></u>
@@ -141,291 +133,197 @@ require_once "../include/connectdb.php";
 &nbsp;
 
 <br>
-<br>								  
-									 
-<?PHP
-
-$page = isset($_GET['page']) ? $_GET['page'] : '';
-
-$select_type="select * from nu_sup order by info5, infono, info1, info4 asc";
-$query_select=mysqli_query($connect, $select_type);
-$num_rows=mysqli_num_rows($query_select);
-
-if($num_rows<1){
-echo "<br><br><center><font color=#666666 face=tahoma size=2><b>No item</b></font></center>";
-}else{
-		$select="select * from nu_sup order by info5, infono, info1, info4 asc";
-		$q_ry = mysqli_query($connect,$select);
-	 	$num_rows=mysqli_num_rows($q_ry);
-  		$pagesize=100;
-		$rt=$num_rows%$pagesize;
-		if($rt!=0)
-			{
-				$totalpage=floor($num_rows/$pagesize)+1;
-			}
-		else
-			{
-				$totalpage=floor($num_rows/$pagesize);
-				$toppic_id=1;
-			}
-		if(empty($page))
-			{
-				$page=1;
-			}
-		mysqli_free_result($q_ry);
-		$goto=($page-1)*$pagesize;
-$sql_select_mem="Select * From nu_sup order by info5, infono, info1, info4 asc limit $goto,$pagesize";
-		$fect=mysqli_query($connect,$sql_select_mem);
-		if(!$fect)
-		{
-		("ติดต่อฐานข้อมูลไม่ได้".mysqli_error());
-		exit;
-		}
-
-	  $bgcount=0;
-	while($rows=mysqli_fetch_array($fect))
-	{
-$idx =$rows["id"];
-$info1 =$rows["info1"];
-$info2 =$rows["info2"];
-$info3 =$rows["info3"];
-$info4 =$rows["info4"];
-$info5 =$rows["info5"];
-$info6 =$rows["info6"];
-$supprice =$rows["supprice"];
-$supphoto =$rows["supphoto"];
-$status =$rows["status"];
-$infono =$rows["infono"];
-if (is_numeric($info1) && is_numeric($supprice)) {
-    $total = $supprice * $info1;
-    $sum += $total;
-    // Rest of the code
-} else {
-    // Handle the case when the values are not numeric
-}
-$bgcount=$bgcount+1;
-$bgmod=$bgcount%2;
-if($bgmod==0){
-	$bgcolor="#E9E9E8";
-}else{
-	$bgcolor="#FFFFFF";
-}		
-
-?>
-	
-
-<form method="post" action="nu_supedit.php?SerID=<?php echo "$idx"; ?>">
+<br>
 
 
-    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
-                    
-			<tr bgcolor="#AFEEEE" > 
-
-
-								
-
-												
-								
-								
-												
-
-								<td bgcolor="#FFFFFF" width="2%" valign="center"  >
-									
-									<center>
-									<a href="<?php echo "../pic/$supphoto"; ?>" rel="lightbox" target="_blank" style="text-decoration: none;" >
-												
-										<?php
-							 			 if ($supphoto >= 100)
-							  			{
-							 			echo "<img src=../pic/$supphoto width=15 height=15 border=1 >";
-							 			}else
-										{
-										echo "<font face= 'tahoma' color='' size='2'>N/A</font>";	
-									    }
-							 			 ?>
-		
-									</a>
-									</center>			
-												
-
-										
-			<?php
-			
-			if ($infono == 'IIS')
-			  {
-			  	echo "<td bgcolor='#4682B4' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;IIS</b></font></td>";
-			}else if ($infono == 'XAMPP')
-			  {
-				echo "<td bgcolor='#3CB371' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;XAMPP</b></font></td>";
-			}else if ($infono == 'Apache.linux')
-			{
-			  echo "<td bgcolor='#99CCFF' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Apache.linux</b></font></td>";
-			}else if ($infono == 'Other')
-			{
-			  echo "<td bgcolor='#66CCCC' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Other</b></font></td>";
-			}else if ($infono == 'Firewall')
-			{
-			  echo "<td bgcolor='#B0C4DE' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Firewall</b></font></td>";
-			}else if ($infono == 'Cloud')
-			{
-			  echo "<td bgcolor='#8FBC8F' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Cloud</b></font></td>";
-			}else if ($infono == 'Nginx.Container')
-			{
-			  echo "<td bgcolor='#B03060' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Nginx.Container</b></font></td>";
-			}else if ($infono == 'Site.Bangpoo')
-			{
-			  echo "<td bgcolor='#B03060' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;Site.Bangpoo</b></font></td>";
-			}else
-			  {
-				echo "<td bgcolor='#66CCCC' width='10%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;$infono</b></font></td>";
-			}
-			
-			
-						
-			?>
-																		
-			
-			
-					
-							
-							<td width="10%" bgcolor='#AFEEEE' align="left" >
-								
-			
-
-								
-
-								&nbsp;<?php echo "<font face=tahoma size=2 color=#27408B><b> $info2</b></font>"; ?>
-								<br>
-								&nbsp;<font face="tahoma" size="2" color="#"></font>
-								<?php echo "<font face=tahoma size=2 color=#	><b>$info3</b></font>"; ?>
-								
-											
-							</td>
-							
-
-												
-												
-												
-									<?php
-									if ($status == "Active")
-					 				{
-									  echo "<td width='0.5%' align='center' bgcolor='green'></td>";
-									}else if ($status == "Deactive")
-									{
-									  echo "<td width='0.5%' align='center' bgcolor='red'></td>";
-									}						
-									?>
-						
-						
-															
-												
-												
-								<td bgcolor="#ffffff" width="28%" valign="top" >
-											
-									
-								&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >&nbsp;
-								<i><b><?php echo "<font face=tahoma size=4 color=#006699 >$info4 </font>"; ?></b></i>
-									
-										
-							
-											
-										<?php
-			
-			if ($info5 == 'PRD')
-			  {
-			  	echo "<td bgcolor='#4682B4' width='3%' ><font face= 'tahoma' color='#FFFACD' size='2'><b>&nbsp;&nbsp;PRD</b></font></td>";
-			}else if ($info5 == 'DEV')
-			  {
-				echo "<td bgcolor='#3CB371' width='3%' ><font face= 'tahoma' color='#FFFACD' size='2'><b>&nbsp;&nbsp;DEV</b></font></td>";
-			}								
-										?>		
-
-
-
-								
-								
-											
-								</td>
-
-								<td width="10%" bgcolor='#FFFFFF' align="left">
-								&nbsp;&nbsp;	
-								<?php echo "<font face=tahoma size=4 color=#3709e2 >$info1 </font>"; ?>	
-
-								</td>									
-		 
-								<td width="17%" bgcolor='#FFFFFF' align="left">
-
-								&nbsp;						
-								<textarea name="info6" type="text" id="" id="info6" cols="47" rows="1" readonly><?php echo $info6; ?></textarea>
-								&nbsp;<a href="nu_delsup.php?SerID=<?php echo "$idx"; ?>" onclick="return confirm('Are you sure?')" ><img src="../images/icon_close.jpg" alt="ลบข้อมูล" width="" height="" border="0" ></a></div>
-
-  								</td>	
-					
-				
-
-
-
-								<!--
-								<td width="6%" bgcolor='#AFEEEE' align="right">						
-	
-								&nbsp;<?php echo "<font face=tahoma size=4 color=#000000 >$supprice </font>"; ?>			
-								
-
-								</td>												
-								-->				
-												
-
-											
-											
-                                        
-											
-	
-			</tr>
-											
-    </table>
-	
-</form>
-																						
-											
 <?php
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$infono_filter = isset($_GET['infono']) ? mysqli_real_escape_string($connect, $_GET['infono']) : ''; // ป้องกัน SQL Injection
+
+// ดึงข้อมูลประเภท infono ที่ไม่ซ้ำ
+$select_infono = "SELECT DISTINCT infono FROM nu_equps ORDER BY infono";
+$query_infono = mysqli_query($connect, $select_infono);
+if (!$query_infono) {
+    echo "ไม่สามารถดึงข้อมูลประเภท infono: " . mysqli_error($connect);
+    exit;
 }
+
+// สร้างปุ่มเลือก infono
+echo "<form method='GET' action=''>";
+echo "<input type='hidden' name='page' value='$page'>"; // ส่งค่าหน้าปัจจุบันไปด้วย
+echo "<div style='margin-bottom: 10px;'>"; // ใช้ div เพื่อจัดการรูปแบบการแสดงผล
+while ($row = mysqli_fetch_assoc($query_infono)) {
+    $selected = ($row['infono'] == $infono_filter) ? 'style="background-color: #ddd;"' : ''; // เปลี่ยนสีเมื่อเลือก
+    echo "<button type='submit' name='infono' value='" . $row['infono'] . "' $selected class='btn-style'>" . $row['infono'] . "</button>";
 }
+echo "</div>";
+echo "</form>";
+
+// การกรองข้อมูลตาม infono ที่เลือก
+$select = "SELECT * FROM nu_equps WHERE infono LIKE '%$infono_filter%' ORDER BY infono, info4 ASC";
+$q_ry = mysqli_query($connect, $select);
+$num_rows = mysqli_num_rows($q_ry);
+
+$pagesize = 100;
+$rt = $num_rows % $pagesize;
+$totalpage = ($rt != 0) ? floor($num_rows / $pagesize) + 1 : floor($num_rows / $pagesize);
+$goto = ($page - 1) * $pagesize;
+
+mysqli_free_result($q_ry);
+$sql_select_mem = "SELECT * FROM nu_equps WHERE infono LIKE '%$infono_filter%' ORDER BY infono, info4 ASC LIMIT $goto, $pagesize";
+$fect = mysqli_query($connect, $sql_select_mem);
+
+if (!$fect) {
+    echo "ติดต่อฐานข้อมูลไม่ได้: " . mysqli_error($connect);
+    exit;
+}
+
+$sum = 0;
+$bgcount = 0;
+
+// ถ้าไม่มีข้อมูล
+if (mysqli_num_rows($fect) == 0) {
+    echo "<p>ไม่พบข้อมูลที่ตรงกับการค้นหาา</p>";
+} else {
+    echo "<table border='1' width='90%' align='center' cellspacing='1' cellpadding='1' >
+            <tr>
+                <th><font face= 'tahoma' color='#27408B' size='1'>รูปภาพ</font></th>
+                <th><font face= 'tahoma' color='#27408B' size='1'>สถาณที่</font></th>
+                <th width='200' ><font face= 'tahoma' color='#27408B' size='1'>ผู้แก้ไข</font></th>
+                <th><font face= 'tahoma' color='#27408B' size='1'>รายละเอียด</font></th>
+                <th width='100'><font face= 'tahoma' color='#27408B' size='1'>จำนวน</font></th>
+                <th width='100'><font face= 'tahoma' color='#27408B' size='1'>ราคา</font></th>
+                <th width='100'><font face= 'tahoma' color='#27408B' size='1'>รวม</font></th>
+            </tr>";
+
+    while ($rows = mysqli_fetch_array($fect)) {
+
+		$idx =$rows["id"];
+		$info1 =$rows["info1"];
+		$info2 =$rows["info2"];
+		$info3 =$rows["info3"];
+		$info4 =$rows["info4"];
+		$info5 =$rows["info5"];
+		$info6 =$rows["info6"];
+		$supprice =$rows["supprice"];
+		$supphoto =$rows["supphoto"];
+		$status =$rows["status"];
+		$infono =$rows["infono"];
+        $bgcolor = ($bgcount % 2 == 0) ? "#E9E9E8" : "#FFFFFF";
+
+        if (is_numeric($info1) && is_numeric($equpprice)) {
+            $total = $equpprice * $info1;
+            $sum += $total;
+        }
+
+        echo "  <tr style='background-color: $bgcolor;'>
+
+                    <form method='post' action='nu_equpedit.php?SerID=" . $idx . "' >
+                        <td width='20' ><img src=../pic/$equpphoto width=50 height=50 border=1 ></td>
+                    
+                        <td bgcolor='#4682B4' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;" . $rows["infono"] . "&nbsp;&nbsp;</b></font></td>
+                    
+                        <td>
+                            <font face= 'tahoma' color='#27408B' size='+1'><b>&nbsp;&nbsp;" . $rows["info2"] . "&nbsp;&nbsp;</font>
+                            <br>
+                            <font face= 'tahoma' color='#FF0033' size='1'>&nbsp;&nbsp;&nbsp;&nbsp;" . $rows["info3"] . "&nbsp;&nbsp;</font>
+                        </td>
+
+                        <td>
+                            <font face= 'tahoma' color='#000000' size='+1'>&nbsp;&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >
+                                &nbsp;&nbsp;" . $info4 . "&nbsp;&nbsp;
+                            </font>
+                        </td>
+
+<td bgcolor='#AFEEEE' align='left'>
+                            &nbsp;&nbsp;";
+        
+        // Fixed the condition for Qty.
+        if ($info1 == 0) {
+            echo "<b><font face='tahoma' size='2' color='#'>Qty.</font><font face='tahoma' size='2' color='#B8860B'>0</font></b>";
+        } else if ($info1 < 4) {
+            echo "<b><font face='tahoma' size='2' color='#'>Qty.</font><font face='tahoma' size='2' color='#B8860B'>$info1</font></b>";
+        } else {
+            echo "<b><font face='tahoma' size='2' color='#'>Qty.</font><font face='tahoma' size='2' color='#B8860B'>$info1</font></b>";
+        }
+
+        echo "  </td>
+
+                <td bgcolor='#AFEEEE' align='left'>
+                    <font face='tahoma' size='2' color='#'>&nbsp;&nbsp;<b>Unit/Price</b><br></font>";
+                    
+        if ($equpprice == 0) {
+            echo "<font face='tahoma' size='2' color='#FF0000'><b>&nbsp;&nbsp;-</b></font>";
+        } else {
+            $formattedPrice = number_format($equpprice, 2, '.', ',');
+            echo "<font face='tahoma' size='2' color='#000000'>&nbsp;&nbsp;$formattedPrice</font>";
+        }
+        
+        echo "  </td>
+
+                <td bgcolor='#AFEEEE' align='right'>
+                    <font face='tahoma' size='2' color='#'><b>&nbsp;Total&nbsp;</b><br></font>
+                    <font face='tahoma' size='2' color='#000000'>
+                        <span>
+                            " . number_format($total, 2, '.', ',') . "&nbsp;
+                        </span>
+                    </font>
+</td>
+
+
+
+                    </form>
+
+                </tr>
+
+                <tr>
+
+                        <td colspan='7' ><textarea width='1000' cols='230' rows='1' style='resize: vertical;' readonly>" . $info6 . "</textarea></td>
+                
+                </tr>
+              ";
+           
+        $bgcount++;
+    }
+    echo "</table>";
+
+}
+
+// แสดงลิงค์แบ่งหน้า
+echo "<div><br>";
+if ($page > 1) {
+    echo "<a href='?page=" . ($page - 1) . "&infono=$infono_filter'>ก่อนหน้า</a> ";
+}
+for ($i = 1; $i <= $totalpage; $i++) {
+    echo "<a href='?page=$i&infono=$infono_filter'>$i</a> ";
+}
+if ($page < $totalpage) {
+    echo "<a href='?page=" . ($page + 1) . "&infono=$infono_filter'>ถัดไป</a> ";
+}
+echo "</div>";
 ?>
-												
-                                        
-										  
-										
-										  
-                                        <tr class="jobscss"> 
-                                          <td>
-										  
-											<strong><span class="maekhawtom"><font color="#990000" size="2">Page 
-                                            :</font></span></strong> <font color="#999999" size="2"><span class="maekhawtom"> 
-    
-	<?php 
-	for($i=1;$i<$page;$i++)
-	{
-	echo"[<a href='$PHP_SELF?page=$i'><font size=2 color='#000000'>$i</font></a>]";
-	}
-	echo"[<font size=2 color=#000000><b><font size=2 color='#FF00000'>$page</font></b></font>]";
-	for($i=$page+1;$i<=$totalpage;$i++)
-	{
-	echo"[<a href='$PHP_SELF?page=$i'><font size=2 color='#000000'>$i</font></a>]";
-	}
-	?>
 
-                                            </span></font><font color="#FFFFFF" size="2"><span class="maekhawtom"> 
-                                            </span></font>
+<!-- เพิ่ม CSS สำหรับการจัดรูปแบบปุ่ม -->
+<style>
+    .btn-style {
+        padding: 10px 20px;
+        margin-right: 15px;
+        margin-bottom: 10px;
+        display: inline-block;
+        background-color: #4CAF50; /* สีพื้นหลัง */
+        color: white; /* สีข้อความ */
+        border: none; /* ขอบปุ่ม */
+        border-radius: 5px; /* มุมโค้ง */
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
 
-											</td>
-										</tr>	
-			</td>
-		</tr>
+    .btn-style:hover {
+        background-color: #45a049; /* เปลี่ยนสีเมื่อ hover */
+    }
 
-</table>
-                                  
-
-  
-
-</body>
-</html>
+    .btn-style:focus {
+        outline: none; /* ลบเส้นขอบเมื่อคลิก */
+    }
+</style>
