@@ -135,29 +135,16 @@ function checkprd()
                                         <input name="info4" type="text" class="input" id="info4" size="125" maxlength="" value='<a href="" target="_blank"  ></a>' >
                                         </font></td>
                                     </tr>
-									<tr bgcolor="#FFFFFF"> 
-                                      <td> <div align="right"><font size="2">Location
+				
+                                    <tr bgcolor="#FFFFFF"> 
+                                      <td width="160"> <div align="right"><font size="2">Qty.
                                           :</font></div></td>
-                                      <td><font size="3"> 
-
-                                      <select name="infono" id="infono" width="300">
-                                                  <option selected value="<?php echo "$infono"; ?>"><?php echo "$infono"; ?></option>
-                                                  <option value="IIS">IIS</option>
-                                                  <option value="XAMPP">XAMPP</option>
-                                                  <option value="Apache.linux">Apache.linux</option>
-                                                  <option value="Nginx.Container">Nginx.Container</option>
-                                                  <option value="Firewall">Firewall</option>
-                                                  <option value="Cloud">Cloud</option>
-                                                  <option value="Other">Other</option>
-
-                                        </select>
-
-
-
+                                      <td width="501"><font size="3"> 
+                                        <input name="infono" type="text" id="infono" class="input" size="30">
                                         </font></td>
                                     </tr>
                                     <tr bgcolor="#FFFFFF"> 
-                                      <td width="160"> <div align="right"><font size="2">LAN.
+                                      <td width="160"> <div align="right"><font size="2">Qty.
                                           :</font></div></td>
                                       <td width="501"><font size="3"> 
                                         <input name="info1" type="text" id="info1" class="input" size="30">
