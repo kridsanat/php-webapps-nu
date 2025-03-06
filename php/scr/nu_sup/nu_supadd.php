@@ -135,14 +135,15 @@ function checkprd()
                                         <input name="info4" type="text" class="input" id="info4" size="125" maxlength="" value='<a href="" target="_blank"  ></a>' >
                                         </font></td>
                                     </tr>
-				
+
                                     <tr bgcolor="#FFFFFF"> 
-                                      <td width="160"> <div align="right"><font size="2">Qty.
+                                      <td width="160"> <div align="right"><font size="2">Location.
                                           :</font></div></td>
                                       <td width="501"><font size="3"> 
-                                        <input name="infono" type="text" id="infono" class="input" size="30">
+                                        <input name="info" type="text" id="info" class="input" size="30">
                                         </font></td>
                                     </tr>
+
                                     <tr bgcolor="#FFFFFF"> 
                                       <td width="160"> <div align="right"><font size="2">Qty.
                                           :</font></div></td>
