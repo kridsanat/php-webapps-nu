@@ -190,7 +190,7 @@ if (mysqli_num_rows($fect) == 0) {
                 <th><font face= 'tahoma' color='#27408B' size='1'>รูปภาพ</font></th>
                 <th><font face= 'tahoma' color='#27408B' size='1'>สถาณที่</font></th>
                 <th width='200' ><font face= 'tahoma' color='#27408B' size='1'>ผู้แก้ไข</font></th>
-				<th width='100' ><font face= 'tahoma' color='#27408B' size='1'>WAN</font></th>
+				<th width='150' ><font face= 'tahoma' color='#27408B' size='1'>WAN</font></th>
                 <th><font face= 'tahoma' color='#27408B' size='1'>รายละเอียด</font></th>
                 <th width='100'><font face= 'tahoma' color='#27408B' size='1'>จำนวน</font></th>
                 <th width='100'><font face= 'tahoma' color='#27408B' size='1'>ราคา</font></th>
@@ -229,7 +229,7 @@ if (mysqli_num_rows($fect) == 0) {
                             <br>
                             <font face= 'tahoma' color='#FF0033' size='1'>&nbsp;&nbsp;&nbsp;&nbsp;" . $rows["info3"] . "&nbsp;&nbsp;</font>
                         </td>
-						<td bgcolor='#FF9900' width='100' >&nbsp;&nbsp;<font face= 'tahoma' color='#000066' size='3'>" . $info5 . "</font></td>
+						<td bgcolor='#FF9900' width='' >&nbsp;&nbsp;<font face= 'tahoma' color='#000066' size='3'>" . $info5 . "</font></td>
                         <td>
                             <font face= 'tahoma' color='#000000' size='3'>&nbsp;&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >
                                 &nbsp;&nbsp;|&nbsp;&nbsp;" . $info4 . "
@@ -262,7 +262,7 @@ if (mysqli_num_rows($fect) == 0) {
         
         echo "  </td>
 
-                <td width='50' bgcolor='#AFEEEE' align='right'>
+                <td width='' bgcolor='#AFEEEE' align='right'>
                     <font face='tahoma' size='2' color='#'><b>&nbsp;Total&nbsp;</b><br></font>
                     <font face='tahoma' size='2' color='#000000'>
                         <span>
