@@ -228,7 +228,7 @@ if (mysqli_num_rows($fect) == 0) {
                             <br>
                             <font face= 'tahoma' color='#FF0033' size='1'>&nbsp;&nbsp;&nbsp;&nbsp;" . $rows["info3"] . "&nbsp;&nbsp;</font>
                         </td>
-						<td bgcolor='#4682B4' width='100' >&nbsp;&nbsp;WAN: <font face= 'tahoma' color='#000066' size='3'>" . $info5 . "</font></td>
+						<td bgcolor='#4682B4' width='300' >&nbsp;&nbsp;WAN: <font face= 'tahoma' color='#000066' size='3'>" . $info5 . "</font></td>
                         <td>
                             <font face= 'tahoma' color='#000000' size='3'>&nbsp;&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >
                                 &nbsp;&nbsp;|&nbsp;&nbsp;" . $info4 . "
@@ -261,7 +261,7 @@ if (mysqli_num_rows($fect) == 0) {
         
         echo "  </td>
 
-                <td bgcolor='#AFEEEE' align='right'>
+                <td width='100' bgcolor='#AFEEEE' align='right'>
                     <font face='tahoma' size='2' color='#'><b>&nbsp;Total&nbsp;</b><br></font>
                     <font face='tahoma' size='2' color='#000000'>
                         <span>
