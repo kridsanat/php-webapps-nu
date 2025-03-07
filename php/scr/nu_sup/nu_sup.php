@@ -237,7 +237,7 @@ if (mysqli_num_rows($fect) == 0) {
                                 &nbsp;&nbsp;" . $info4 . " &nbsp;&nbsp;    <font face='tahoma' color='#000000' size='3'>
         &nbsp;&nbsp;<input name='submit' type='submit' class='submit' value='Edit'>
         &nbsp;&nbsp;<?= $info4; ?> 
-        &nbsp;&nbsp;<span style="color: <?= $colorStatus; ?>;"><b><?= $status; ?></b></span>
+        &nbsp;&nbsp;<span style=color: <?= $colorStatus; ?>;><b><?= $status; ?></b></span>
     </font>
                             </font>
                         </td>
