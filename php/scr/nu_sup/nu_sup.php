@@ -211,7 +211,7 @@ if (mysqli_num_rows($fect) == 0) {
 		$status =$rows["status"];
 		$infono =$rows["infono"];
         $bgcolor = ($bgcount % 2 == 0) ? "#E9E9E8" : "#FFFFFF";
-
+        $colorStatus = ($status === "Active") ? "green" : "red";
         if (is_numeric($info1) && is_numeric($supprice)) {
             $total = $supprice * $info1;
             $sum += $total;
@@ -232,7 +232,7 @@ if (mysqli_num_rows($fect) == 0) {
 						<td bgcolor='#FFCC33' width='' >&nbsp;&nbsp;<font face= 'tahoma' color='#000066' size='+2'><b>" . $info5 . "</b></font></td>
                         <td>
                             <font face= 'tahoma' color='#000000' size='3'>&nbsp;&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >
-                                &nbsp;&nbsp;" . $info4 . " &nbsp;&nbsp;" . $status . "
+                                &nbsp;&nbsp;" . $info4 . " &nbsp;&nbsp;" . $status . "&nbsp;&nbsp;" . $colorStatus . "
                             </font>
                         </td>
 
