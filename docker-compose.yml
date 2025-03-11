@@ -34,7 +34,7 @@ services:
       PMA_HOST: db
     depends_on:
       - db
-x
+      
 networks:
   default:
     name: web_network
