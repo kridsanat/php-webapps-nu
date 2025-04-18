@@ -215,7 +215,12 @@ if (mysqli_num_rows($fect) == 0) {
         if (is_numeric($info1) && is_numeric($supprice)) {
             $total = $supprice * $info1;
             $sum += $total;
-        }
+
+    // คำนวณยอดรวม
+    if (is_numeric($info1) && is_numeric($supprice)) {
+        $total = $supprice * $info1;
+        $sum += $total;
+    }
 
         echo "  <tr style='background-color: $bgcolor;'>
 
