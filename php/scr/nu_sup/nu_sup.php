@@ -275,9 +275,6 @@ if (mysqli_num_rows($fect) == 0) {
                         </span>
                     </font>
 </td>
-
-
-
                     </form>
 
                 </tr>
