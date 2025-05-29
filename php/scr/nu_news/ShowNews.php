@@ -56,7 +56,7 @@ background-attachment : fixed
 		<head>
 		<?php echo "$fav"; ?>
 			<title><?php echo "$topic"; ?></title>
-			<meta http-equiv="Content-Type" content="text/html; charset=tis-620">
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 			<meta http-equiv="refresh" content="1800;url=../logout.php" />
 
 			<link href="" rel="" type="">
@@ -143,9 +143,8 @@ background-attachment : fixed
                               <td>
 							  <font size="2" face="tahoma" color="#222222">
 
-						
-							  <?php echo nl2br(htmlspecialchars_decode($message, ENT_QUOTES)); ?>
-
+							  <? echo "$message"; ?>
+							  
 							  
 							
 							  <?php 
