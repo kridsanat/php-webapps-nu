@@ -143,7 +143,7 @@ background-attachment : fixed
                               <td>
 							  <font size="2" face="tahoma" color="#222222">
 
-							  <?php echo htmlspecialchars($message, ENT_QUOTES | ENT_HTML401); ?>
+							  <? echo "$message"; ?>
 							  
 							  
 							
