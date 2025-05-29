@@ -124,7 +124,8 @@ background-attachment : fixed
                               <td>
 							  <font size="2" face="tahoma" color="#222222">
 
-							  <? echo "$message"; ?>
+							  <?php echo nl2br(htmlspecialchars_decode($message, ENT_QUOTES)); ?>
+
 							  
 							  
 							
