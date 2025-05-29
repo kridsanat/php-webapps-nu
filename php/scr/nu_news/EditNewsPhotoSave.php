@@ -45,4 +45,36 @@ if (isset($_FILES["newphoto"]) && $_FILES["newphoto"]["error"] === UPLOAD_ERR_OK
         die("ไม่สามารถย้ายไฟล์ไปยังโฟลเดอร์ NEW/");
     }
 } else {
-    echo "<s
+    echo "<script>alert('ไม่ได้เลือกรูปใหม่ หรือเกิดข้อผิดพลาดในการอัปโหลด');window.location.href='EditNews.php?NewsID=$idx';</script>";
+    exit();
+}
+?>
+<html>
+<head>
+<?php echo "$fav"; ?>
+<title><?php echo "$headtxt"; ?></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="refresh" content="900;url=../logout.php" />
+<meta http-equiv="refresh" content="3;URL=newmain.php">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body bgcolor="#ffffff">
+<div align="center">
+    <table width="100%" border="0" cellspacing="1" cellpadding="1">
+        <tr>
+            <td>
+                <div align="center">
+                    <br><br>
+                    <img src="../images/ajax-loader.gif">
+                    <br><br>
+                    <font color="#003366" size="2">Completed: รูปภาพอัปเดตแล้ว</font>
+                    <br><br>
+                    <font size="2">Please Wait...</font>
+                    <br><br><br><br><br>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
