@@ -1,131 +1,80 @@
 <?php
 @session_start();
-
 ob_start();
+
 $useradmin = $_SESSION["useradmin"];
-if(empty($useradmin)) 
-{
-echo "<script>alert('Only Administrator');</script>";
-header("Location: ../index.php");
-exit();
+if (empty($useradmin)) {
+    echo "<script>alert('Only Administrator');</script>";
+    header("Location: ../index.php");
+    exit();
 }
+
 require_once "../include/tdate.php";
 require_once "../include/connectdb.php";
 
-						  $sql="select * from useradmin where useradmin='$useradmin'";
-						  $db_query=mysqli_query($connect, $sql);					
-						  $result=mysqli_fetch_array($db_query);
-						  $id=$result["id"];
-						  $adminname=$result["name"];
-						  $user_admin=$result["useradmin"];
-						  $pass_admin=$result["passadmin"];
+$sql = "SELECT * FROM useradmin WHERE useradmin='$useradmin'";
+$db_query = mysqli_query($connect, $sql);					
+$result = mysqli_fetch_array($db_query);
+$adminname = $result["name"];
+
+$newsID = intval($_GET['NewsID']);
+$sql_1 = "SELECT * FROM news WHERE id = '$newsID'";
+$db_query = mysqli_query($connect, $sql_1);
+$result1 = mysqli_fetch_array($db_query);
+
+$idxx     = $result1['id'];
+$topic    = $result1['topic'];
+$newphoto = $result1['newphoto'];
+$message  = $result1['message'];
 ?>
 <html>
 <head>
-<?php echo "$fav"; ?>
-<title><? echo "$headtxt"; ?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=tis-620">
-<meta http-equiv="refresh" content="900;url=../logout.php" />
-
-<!-- Fireworks MX Dreamweaver MX target.  Created Sat Apr 02 10:29:23 GMT+0700 (SE Asia Standard Time) 2011-->
-<link href="css/style.css" rel="stylesheet" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>เปลี่ยนรูปภาพข่าว</title>
+    <meta http-equiv="refresh" content="900;url=../logout.php" />
+    <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body bgcolor="#ffffff">
-<div align="center"><font color="#990000" size="+1"><strong><font color="#333333" size="2"> 
-  </font></strong></font>
-  <table width="89%" border="0" align="center" cellpadding="1" cellspacing="1">
-  
-
-    <tr> 
-      <td colspan="2"><table width="100%" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#E9E9E6">
-          <tr> 
-            <td><div align="center"> 
-                <table width="100%" border="0" cellspacing="1" cellpadding="1">
-                  <tr> 
-                    <td><div align="center"><br>
-                        <table width="100%" border="0" cellspacing="1" cellpadding="1">
-                          <tr> 
-                            <td><div align="center"> <font color="#003366" size="2"> 
-                                <?php
-						  $sql_1="select * from news where id = '$_GET[NewsID]'";
-						  $db_query=mysqli_query($connect,$sql_1);
-						  $result1=mysqli_fetch_array($db_query);
-						  $idxx  =$result1['id'];
-						  $topic  =$result1['topic'];
-						  $newphoto  =$result1['newphoto'];
-						  $message  =$result1['message'];
-						?>
-                                </font> 
-                                <table width="636" border="0" align="center" cellpadding="1" cellspacing="1">
-                                  <form method="post" action="EditNewsPhotoSave.php" enctype="multipart/form-data">
-                                    <tr bgcolor="#FFFFFF"> 
-                                      <td width="151" valign="top"> <div align="right"><font size="2">Titel 
-                                          :</font></div></td>
-                                      <td width="558"><font size="3"> 
-                                        <input name="topic" type="text" class="input" id="topic" size="40" value='<? echo $topic; ?>'>
-                                        <input type="hidden" name="idx" value=<? echo "$idxx"; ?>>
-                                        </font></td>
-                                    </tr>
-									<tr>
-										<td align="right">
-										<font size="3"> Picture:</font>
-                                                
-										</td>
-										<td>
-										<br>
-                    <?php 
-							  if ($newphoto >= 100){
-							  echo "<img src=NEW/$newphoto width=55 height=55 border=1 >
-							  
-							  ";
-							  }
-								else{
-								echo "";	
-								}
-							  ?>
-										<br>
-										<input name="newphoto" type="file" class="input" id="newphoto" size="40">
-										<br>
-										<br>
-										</td>
-									</tr>
-                                    <tr bgcolor="#FFFFFF"> 
-                                      <td valign="top"> <div align="right"><font size="2">Detail:</font></div></td>
-                                      <td><font size="3"> 
-                                        <textarea name="message" cols="180" rows="30" class="input" id="message"><?= htmlspecialchars($message, ENT_QUOTES | ENT_HTML401, 'TIS-620'); ?></textarea>
-                                        </font>
-										<br><br>
-									  Update on :<input name="update" type="text" class="input" id="update" size="12" value='<? echo $e_date; ?>' maxlength="100" readonly> *Cannot edit !
-										<br><br>
-										</td>
-                                    </tr>
-                                    <tr bgcolor="#FFFFFF"> 
-                                      <td valign="top">&nbsp;</td>
-                                      <td><font size="3">
-                                        <input name="submit" type="submit" class="submit" value="Submit" onClick="return confirm ('Sure ? ') ">
-										&nbsp;&nbsp;&nbsp;&nbsp;<a href="newmain.php"><font face="tahoma" >Cancel</font></a>
-                                        </font></td>
-                                    </tr>
-                                  </form>
-                                </table>
-                              </div></td>
-                          </tr>
-                        </table>
-                        <br>
-                        <br>
-                      </div></td>
-                  </tr>
-                </table>
-              </div></td>
-          </tr>
-        </table></td>
-    </tr>
-    <tr> 
-      <td colspan="2"><div align="center"><br>
-          <? echo "<font size=2 color=#666666>$buttomtxt</font>"; ?> </div></td>
+<div align="center">
+  <table width="800" border="0" align="center" cellpadding="2" cellspacing="0">
+    <tr>
+      <td colspan="2" align="center">
+        <h3>🖼️ เปลี่ยนเฉพาะรูปภาพข่าว</h3>
+        <a href="newmain.php"><font face="tahoma" size="2" color="#0099CC">⬅ กลับหน้าหลัก</font></a>
+        <br><br>
+        <form method="post" action="EditNewsPhotoSave.php" enctype="multipart/form-data">
+          <table border="0" cellpadding="5" cellspacing="0">
+            <tr>
+              <td align="right"><b>รูปเดิม:</b></td>
+              <td>
+                <?php
+                  if (!empty($newphoto)) {
+                      echo "<img src='NEW/$newphoto' width='120' border='1'><br><br>";
+                  } else {
+                      echo "<i>ไม่มีรูปเดิม</i><br><br>";
+                  }
+                ?>
+              </td>
+            </tr>
+            <tr>
+              <td align="right"><b>เลือกรูปใหม่:</b></td>
+              <td><input type="file" name="newphoto" class="input" id="newphoto" size="40"></td>
+            </tr>
+            <tr>
+              <td colspan="2" align="center">
+                <br>
+                <input type="hidden" name="idx" value="<?php echo $idxx; ?>">
+                <input type="submit" name="submit" value="เปลี่ยนรูปภาพ" onclick="return confirm('ยืนยันการเปลี่ยนรูปภาพ?')">
+                &nbsp;&nbsp;
+                <a href="newmain.php"><font face="tahoma">ยกเลิก</font></a>
+              </td>
+            </tr>
+          </table>
+        </form>
+        <br><font color="red">* หน้านี้สำหรับเปลี่ยนเฉพาะรูปภาพเท่านั้น ข้อความจะไม่ถูกเปลี่ยน</font>
+      </td>
     </tr>
   </table>
-  
 </div>
 </body>
 </html>
