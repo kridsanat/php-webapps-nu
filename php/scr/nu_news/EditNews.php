@@ -86,7 +86,7 @@ require_once "../include/connectdb.php";
 							  ?>
 										<br>
 										
-										<a href="EditNewsPhoto.php?NewsID=<? echo "$idxx"; ?>">Change Picture</a>
+										<a href="EditNewsPhoto.php?NewsID=<? echo "$idxx"; ?>">Change Pictureeeee</a>
 										<br>
 										<br>
 										</td>
