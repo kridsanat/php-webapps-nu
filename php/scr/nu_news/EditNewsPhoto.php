@@ -92,7 +92,9 @@ require_once "../include/connectdb.php";
                                     <tr bgcolor="#FFFFFF"> 
                                       <td valign="top"> <div align="right"><font size="2">Detail:</font></div></td>
                                       <td><font size="3"> 
-                                        <textarea name="message" cols="120" rows="30" class="input" id="message"><? echo "$message"; ?></textarea>
+                                        
+                                        <textarea name="message" cols="120" rows="30" class="input" id="message"><?php echo htmlspecialchars($message, ENT_QUOTES, 'UTF-8'); ?></textarea>
+
                                         </font>
 										<br><br>
 									  Update on :<input name="update" type="text" class="input" id="update" size="12" value='<? echo $e_date; ?>' maxlength="100" readonly> *Cannot edit !
