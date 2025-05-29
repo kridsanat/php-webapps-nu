@@ -95,7 +95,7 @@ require_once "../include/connectdb.php";
                                       <td valign="top"> <div align="right"><font size="2">Detail:</font></div></td>
                                       <td><font size="3"> 
                                         
-                                        <textarea name="message" cols="180" rows="30" class="input" id="message"><?= htmlspecialchars($message, ENT_QUOTES | ENT_HTML401, 'TIS-620'); ?></textarea>
+                                        <textarea name="message" cols="180" rows="30" class="input" id="message"><?= htmlspecialchars($message, ENT_QUOTES); ?></textarea>
 
                                         </font>
 										<br><br>
