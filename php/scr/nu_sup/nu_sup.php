@@ -198,98 +198,73 @@ if (mysqli_num_rows($fect) == 0) {
             </tr>";
 
     while ($rows = mysqli_fetch_array($fect)) {
-
-		$idx =$rows["id"];
-		$info1 =$rows["info1"];
-		$info2 =$rows["info2"];
-		$info3 =$rows["info3"];
-		$info4 =$rows["info4"];
-		$info5 =$rows["info5"];
-		$info6 =$rows["info6"];
-		$supprice =$rows["supprice"];
-		$supphoto =$rows["supphoto"];
-		$status =$rows["status"];
-		$infono =$rows["infono"];
+        $idx = $rows["id"];
+        $info1 = $rows["info1"];
+        $info2 = $rows["info2"];
+        $info3 = $rows["info3"];
+        $info4 = $rows["info4"];
+        $info5 = $rows["info5"];
+        $info6 = $rows["info6"];
+        $supprice = $rows["supprice"];
+        $supphoto = $rows["supphoto"];
+        $status = $rows["status"];
+        $infono = $rows["infono"];
         $bgcolor = ($bgcount % 2 == 0) ? "#E9E9E8" : "#FFFFFF";
         $colorStatus = ($status === "Active") ? "green" : "red";
+
         if (is_numeric($info1) && is_numeric($supprice)) {
             $total = $supprice * $info1;
             $sum += $total;
-
-    // คำนวณยอดรวม
-    if (is_numeric($info1) && is_numeric($supprice)) {
-        $total = $supprice * $info1;
-        $sum += $total;
-    }
-
-        echo "  <tr style='background-color: $bgcolor;'>
-
-                    <form method='post' action='nu_supedit.php?SerID=" . $idx . "' >
-                        <td width='20' ><img src=../pic/$supphoto width=50 height=50 border=1 ></td>
-                    
-                        <td bgcolor='#4682B4' width='14%' ><font face= 'tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;" . $rows["infono"] . "&nbsp;&nbsp;</b></font></td>
-                    
-                        <td>
-                            <font face= 'tahoma' color='#27408B' size='+1'><b>&nbsp;&nbsp;" . $rows["info2"] . "&nbsp;&nbsp;</font>
-                            <br>
-                            <font face= 'tahoma' color='#FF0033' size='1'>&nbsp;&nbsp;&nbsp;&nbsp;" . $rows["info3"] . "&nbsp;&nbsp;</font>
-                        </td>
-						<td bgcolor='#FFFFFF' width='' >&nbsp;&nbsp;<font face= 'tahoma' color='#000000' size='+1'><b>" . $info5 . "</b></font></td>
-                        <td>
-                            <font face= 'tahoma' color='#000000' size='3'>&nbsp;&nbsp;<input name='submit' type='submit' class='submit' value='Edit' >
-                                &nbsp;&nbsp;" . $info4 . " &nbsp;&nbsp;<font face= 'tahoma' color='" . $colorStatus . "' size='3'>" . $status . "</font>
-                            </font>
-                        </td>
-
-<td bgcolor='#AFEEEE' align='left'>
-                            &nbsp;&nbsp;";
-        
-        // Fixed the condition for Qty.
-        if ($info1 == 0) {
-            echo "<b><font face='tahoma' size='2' color='#'>Qty.</font><font face='tahoma' size='2' color='#B8860B'>0</font></b>";
-        } else if ($info1 < 4) {
-            echo "<b><font face='tahoma' size='2' color='#'>Qty.</font><font face='tahoma' size='2' color='#B8860B'>$info1</font></b>";
-        } else {
-            echo "<b><font face='tahoma' size='2' color='#'>Qty.</font><font face='tahoma' size='2' color='#B8860B'>$info1</font></b>";
         }
 
-        echo "  </td>
+        echo "  <tr style='background-color: $bgcolor;'>
+                    <form method='post' action='nu_supedit.php?SerID=$idx'>
+                        <td width='20'><img src='../pic/$supphoto' width='50' height='50' border='1'></td>
+                        <td bgcolor='#4682B4' width='14%'><font face='tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;$infono&nbsp;&nbsp;</b></font></td>
+                        <td>
+                            <font face='tahoma' color='#27408B' size='+1'><b>&nbsp;&nbsp;$info2&nbsp;&nbsp;</font><br>
+                            <font face='tahoma' color='#FF0033' size='1'>&nbsp;&nbsp;&nbsp;&nbsp;$info3&nbsp;&nbsp;</font>
+                        </td>
+                        <td bgcolor='#FFFFFF'><font face='tahoma' color='#000000' size='+1'><b>$info5</b></font></td>
+                        <td>
+                            <font face='tahoma' color='#000000' size='3'>&nbsp;&nbsp;
+                            <input name='submit' type='submit' class='submit' value='Edit'>
+                            &nbsp;&nbsp;$info4 &nbsp;&nbsp;<font color='$colorStatus' size='3'>$status</font></font>
+                        </td>
+                        <td bgcolor='#AFEEEE' align='left'>&nbsp;&nbsp;";
 
-                <td bgcolor='#AFEEEE' align='left'>
-                    <font face='tahoma' size='2' color='#'>&nbsp;&nbsp;<b>Unit/Price</b><br></font>";
-                    
+        if ($info1 == 0) {
+            echo "<b><font face='tahoma' size='2'>Qty.</font><font color='#B8860B'>0</font></b>";
+        } else {
+            echo "<b><font face='tahoma' size='2'>Qty.</font><font color='#B8860B'>$info1</font></b>";
+        }
+
+        echo "</td>
+              <td bgcolor='#AFEEEE' align='left'>
+                  <font face='tahoma' size='2'><b>Unit/Price</b><br></font>";
         if ($supprice == 0) {
             echo "<font face='tahoma' size='2' color='#FF0000'><b>&nbsp;&nbsp;-</b></font>";
         } else {
-            $formattedPrice = number_format($supprice, 2, '.', ',');
-            echo "<font face='tahoma' size='2' color='#000000'>&nbsp;&nbsp;$formattedPrice</font>";
+            echo "<font face='tahoma' size='2' color='#000000'>&nbsp;&nbsp;" . number_format($supprice, 2, '.', ',') . "</font>";
         }
-        
-        echo "  </td>
 
-                <td width='' bgcolor='#AFEEEE' align='right'>
-                    <font face='tahoma' size='2' color='#'><b>&nbsp;Total&nbsp;</b><br></font>
-                    <font face='tahoma' size='2' color='#000000'>
-                        <span>
-                            " . number_format($total, 2, '.', ',') . "&nbsp;
-                        </span>
-                    </font>
-</td>
-                    </form>
+        echo "</td>
+              <td bgcolor='#AFEEEE' align='right'>
+                  <font face='tahoma' size='2'><b>&nbsp;Total&nbsp;</b><br></font>
+                  <font face='tahoma' size='2' color='#000000'>
+                      <span>" . number_format($total, 2, '.', ',') . "&nbsp;</span>
+                  </font>
+              </td>
+            </form>
+        </tr>
+        <tr>
+            <td colspan='8'><textarea width='1000' cols='230' rows='1' style='resize: vertical;' readonly>$info6</textarea></td>
+        </tr>";
 
-                </tr>
-
-                <tr>
-
-                        <td colspan='8' ><textarea width='1000' cols='230' rows='1' style='resize: vertical;' readonly>" . $info6 . "</textarea></td>
-                
-                </tr>
-              ";
-           
         $bgcount++;
-    }
-    echo "</table>";
+    } // ✅ ปิด while
 
+    echo "</table>";
 }
 
 // แสดงลิงค์แบ่งหน้า
@@ -305,28 +280,3 @@ if ($page < $totalpage) {
 }
 echo "</div>";
 ?>
-
-<!-- เพิ่ม CSS สำหรับการจัดรูปแบบปุ่ม -->
-<style>
-    .btn-style {
-        padding: 10px 20px;
-        margin-right: 15px;
-        margin-bottom: 10px;
-        display: inline-block;
-        background-color: #4CAF50; /* สีพื้นหลัง */
-        color: white; /* สีข้อความ */
-        border: none; /* ขอบปุ่ม */
-        border-radius: 5px; /* มุมโค้ง */
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    .btn-style:hover {
-        background-color: #45a049; /* เปลี่ยนสีเมื่อ hover */
-    }
-
-    .btn-style:focus {
-        outline: none; /* ลบเส้นขอบเมื่อคลิก */
-    }
-</style>
