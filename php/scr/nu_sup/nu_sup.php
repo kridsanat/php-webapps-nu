@@ -234,24 +234,24 @@ if (mysqli_num_rows($fect) == 0) {
                         <td bgcolor='#AFEEEE' align='left'>&nbsp;&nbsp;";
 
         if ($info1 == 0) {
-            echo "<b><font face='tahoma' size='2'>Qty.</font><font color='#B8860B'>0</font></b>";
+            echo "<b><font face='tahoma' size='1'>Qty.</font><font color='#B8860B'>0</font></b>";
         } else {
-            echo "<b><font face='tahoma' size='2'>Qty.</font><font color='#B8860B'>$info1</font></b>";
+            echo "<b><font face='tahoma' size='1'>Qty.</font><font color='#B8860B'>$info1</font></b>";
         }
 
         echo "</td>
               <td bgcolor='#AFEEEE' align='left'>
-                  <font face='tahoma' size='2'><b>Unit/Price</b><br></font>";
+                  <font face='tahoma' size='1'><b>Unit/Price</b><br></font>";
         if ($supprice == 0) {
-            echo "<font face='tahoma' size='2' color='#FF0000'><b>&nbsp;&nbsp;-</b></font>";
+            echo "<font face='tahoma' size='1' color='#FF0000'><b>&nbsp;&nbsp;-</b></font>";
         } else {
-            echo "<font face='tahoma' size='2' color='#000000'>&nbsp;&nbsp;" . number_format($supprice, 2, '.', ',') . "</font>";
+            echo "<font face='tahoma' size='1' color='#000000'>&nbsp;&nbsp;" . number_format($supprice, 2, '.', ',') . "</font>";
         }
 
         echo "</td>
               <td bgcolor='#AFEEEE' align='right'>
-                  <font face='tahoma' size='2'><b>&nbsp;Total&nbsp;</b><br></font>
-                  <font face='tahoma' size='2' color='#000000'>
+                  <font face='tahoma' size='1'><b>&nbsp;Total&nbsp;</b><br></font>
+                  <font face='tahoma' size='1' color='#000000'>
                       <span>" . number_format($total, 2, '.', ',') . "&nbsp;</span>
                   </font>
               </td>
