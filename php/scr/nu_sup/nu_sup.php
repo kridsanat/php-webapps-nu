@@ -219,7 +219,7 @@ if (mysqli_num_rows($fect) == 0) {
 
         echo "  <tr style='background-color: $bgcolor;'>
                     <form method='post' action='nu_supedit.php?SerID=$idx'>
-                        <td width='20'><img src='../pic/$supphoto' width='25' height='25' border='1'></td>
+                        <td width='20'><img src='../pic/$supphoto' width='30' height='30' border='1'></td>
                         <td bgcolor='#4682B4' width='14%'><font face='tahoma' color='#FFFACD' size='+1'><b>&nbsp;&nbsp;$infono&nbsp;&nbsp;</b></font></td>
                         <td>
                             <font face='tahoma' color='#27408B' size='1'><b>&nbsp;&nbsp;$info2&nbsp;&nbsp;</font><br>
