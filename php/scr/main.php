@@ -338,7 +338,7 @@ function e(string $s): string {
                                 <div class="todo-meta">สร้างเมื่อ: <?= e((string)$t['created_at']) ?></div>
                             <?php endif; ?>
                         </div>
-
+<br><br>
                         <?php if (!$isEditing): ?>
                             <div class="todo-actions">
                                 <a href="?action=edit&id=<?= (int)$t['id'] ?>">✏️ แก้ไข</a>
