@@ -1,9 +1,11 @@
 <?php
+declare(strict_types=1);
+
 @session_start();
+ob_start();
 
 // Start session and check user admin
-ob_start();
-$useradmin = $_SESSION["useradmin"];
+$useradmin = $_SESSION["useradmin"] ?? '';
 if (empty($useradmin)) {
     echo "<script>alert('Only Administrator');</script>";
     header("Location: ../index.php");
@@ -13,7 +15,7 @@ if (empty($useradmin)) {
 require_once "include/tdate.php";
 require_once "include/connectdb.php";
 
-// Query user information
+// Query user information (MySQL)
 $stmt = $connect->prepare("SELECT * FROM useradmin WHERE useradmin = ?");
 $stmt->bind_param("s", $useradmin);
 $stmt->execute();
@@ -24,9 +26,69 @@ if (!$result) {
     exit();
 }
 
-$id = $result["id"];
-$adminname = htmlspecialchars($result["name"], ENT_QUOTES, 'UTF-8');
+$id = (int)($result["id"] ?? 0);
+$adminname = htmlspecialchars((string)($result["name"] ?? ''), ENT_QUOTES, 'UTF-8');
 
+// =====================
+// TODO APP (SQLite)
+// =====================
+$dbFile = __DIR__ . '/todo.sqlite';
+
+$pdo = new PDO('sqlite:' . $dbFile, null, null, [
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+]);
+
+$pdo->exec("
+  CREATE TABLE IF NOT EXISTS tasks (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    is_done INTEGER NOT NULL DEFAULT 0,
+    created_at TEXT NOT NULL DEFAULT (datetime('now'))
+  );
+");
+
+$action = $_GET['action'] ?? '';
+
+if ($action === 'add' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    $title = trim($_POST['title'] ?? '');
+    if ($title !== '') {
+        $pdoStmt = $pdo->prepare("INSERT INTO tasks (title) VALUES (:title)");
+        $pdoStmt->execute([':title' => $title]);
+    }
+    header("Location: main.php");
+    exit;
+}
+
+if ($action === 'toggle') {
+    $taskId = (int)($_GET['id'] ?? 0);
+    if ($taskId > 0) {
+        $pdoStmt = $pdo->prepare("
+            UPDATE tasks
+            SET is_done = CASE WHEN is_done = 1 THEN 0 ELSE 1 END
+            WHERE id = :id
+        ");
+        $pdoStmt->execute([':id' => $taskId]);
+    }
+    header("Location: main.php");
+    exit;
+}
+
+if ($action === 'delete') {
+    $taskId = (int)($_GET['id'] ?? 0);
+    if ($taskId > 0) {
+        $pdoStmt = $pdo->prepare("DELETE FROM tasks WHERE id = :id");
+        $pdoStmt->execute([':id' => $taskId]);
+    }
+    header("Location: main.php");
+    exit;
+}
+
+$tasks = $pdo->query("SELECT * FROM tasks ORDER BY is_done ASC, id DESC")->fetchAll();
+
+function e(string $s): string {
+    return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -86,11 +148,7 @@ $adminname = htmlspecialchars($result["name"], ENT_QUOTES, 'UTF-8');
 
         .container {
             padding: 20px;
-        }
-
-        .welcome {
-            text-align: center;
-            margin: 20px 0;
+            padding-bottom: 80px; /* กัน footer บัง */
         }
 
         .links {
@@ -113,6 +171,49 @@ $adminname = htmlspecialchars($result["name"], ENT_QUOTES, 'UTF-8');
         .link:hover {
             background-color: #218838;
         }
+
+        /* ===== Todo Section ===== */
+        .todo-section{
+            max-width: 860px;
+            margin: 30px auto 0;
+            background: #fff;
+            border: 1px solid #e8e8f0;
+            border-radius: 10px;
+            padding: 18px;
+        }
+        .todo-section h2{
+            margin: 0 0 14px;
+            font-size: 1.3em;
+        }
+        .todo-row{display:flex; gap:10px;}
+        .todo-row input{
+            flex:1;
+            padding:10px;
+            border:1px solid #ccc;
+            border-radius:8px;
+        }
+        .todo-row button{
+            padding:10px 14px;
+            border:0;
+            border-radius:8px;
+            cursor:pointer;
+            background:#007bff;
+            color:#fff;
+        }
+        .todo-list{list-style:none; padding:0; margin:14px 0 0;}
+        .todo-item{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:10px 12px;
+            border:1px solid #eee;
+            border-radius:10px;
+            margin-bottom:10px;
+        }
+        .todo-done{ text-decoration: line-through; opacity:.6; }
+        .todo-actions{display:flex; gap:12px; align-items:center;}
+        .todo-actions a{color:#333; text-decoration:none;}
+        .todo-meta{font-size:12px; opacity:.6;}
 
         footer {
             text-align: center;
@@ -142,6 +243,7 @@ $adminname = htmlspecialchars($result["name"], ENT_QUOTES, 'UTF-8');
 
             .container {
                 padding: 10px;
+                padding-bottom: 90px;
             }
 
             .links {
@@ -153,20 +255,20 @@ $adminname = htmlspecialchars($result["name"], ENT_QUOTES, 'UTF-8');
                 font-size: 1em;
                 padding: 10px 20px;
             }
+
+            .todo-row{flex-direction:column;}
+            .todo-row button{width:100%;}
         }
     </style>
 </head>
 <body>
     <header>
-        
-        <h1>ยินดีตอนรับเข้าสู่ระบบ คุณ <font face= 'tahoma' color='#FFD700' size='+3'><b><?php echo $adminname; ?>!</b></font></h1>
-        
-        
+        <h1>ยินดีตอนรับเข้าสู่ระบบ คุณ <font face='tahoma' color='#FFD700' size='+3'><b><?php echo $adminname; ?>!</b></font></h1>
+
         <div class="top-right">
             <button onclick="location.href='../ChangePass.php'">Change Password</button>
             <button onclick="location.href='../logout.php'">Sign Out</button>
         </div>
-        
     </header>
 
     <div class="container">
@@ -176,120 +278,42 @@ $adminname = htmlspecialchars($result["name"], ENT_QUOTES, 'UTF-8');
             <a href="nu_sup/nu_sup.php" class="link">WAN-IP & Production SubDomain Management</a>
             <a href="nu_prints/nu_prints.php" class="link">Printers Management</a>
         </div>
+
+        <!-- Todo List -->
+        <div class="todo-section">
+            <h2>To-Do List</h2>
+
+            <form class="todo-row" method="post" action="?action=add">
+                <input name="title" placeholder="พิมพ์งานที่ต้องทำ..." required />
+                <button type="submit">เพิ่ม</button>
+            </form>
+
+            <ul class="todo-list">
+                <?php foreach ($tasks as $t): ?>
+                    <li class="todo-item">
+                        <div>
+                            <a href="?action=toggle&id=<?= (int)$t['id'] ?>">
+                                <span class="<?= ((int)$t['is_done'] === 1) ? 'todo-done' : '' ?>">
+                                    <?= e((string)$t['title']) ?>
+                                </span>
+                            </a>
+                            <div class="todo-meta">สร้างเมื่อ: <?= e((string)$t['created_at']) ?></div>
+                        </div>
+
+                        <div class="todo-actions">
+                            <a href="?action=toggle&id=<?= (int)$t['id'] ?>">
+                                <?= ((int)$t['is_done'] === 1) ? '↩ ยังไม่เสร็จ' : '✅ เสร็จแล้ว' ?>
+                            </a>
+                            <a href="?action=delete&id=<?= (int)$t['id'] ?>" onclick="return confirm('ลบรายการนี้?')">🗑 ลบ</a>
+                        </div>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
     </div>
 
     <footer>
         &copy; <?php echo date('Y'); ?> Admin Dashboard. All rights reserved.
     </footer>
-
-<?php
-declare(strict_types=1);
-
-// --- DB (SQLite) ---
-$dbFile = __DIR__ . '/todo.sqlite';
-$pdo = new PDO('sqlite:' . $dbFile);
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-// --- Create table (ครั้งแรกเท่านั้น) ---
-$pdo->exec("
-  CREATE TABLE IF NOT EXISTS tasks (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    title TEXT NOT NULL,
-    is_done INTEGER NOT NULL DEFAULT 0,
-    created_at TEXT NOT NULL DEFAULT (datetime('now'))
-  );
-");
-
-// --- Actions ---
-$action = $_GET['action'] ?? '';
-
-if ($action === 'add' && $_SERVER['REQUEST_METHOD'] === 'POST') {
-    $title = trim($_POST['title'] ?? '');
-    if ($title !== '') {
-        $stmt = $pdo->prepare("INSERT INTO tasks (title) VALUES (:title)");
-        $stmt->execute([':title' => $title]);
-    }
-    header("Location: index.php");
-    exit;
-}
-
-if ($action === 'toggle') {
-    $id = (int)($_GET['id'] ?? 0);
-    if ($id > 0) {
-        $stmt = $pdo->prepare("UPDATE tasks SET is_done = CASE WHEN is_done=1 THEN 0 ELSE 1 END WHERE id=:id");
-        $stmt->execute([':id' => $id]);
-    }
-    header("Location: index.php");
-    exit;
-}
-
-if ($action === 'delete') {
-    $id = (int)($_GET['id'] ?? 0);
-    if ($id > 0) {
-        $stmt = $pdo->prepare("DELETE FROM tasks WHERE id=:id");
-        $stmt->execute([':id' => $id]);
-    }
-    header("Location: index.php");
-    exit;
-}
-
-// --- Fetch tasks ---
-$tasks = $pdo->query("SELECT * FROM tasks ORDER BY is_done ASC, id DESC")->fetchAll(PDO::FETCH_ASSOC);
-
-function e(string $s): string { return htmlspecialchars($s, ENT_QUOTES, 'UTF-8'); }
-?>
-<!doctype html>
-<html lang="th">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PHP To-Do</title>
-  <style>
-    body{font-family:system-ui, sans-serif; max-width:720px; margin:40px auto; padding:0 16px;}
-    .row{display:flex; gap:8px;}
-    input{flex:1; padding:10px; border:1px solid #ccc; border-radius:8px;}
-    button{padding:10px 14px; border:0; border-radius:8px; cursor:pointer;}
-    ul{list-style:none; padding:0; margin-top:18px;}
-    li{display:flex; justify-content:space-between; align-items:center; padding:10px 12px; border:1px solid #eee; border-radius:10px; margin-bottom:10px;}
-    .done{text-decoration:line-through; opacity:.6;}
-    a{color:#333; text-decoration:none;}
-    .actions{display:flex; gap:10px; align-items:center;}
-  </style>
-</head>
-<body>
-
-<h2>To-Do List (PHP + SQLite)</h2>
-
-<form class="row" method="post" action="?action=add">
-  <input name="title" placeholder="พิมพ์งานที่ต้องทำ..." required />
-  <button type="submit">เพิ่ม</button>
-</form>
-
-<ul>
-  <?php foreach ($tasks as $t): ?>
-    <li>
-      <div>
-        <a href="?action=toggle&id=<?= (int)$t['id'] ?>">
-          <span class="<?= ((int)$t['is_done'] === 1) ? 'done' : '' ?>">
-            <?= e($t['title']) ?>
-          </span>
-        </a>
-        <div style="font-size:12px; opacity:.6;">สร้างเมื่อ: <?= e($t['created_at']) ?></div>
-      </div>
-
-      <div class="actions">
-        <a href="?action=toggle&id=<?= (int)$t['id'] ?>">
-          <?= ((int)$t['is_done'] === 1) ? '↩ ยังไม่เสร็จ' : '✅ เสร็จแล้ว' ?>
-        </a>
-        <a href="?action=delete&id=<?= (int)$t['id'] ?>" onclick="return confirm('ลบรายการนี้?')">🗑 ลบ</a>
-      </div>
-    </li>
-  <?php endforeach; ?>
-</ul>
-
-</body>
-</html>
-
-
 </body>
 </html>
