@@ -50,6 +50,7 @@ $pdo->exec("
 
 $action = $_GET['action'] ?? '';
 
+// --- Add ---
 if ($action === 'add' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = trim($_POST['title'] ?? '');
     if ($title !== '') {
@@ -60,6 +61,7 @@ if ($action === 'add' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 
+// --- Toggle done ---
 if ($action === 'toggle') {
     $taskId = (int)($_GET['id'] ?? 0);
     if ($taskId > 0) {
@@ -74,6 +76,7 @@ if ($action === 'toggle') {
     exit;
 }
 
+// --- Delete ---
 if ($action === 'delete') {
     $taskId = (int)($_GET['id'] ?? 0);
     if ($taskId > 0) {
@@ -84,6 +87,30 @@ if ($action === 'delete') {
     exit;
 }
 
+// --- Edit / Update ---
+$editingId = 0;
+
+if ($action === 'edit') {
+    $editingId = (int)($_GET['id'] ?? 0);
+    if ($editingId <= 0) {
+        header("Location: main.php");
+        exit;
+    }
+}
+
+if ($action === 'update' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    $taskId = (int)($_GET['id'] ?? 0);
+    $title  = trim($_POST['title'] ?? '');
+
+    if ($taskId > 0 && $title !== '') {
+        $pdoStmt = $pdo->prepare("UPDATE tasks SET title = :title WHERE id = :id");
+        $pdoStmt->execute([':title' => $title, ':id' => $taskId]);
+    }
+    header("Location: main.php");
+    exit;
+}
+
+// --- Fetch tasks ---
 $tasks = $pdo->query("SELECT * FROM tasks ORDER BY is_done ASC, id DESC")->fetchAll();
 
 function e(string $s): string {
@@ -209,11 +236,13 @@ function e(string $s): string {
             border:1px solid #eee;
             border-radius:10px;
             margin-bottom:10px;
+            gap: 12px;
         }
         .todo-done{ text-decoration: line-through; opacity:.6; }
-        .todo-actions{display:flex; gap:12px; align-items:center;}
+        .todo-actions{display:flex; gap:12px; align-items:center; flex-wrap: wrap;}
         .todo-actions a{color:#333; text-decoration:none;}
         .todo-meta{font-size:12px; opacity:.6;}
+        .todo-cancel{ text-decoration:none; padding:10px 12px; display:inline-block; }
 
         footer {
             text-align: center;
@@ -290,22 +319,35 @@ function e(string $s): string {
 
             <ul class="todo-list">
                 <?php foreach ($tasks as $t): ?>
+                    <?php $isEditing = ($editingId === (int)$t['id']); ?>
                     <li class="todo-item">
-                        <div>
-                            <a href="?action=toggle&id=<?= (int)$t['id'] ?>">
-                                <span class="<?= ((int)$t['is_done'] === 1) ? 'todo-done' : '' ?>">
-                                    <?= e((string)$t['title']) ?>
-                                </span>
-                            </a>
-                            <div class="todo-meta">สร้างเมื่อ: <?= e((string)$t['created_at']) ?></div>
+                        <div style="flex:1;">
+                            <?php if ($isEditing): ?>
+                                <form class="todo-row" method="post" action="?action=update&id=<?= (int)$t['id'] ?>">
+                                    <input name="title" value="<?= e((string)$t['title']) ?>" required />
+                                    <button type="submit">บันทึก</button>
+                                    <a class="todo-cancel" href="main.php">ยกเลิก</a>
+                                </form>
+                                <div class="todo-meta">สร้างเมื่อ: <?= e((string)$t['created_at']) ?></div>
+                            <?php else: ?>
+                                <a href="?action=toggle&id=<?= (int)$t['id'] ?>">
+                                    <span class="<?= ((int)$t['is_done'] === 1) ? 'todo-done' : '' ?>">
+                                        <?= e((string)$t['title']) ?>
+                                    </span>
+                                </a>
+                                <div class="todo-meta">สร้างเมื่อ: <?= e((string)$t['created_at']) ?></div>
+                            <?php endif; ?>
                         </div>
 
-                        <div class="todo-actions">
-                            <a href="?action=toggle&id=<?= (int)$t['id'] ?>">
-                                <?= ((int)$t['is_done'] === 1) ? '↩ ยังไม่เสร็จ' : '✅ เสร็จแล้ว' ?>
-                            </a>
-                            <a href="?action=delete&id=<?= (int)$t['id'] ?>" onclick="return confirm('ลบรายการนี้?')">🗑 ลบ</a>
-                        </div>
+                        <?php if (!$isEditing): ?>
+                            <div class="todo-actions">
+                                <a href="?action=edit&id=<?= (int)$t['id'] ?>">✏️ แก้ไข</a>
+                                <a href="?action=toggle&id=<?= (int)$t['id'] ?>">
+                                    <?= ((int)$t['is_done'] === 1) ? '↩ ยังไม่เสร็จ' : '✅ เสร็จแล้ว' ?>
+                                </a>
+                                <a href="?action=delete&id=<?= (int)$t['id'] ?>" onclick="return confirm('ลบรายการนี้?')">🗑 ลบ</a>
+                            </div>
+                        <?php endif; ?>
                     </li>
                 <?php endforeach; ?>
             </ul>
