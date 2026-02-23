@@ -88,9 +88,6 @@ function checksearch()
 <font color="#000000" face="tahoma" size="2">
 <a href="." target="_blank" ></a>
 
-
-
-
 </font>
 </div>
 </textarea>
