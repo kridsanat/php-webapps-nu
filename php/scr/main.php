@@ -202,11 +202,11 @@ function e(string $s): string {
         /* ===== Todo Section ===== */
         .todo-section{
             max-width: 860px;
-            margin: 30px auto 0;
+            margin: 12px auto 0;
             background: #fff;
             border: 1px solid #e8e8f0;
             border-radius: 10px;
-            padding: 18px;
+            padding: 12px;
         }
         .todo-section h2{
             margin: 0 0 14px;
