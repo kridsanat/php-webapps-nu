@@ -316,7 +316,7 @@ footer{
 }
 
 /* Mobile */
-@media (max-width: 768px){
+@media (max-width: 1000px){
   .todo-row{flex-direction:column;}
   .todo-row button{width:100%;}
   .todo-section h2{font-size: 16px;}
