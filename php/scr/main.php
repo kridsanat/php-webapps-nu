@@ -200,94 +200,133 @@ function e(string $s): string {
         }
 
         /* ===== Todo Section ===== */
-        .todo-section{
-            max-width: 860px;
-            margin: 10px auto 0;
-            background: #fff;
-            border: 1px solid #e8e8f0;
-            border-radius: 10px;
-            padding: 10px;
-        }
-        .todo-section h2{
-            margin: 0 0 14px;
-            font-size: 1.3em;
-        }
-        .todo-row{display:flex; gap:10px;}
-        .todo-row input{
-            flex:1;
-            padding:10px;
-            border:1px solid #ccc;
-            border-radius:8px;
-        }
-        .todo-row button{
-            padding:10px 14px;
-            border:0;
-            border-radius:8px;
-            cursor:pointer;
-            background:#007bff;
-            color:#fff;
-        }
-        .todo-list{list-style:none; padding:0; margin:10px 0 0;}
-        .todo-item{
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding:10px 12px;
-            border:1px solid #eee;
-            border-radius:10px;
-            margin-bottom:10px;
-            gap: 12px;
-        }
-        .todo-done{ text-decoration: line-through; opacity:.6; }
-        .todo-actions{display:flex; gap:10px; align-items:center; flex-wrap: wrap;}
-        .todo-actions a{color:#333; text-decoration:none;}
-        .todo-meta{font-size:10px; opacity:.6;}
-        .todo-cancel{ text-decoration:none; padding:10px 12px; display:inline-block; }
+        /* หัวข้อรายการ (ลิงก์สีน้ำเงิน) */
+/* =========================
+   TODO UI (fixed font sizes)
+   ========================= */
 
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
+.todo-section{
+  max-width: 860px;
+  margin: 10px auto 0;
+  background: #fff;
+  border: 1px solid #e8e8f0;
+  border-radius: 10px;
+  padding: 10px;
+}
 
-        @media (max-width: 768px) {
-            header {
-                text-align: left;
-                padding: 10px;
-            }
+.todo-section h2{
+  margin: 0 0 14px;
+  font-size: 18px; /* เดิม 1.3em */
+}
 
-            header h1 {
-                font-size: 1.8em;
-            }
+.todo-row{
+  display:flex;
+  gap:10px;
+}
 
-            .top-right {
-                position: static;
-                flex-direction: row;
-                justify-content: flex-end;
-            }
+.todo-row input{
+  flex:1;
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-size: 14px;
+}
 
-            .container {
-                padding: 10px;
-                padding-bottom: 90px;
-            }
+.todo-row button{
+  padding:10px 14px;
+  border:0;
+  border-radius:8px;
+  cursor:pointer;
+  background:#007bff;
+  color:#fff;
+  font-size: 14px;
+}
 
-            .links {
-                flex-direction: column;
-                gap: 10px;
-            }
+.todo-list{
+  list-style:none;
+  padding:0;
+  margin:10px 0 0;
+}
 
-            .link {
-                font-size: 1em;
-                padding: 10px 20px;
-            }
+.todo-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 12px;
+  border:1px solid #eee;
+  border-radius:10px;
+  margin-bottom:10px;
+  gap: 12px;
+}
 
-            .todo-row{flex-direction:column;}
-            .todo-row button{width:100%;}
-        }
+/* ฝั่งซ้าย (ชื่อ + meta) */
+.todo-title a{
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.todo-title a:hover{
+  text-decoration: underline;
+}
+
+.todo-meta{
+  font-size: 11px;
+  opacity: .6;
+  margin-top: 2px;
+}
+
+/* ทำเสร็จแล้ว */
+.todo-done{
+  text-decoration: line-through;
+  opacity:.6;
+}
+
+/* ฝั่งขวา (action buttons) */
+.todo-actions{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap: wrap;
+  white-space: nowrap;
+}
+
+.todo-actions a{
+  color:#333;
+  text-decoration:none;
+  font-size: 12px;
+  font-weight: 500;
+}
+.todo-actions a:hover{
+  text-decoration: underline;
+}
+
+/* ปุ่มยกเลิก (ถ้ามีใช้) */
+.todo-cancel{
+  text-decoration:none;
+  padding:10px 12px;
+  display:inline-block;
+  font-size: 12px;
+}
+
+footer{
+  text-align: center;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  .todo-row{flex-direction:column;}
+  .todo-row button{width:100%;}
+  .todo-section h2{font-size: 16px;}
+  .todo-actions a{font-size: 11px;}
+  .todo-title a{font-size: 13px;}
+  .todo-meta{font-size: 10px;}
+}
     </style>
 </head>
 <body>
