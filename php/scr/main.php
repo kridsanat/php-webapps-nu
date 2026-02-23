@@ -364,6 +364,7 @@ footer{
                                     <button type="submit">บันทึก</button>
                                     <a class="todo-cancel" href="main.php">ยกเลิก</a>
                                 </form>
+                                <br><br>
                                 <div class="todo-meta">สร้างเมื่อ: <?= e((string)$t['created_at']) ?></div>
                             <?php else: ?>
                                 <a href="?action=toggle&id=<?= (int)$t['id'] ?>">
