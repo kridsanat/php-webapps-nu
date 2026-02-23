@@ -34,7 +34,7 @@ if ($_FILES["newphoto"]["name"] != "") {
 
 // รับและ escape ข้อมูลจากฟอร์ม
 $topic = mysqli_real_escape_string($connect, $_POST['topic']);
-$message_raw = str_replace("\n", "<br>", $_POST['message']); // แปลง \n เป็น <br>
+$message_raw = str_replace("\n", $_POST['message']); // แปลง \n เป็น <br>
 $postmessage = mysqli_real_escape_string($connect, $message_raw);
 $regist_datetime = "$e_date $etime";
 
