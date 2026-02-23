@@ -260,13 +260,10 @@ function e(string $s): string {
 }
 
 /* ฝั่งซ้าย (ชื่อ + meta) */
-.todo-title a{
-  font-size: 9px;
-  font-weight: 600;
-  text-decoration: none;
-}
-.todo-title a:hover{
-  text-decoration: underline;
+.todo-title,
+.todo-title a,
+.todo-item a{
+  font-size: 11px !important;
 }
 
 .todo-meta{
