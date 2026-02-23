@@ -324,7 +324,7 @@ footer{
   .todo-row button{width:100%;}
   .todo-section h2{font-size: 16px;}
   .todo-actions a{font-size: 11px;}
-  .todo-title a{font-size: 13px;}
+  .todo-title a{font-size: 9px;}
   .todo-meta{font-size: 10px;}
 }
     </style>
