@@ -141,7 +141,7 @@ background-attachment : fixed
 						<table width="900" border="0" cellspacing="1" cellpadding="4">
                             <tr>
                               <td>
-							  <font size="1" face="tahoma" color="#222222">
+							  <font size="0.5" face="tahoma" color="#525151">
 
 							  
 							  <?php echo nl2br(htmlspecialchars_decode($message, ENT_QUOTES)); ?>
