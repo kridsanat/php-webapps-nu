@@ -227,7 +227,7 @@ function e(string $s): string {
             background:#007bff;
             color:#fff;
         }
-        .todo-list{list-style:none; padding:0; margin:11px 0 0;}
+        .todo-list{list-style:none; padding:0; margin:10px 0 0;}
         .todo-item{
             display:flex;
             justify-content:space-between;
