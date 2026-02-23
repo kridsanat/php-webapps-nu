@@ -261,7 +261,7 @@ function e(string $s): string {
 
 /* ฝั่งซ้าย (ชื่อ + meta) */
 .todo-title a{
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 600;
   text-decoration: none;
 }
