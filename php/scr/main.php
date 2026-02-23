@@ -239,9 +239,9 @@ function e(string $s): string {
             gap: 12px;
         }
         .todo-done{ text-decoration: line-through; opacity:.6; }
-        .todo-actions{display:flex; gap:11px; align-items:center; flex-wrap: wrap;}
+        .todo-actions{display:flex; gap:10px; align-items:center; flex-wrap: wrap;}
         .todo-actions a{color:#333; text-decoration:none;}
-        .todo-meta{font-size:11px; opacity:.6;}
+        .todo-meta{font-size:10px; opacity:.6;}
         .todo-cancel{ text-decoration:none; padding:10px 12px; display:inline-block; }
 
         footer {
