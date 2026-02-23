@@ -85,7 +85,7 @@ function checksearch()
                                       <td width="469" rowspan="2"><font size="3"> 
 <textarea name="message" cols="180" rows="30" class="input" id="message">
 <div align="left">
-<font color="#000000" face="tahoma" size="">
+<font color="#000000" face="tahoma" size="2">
 <a href="." target="_blank" ></a>
 
 
