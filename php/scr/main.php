@@ -206,7 +206,7 @@ function e(string $s): string {
    ========================= */
 
 .todo-section{
-  max-width: 860px;
+  max-width: 1000px;
   margin: 10px auto 0;
   background: #fff;
   border: 1px solid #e8e8f0;
